@@ -94,7 +94,7 @@
             // 
             // Pear_02
             // 
-            this.Pear_02.Image = global::tutorial.Properties.Resources.untitled_jpg;
+            this.Pear_02.Image = global::tutorial.Properties.Resources.untitled;
             this.Pear_02.Location = new System.Drawing.Point(796, 523);
             this.Pear_02.Name = "Pear_02";
             this.Pear_02.Size = new System.Drawing.Size(32, 32);
@@ -104,7 +104,7 @@
             // 
             // Banana_02
             // 
-            this.Banana_02.Image = global::tutorial.Properties.Resources.banana_jpg;
+            this.Banana_02.Image = global::tutorial.Properties.Resources.banana;
             this.Banana_02.Location = new System.Drawing.Point(85, 214);
             this.Banana_02.Name = "Banana_02";
             this.Banana_02.Size = new System.Drawing.Size(32, 32);
@@ -124,7 +124,7 @@
             // 
             // Pear_01
             // 
-            this.Pear_01.Image = global::tutorial.Properties.Resources.untitled_jpg;
+            this.Pear_01.Image = global::tutorial.Properties.Resources.untitled;
             this.Pear_01.Location = new System.Drawing.Point(368, 105);
             this.Pear_01.Name = "Pear_01";
             this.Pear_01.Size = new System.Drawing.Size(32, 32);
@@ -134,7 +134,7 @@
             // 
             // Banana_01
             // 
-            this.Banana_01.Image = global::tutorial.Properties.Resources.banana_jpg;
+            this.Banana_01.Image = global::tutorial.Properties.Resources.banana;
             this.Banana_01.Location = new System.Drawing.Point(428, 557);
             this.Banana_01.Name = "Banana_01";
             this.Banana_01.Size = new System.Drawing.Size(32, 32);
@@ -204,6 +204,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -229,7 +230,7 @@
             this.MenuItemDebugInfo,
             this.MenuItemDebugInfo_2});
             this.MenuItemDebug.Name = "MenuItemDebug";
-            this.MenuItemDebug.Size = new System.Drawing.Size(152, 22);
+            this.MenuItemDebug.Size = new System.Drawing.Size(109, 22);
             this.MenuItemDebug.Text = "Debug";
             // 
             // MenuItemDebugInfo
@@ -249,12 +250,12 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(106, 6);
             // 
             // MenuItemExit
             // 
             this.MenuItemExit.Name = "MenuItemExit";
-            this.MenuItemExit.Size = new System.Drawing.Size(152, 22);
+            this.MenuItemExit.Size = new System.Drawing.Size(109, 22);
             this.MenuItemExit.Text = "Exit";
             this.MenuItemExit.Click += new System.EventHandler(this.MenuItemExit_Click);
             // 
@@ -262,6 +263,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1008, 729);
             this.Controls.Add(this.Enemy_01);
             this.Controls.Add(this.Pear_02);

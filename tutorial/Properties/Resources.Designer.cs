@@ -73,9 +73,9 @@ namespace tutorial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap banana_jpg {
+        internal static System.Drawing.Bitmap banana {
             get {
-                object obj = ResourceManager.GetObject("banana.jpg", resourceCulture);
+                object obj = ResourceManager.GetObject("banana", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace tutorial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap untitled_jpg {
+        internal static System.Drawing.Bitmap untitled {
             get {
-                object obj = ResourceManager.GetObject("untitled.jpg", resourceCulture);
+                object obj = ResourceManager.GetObject("untitled", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
