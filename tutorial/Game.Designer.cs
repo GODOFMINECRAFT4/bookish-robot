@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Game));
             this.Player = new System.Windows.Forms.Label();
             this.Life = new System.Windows.Forms.ProgressBar();
@@ -50,6 +51,8 @@
             this.MenuItemDebugInfo_2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.MenuItemExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.LifeLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Enemy_01)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pear_02)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Banana_02)).BeginInit();
@@ -69,7 +72,7 @@
             // 
             this.Player.AutoSize = true;
             this.Player.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Player.Location = new System.Drawing.Point(376, 326);
+            this.Player.Location = new System.Drawing.Point(425, 350);
             this.Player.Name = "Player";
             this.Player.Size = new System.Drawing.Size(98, 25);
             this.Player.TabIndex = 0;
@@ -77,7 +80,7 @@
             // 
             // Life
             // 
-            this.Life.Location = new System.Drawing.Point(0, 27);
+            this.Life.Location = new System.Drawing.Point(0, 28);
             this.Life.Name = "Life";
             this.Life.Size = new System.Drawing.Size(183, 23);
             this.Life.TabIndex = 1;
@@ -85,7 +88,7 @@
             // Enemy_01
             // 
             this.Enemy_01.Image = global::tutorial.Properties.Resources.Enemy_01;
-            this.Enemy_01.Location = new System.Drawing.Point(600, 119);
+            this.Enemy_01.Location = new System.Drawing.Point(604, 77);
             this.Enemy_01.Name = "Enemy_01";
             this.Enemy_01.Size = new System.Drawing.Size(32, 32);
             this.Enemy_01.TabIndex = 13;
@@ -135,7 +138,7 @@
             // Banana_01
             // 
             this.Banana_01.Image = global::tutorial.Properties.Resources.banana;
-            this.Banana_01.Location = new System.Drawing.Point(428, 557);
+            this.Banana_01.Location = new System.Drawing.Point(504, 591);
             this.Banana_01.Name = "Banana_01";
             this.Banana_01.Size = new System.Drawing.Size(32, 32);
             this.Banana_01.TabIndex = 8;
@@ -259,12 +262,24 @@
             this.MenuItemExit.Text = "Exit";
             this.MenuItemExit.Click += new System.EventHandler(this.MenuItemExit_Click);
             // 
+            // LifeLabel
+            // 
+            this.LifeLabel.AutoSize = true;
+            this.LifeLabel.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.LifeLabel.Location = new System.Drawing.Point(71, 9);
+            this.LifeLabel.Name = "LifeLabel";
+            this.LifeLabel.Size = new System.Drawing.Size(65, 13);
+            this.LifeLabel.TabIndex = 15;
+            this.LifeLabel.Text = "Health - 100";
+            this.LifeLabel.Click += new System.EventHandler(this.LifeLabel_Click);
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.LifeLabel);
             this.Controls.Add(this.Enemy_01);
             this.Controls.Add(this.Pear_02);
             this.Controls.Add(this.Banana_02);
@@ -327,5 +342,7 @@
         private System.Windows.Forms.ToolStripMenuItem MenuItemDebugInfo_2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem MenuItemExit;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label LifeLabel;
     }
 }

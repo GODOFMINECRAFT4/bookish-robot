@@ -98,7 +98,8 @@ namespace tutorial
 //Enemys
             else if (Player.Bounds.IntersectsWith(Enemy_01.Bounds))
             {
-                DamageValues(10);
+                //DamageValues(10);
+                LoseHealth(1*10);
             }
         }
 
@@ -113,6 +114,7 @@ namespace tutorial
             else if (Life.Value > Life.Minimum)
             {
                 Life.Value -= lose;
+                LifeLabel.Text = "Health - " + Life.Value;
             }
             //Life.Value -= 10;
         }
@@ -126,6 +128,7 @@ namespace tutorial
             else if (Life.Value < Life.Maximum)
             {
                 Life.Value += gain;
+                LifeLabel.Text = "Health - " + Life.Value;
             }
             //Life.Value += 10;
         }
@@ -186,6 +189,7 @@ namespace tutorial
         {
             Text = "Game";
             Life.Value = 100;
+            LifeLabel.Text = "Health - " + Life.Value;
             Inv_01.Tag = null;
             Inv_02.Tag = null;
             Inv_03.Tag = null;
@@ -553,6 +557,11 @@ namespace tutorial
         private void MenuItemExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void LifeLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
