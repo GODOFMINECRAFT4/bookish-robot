@@ -12,6 +12,11 @@ namespace tutorial
 {
     public partial class Game : Form
     {
+        bool right;
+        bool left;
+        bool up;
+        bool down;
+        
         public Game()
         {
             InitializeComponent();
@@ -21,31 +26,92 @@ namespace tutorial
         {
             Reset();
         }
+        
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (up == true)
+            {
+               Player.Top -= 5;
+            }
+            
+            if (down == true)
+            {
+               Player.Top += 5;
+            }
+            
+            if (left == true)
+            {
+               Player.Left -= 5;
+            }
+            
+            if (right == true)
+            {
+               Player.Left += 5;
+            }
+        }
 
         #region Controls
+        private void Game_KeyUp(object sender, KeyEventArgs key)
+        { 
+// Up And Down Movement
+         if (key.KeyCode == Keys.W)
+            {
+             //enter Code Here
+             up = false;
+            }
+         
+          if (key.KeyCode == Keys.S)
+            {
+             //enter Code Here
+             down = false;
+            }
+         
+// Left And Right Movement
+          if (key.KeyCode == Keys.A)
+            {
+             //enter Code Here
+             left = false;
+            }
+ if (key.KeyCode == Keys.D)
+            {
+             //enter Code Here
+             right = false;
+            }
+        }
+        
         private void Game_KeyDown(object sender, KeyEventArgs key)
         {
             #region Movement
 // Up And Down Movement
             if (key.KeyCode == Keys.W)
             {
-                Player.Top -= 5;
+                //Player.Top -= 5;
+                up = true;
             }
 
             if (key.KeyCode == Keys.S)
             {
-                Player.Top += 5;
+                //Player.Top += 5;
+                down = true;
             }
 
 // Left And Right Movement
             if (key.KeyCode == Keys.A)
             {
-                Player.Left -= 5;
+                //Player.Left -= 5;
+                left = true;
             }
 
             if (key.KeyCode == Keys.D)
             {
-                Player.Left += 5;
+                //Player.Left += 5;
+                right = true;
+            }
+// Left + Right  Movement keys at once
+            if (key.KeyCode == Keys.Left && key.KeyCode == Keys.Right)
+            { 
+                right = false;
+                left = false;
             }
             #endregion
             #region Life_Test
