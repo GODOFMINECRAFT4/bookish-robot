@@ -166,7 +166,7 @@ namespace tutorial
             else if (Player.Bounds.IntersectsWith(Enemy_01.Bounds))
             {
                 //DamageValues(10);
-                LoseHealth(1*10);
+                LoseHealth(1*5);
             }
         }
 
