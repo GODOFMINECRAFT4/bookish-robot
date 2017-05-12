@@ -262,6 +262,11 @@
             this.MenuItemExit.Text = "Exit";
             this.MenuItemExit.Click += new System.EventHandler(this.MenuItemExit_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // LifeLabel
             // 
             this.LifeLabel.AutoSize = true;
@@ -300,6 +305,7 @@
             this.Text = " Game";
             this.Load += new System.EventHandler(this.Game_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Game_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Game_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.Enemy_01)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pear_02)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Banana_02)).EndInit();

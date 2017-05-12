@@ -24,61 +24,62 @@ namespace tutorial
 
         private void Game_Load(object sender, EventArgs e)
         {
+            timer1.Start();
             Reset();
         }
-        
+
+        #region Controls
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (up == true)
             {
-               Player.Top -= 5;
+                Player.Top -= 5;
             }
-            
+
             if (down == true)
             {
-               Player.Top += 5;
+                Player.Top += 5;
             }
-            
+
             if (left == true)
             {
-               Player.Left -= 5;
+                Player.Left -= 5;
             }
-            
+
             if (right == true)
             {
-               Player.Left += 5;
+                Player.Left += 5;
             }
         }
 
-        #region Controls
         private void Game_KeyUp(object sender, KeyEventArgs key)
-        { 
+        {
 // Up And Down Movement
          if (key.KeyCode == Keys.W)
             {
              //enter Code Here
              up = false;
             }
-         
-          if (key.KeyCode == Keys.S)
+
+            if (key.KeyCode == Keys.S)
             {
              //enter Code Here
              down = false;
             }
-         
-// Left And Right Movement
-          if (key.KeyCode == Keys.A)
+
+            // Left And Right Movement
+            if (key.KeyCode == Keys.A)
             {
              //enter Code Here
              left = false;
             }
- if (key.KeyCode == Keys.D)
+            if (key.KeyCode == Keys.D)
             {
              //enter Code Here
              right = false;
             }
         }
-        
+
         private void Game_KeyDown(object sender, KeyEventArgs key)
         {
             #region Movement
@@ -95,7 +96,7 @@ namespace tutorial
                 down = true;
             }
 
-// Left And Right Movement
+            // Left And Right Movement
             if (key.KeyCode == Keys.A)
             {
                 //Player.Left -= 5;
@@ -107,7 +108,7 @@ namespace tutorial
                 //Player.Left += 5;
                 right = true;
             }
-// Left + Right  Movement keys at once
+            // Left + Right  Movement keys at once
             if (key.KeyCode == Keys.Left && key.KeyCode == Keys.Right)
             { 
                 right = false;
@@ -115,7 +116,7 @@ namespace tutorial
             }
             #endregion
             #region Life_Test
-// Life
+            // Life
             if (key.KeyCode == Keys.H)
             {
                 LoseHealth(10);
@@ -127,11 +128,11 @@ namespace tutorial
             }
 
             #endregion
-
             Collisions();
-
         }
+
         #endregion
+
         public void Collisions()
         {
 //Apples
@@ -244,7 +245,7 @@ namespace tutorial
                 item.Top = 2000;
             }
         }
-    
+
         public void TakeFromInv(PictureBox item)
         {
             item.Image = null;
@@ -262,6 +263,7 @@ namespace tutorial
             Inv_04.Tag = null;
             Inv_05.Tag = null;
         }
+
         #region Inv_Click
         // Inv_01
         private void Inv_01_Click(object sender, EventArgs e)
@@ -565,7 +567,6 @@ namespace tutorial
             }
             #endregion
         }
-
         private void MenuItemDebugInfo_2_Click(object sender, EventArgs e)
         {
             #region Inv_Check
