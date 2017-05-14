@@ -52,7 +52,7 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.MenuItemExit = new System.Windows.Forms.ToolStripMenuItem();
             this.DebugMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.DebugMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
@@ -274,7 +274,7 @@
             // DebugMenuItem
             // 
             this.DebugMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem3,
+            this.DebugMenuItem2,
             this.toolStripSeparator2,
             this.toolStripMenuItem4,
             this.DebugTextBox,
@@ -283,11 +283,12 @@
             this.DebugMenuItem.Size = new System.Drawing.Size(57, 20);
             this.DebugMenuItem.Text = "Debug ";
             // 
-            // toolStripMenuItem3
+            // DebugMenuItem2
             // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(185, 22);
-            this.toolStripMenuItem3.Text = "Infinate Health (God)";
+            this.DebugMenuItem2.Name = "DebugMenuItem2";
+            this.DebugMenuItem2.Size = new System.Drawing.Size(185, 22);
+            this.DebugMenuItem2.Text = "Infinate Health (God)";
+            this.DebugMenuItem2.Click += new System.EventHandler(this.DebugMenuItem2_Click);
             // 
             // toolStripSeparator2
             // 
@@ -407,7 +408,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label LifeLabel;
         private System.Windows.Forms.ToolStripMenuItem DebugMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem DebugMenuItem2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;

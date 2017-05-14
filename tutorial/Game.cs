@@ -636,5 +636,11 @@ namespace tutorial
         {
             DebugMenuItem.Visible = true;
         }
+
+        private void DebugMenuItem2_Click(object sender, EventArgs e)
+        {
+            //God Mode / Infinate Health
+
+        }
     }
 }
