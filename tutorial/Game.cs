@@ -254,6 +254,7 @@ namespace tutorial
 
         public void Reset()
         {
+            DebugMenuItem.Visible = false;
             Text = "Game";
             Life.Value = 100;
             LifeLabel.Text = "Health - " + Life.Value;
@@ -628,7 +629,12 @@ namespace tutorial
 
         private void LifeLabel_Click(object sender, EventArgs e)
         {
+            DebugMenuItem.Visible = false;
+        }
 
+        private void Life_Click(object sender, EventArgs e)
+        {
+            DebugMenuItem.Visible = true;
         }
     }
 }
