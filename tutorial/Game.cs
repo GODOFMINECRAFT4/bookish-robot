@@ -131,6 +131,26 @@ namespace tutorial
             }
 
             #endregion
+            #region Speed Test
+
+            if (key.KeyCode == Keys.PageUp)
+            {
+                Speed = Speed + 1;
+                SpeedTextBox.Text = "Speed = " + Speed;
+                DebugTextBox.Text = "Speed = " + Speed;
+                SpeedLabel.Text = "Speed = " + Speed;
+            }
+
+            if(key.KeyCode == Keys.PageDown)
+            {
+                Speed = Speed - 1;
+                SpeedTextBox.Text = "Speed = " + Speed;
+                DebugTextBox.Text = "Speed = " + Speed;
+                SpeedLabel.Text = "Speed = " + Speed;
+            }
+           
+
+            #endregion
             Collisions();
         }
 
@@ -265,6 +285,7 @@ namespace tutorial
 
         public void Reset()
         {
+            SpeedLabel.Text = "Speed = " + Speed;
             DebugTextBox.Text = "Speed = " + Speed;
             SpeedTextBox.Text = "Speed = " + Speed;
             TextBoxGod.Text = "God Mode = " + GodMode;
@@ -670,15 +691,15 @@ namespace tutorial
         private void SpeedMenuItem_Click(object sender, EventArgs e)
         {
             Speed = Speed + 1;
-            SpeedTextBox.Text = "Speed" + Speed;
-            DebugTextBox.Text = "Speed" + Speed;
+            SpeedTextBox.Text = "Speed = " + Speed;
+            DebugTextBox.Text = "Speed = " + Speed;
         }
 
         private void SpeedMenuItem2_Click(object sender, EventArgs e)
         {
             Speed = Speed - 1;
-            SpeedTextBox.Text = "Speed" + Speed;
-            DebugTextBox.Text = "Speed" + Speed;
+            SpeedTextBox.Text = "Speed = " + Speed;
+            DebugTextBox.Text = "Speed = " + Speed;
         }
 
         #endregion
