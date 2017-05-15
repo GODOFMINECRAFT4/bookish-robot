@@ -1,0 +1,30 @@
+Username: YouTube
+Password: Videos_2_@
+
+Locations
+
+Apple_01  Location: 104, 591
+Apple_02  Location: 771, 174
+Banana_01 Location: 504, 591
+Banana_02 Location: 85, 214
+Enemy_01  Location: 604, 77
+Pear_01   Location: 368, 105
+Pear_02   Location: 796, 523
+
+Default Values For Debug Purposes
+
+right      = false
+left       = false
+up         = false
+down       = false
+GodMode    = false
+Speed      = 5
+Inv_01.Tag = null
+Inv_02.Tag = null
+Inv_03.Tag = null
+Inv_04.Tag = null
+Inv_05.Tag = null
+Text	   = Game
+DebugText  = null
+Life.Value = 100
+DebugMenuItem.Visible = false
