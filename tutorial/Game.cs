@@ -17,6 +17,9 @@ namespace tutorial
         bool up;
         bool down;
         bool GodMode = false;
+        int Apple = 5;
+        int Pear = 10;
+        int Banana = 15;
         int Speed = 5;
         string DebugText ;
         
@@ -29,6 +32,7 @@ namespace tutorial
         {
             timer1.Start();
             timer2.Start();
+            timer2.Tag = "on";
             Reset();
         }
 
@@ -59,21 +63,14 @@ namespace tutorial
 
         public void timer2_Tick(object sender, EventArgs time)
         {
-           if (timer2.Equals(timer2))
+  /*         if (timer2.Equals(timer2))
             {
-                if (Player.Bounds.IntersectsWith(Enemy_01.Bounds))
-                {
-                    if (GodMode == false)
-                    {
-                        //DamageValues(10);
-                        LoseHealth(1 * 5);
-                    }
+                EnemyCollisons();
+            }  */
 
-                    if (GodMode == true)
-                    {
-                        LoseHealth(1 * 0);
-                    }
-                }
+            if (timer2.Tag == "on")
+            {
+                EnemyCollisons();
             }
         }
 
@@ -177,10 +174,11 @@ namespace tutorial
 
             #endregion
             Collisions();
+            EnemyCollisons();
         }
 
         #endregion
-
+        #region Collisions
         public void Collisions()
         {
 //Apples
@@ -210,30 +208,33 @@ namespace tutorial
             {
                AddToInv(Pear_02);
             }
-//Enemys
-            else if (Player.Bounds.IntersectsWith(Enemy_01.Bounds))
+        }
+
+        public void EnemyCollisons()
+        {
+            if (Player.Bounds.IntersectsWith(Enemy_01.Bounds))
             {
                 if (GodMode == false)
                 {
-                  //DamageValues(10);
-                  LoseHealth(1 * 5);
+                    //DamageValues(10);
+                    LoseHealth(1 * 5);
                 }
 
-                if (GodMode == true)
+                else if (GodMode == true)
                 {
                     LoseHealth(1 * 0);
                 }
             }
         }
+         
+        #endregion
+        #region Health
 
-        #region Health  
-             
         public void LoseHealth(int lose)
         {
             if (Life.Value == Life.Minimum)
             {
-                MessageBox.Show("Error Cannot Go Lower Than 0");
-                Application.Exit();
+                System.Console.WriteLine("Health Min");
 
             }
             else if (Life.Value > Life.Minimum)
@@ -248,7 +249,7 @@ namespace tutorial
         {
             if (Life.Value == Life.Maximum)
             {
-                MessageBox.Show("Error Cannot Go Higher Than 100");
+                System.Console.WriteLine("Health Max");
             }
             else if (Life.Value < Life.Maximum)
             {
@@ -337,14 +338,28 @@ namespace tutorial
             // Apples           
             if (Inv_01.Tag == Apple_01.Tag)
             {
-                TakeFromInv(Inv_01);
-                GainHealth(5);
+                if (Life.Value == Life.Maximum)
+                {
+                    System.Console.WriteLine("Health Max");
+                }
+                else if (Life.Value  + Apple < Life.Maximum)
+                {
+                    GainHealth(Apple);
+                    TakeFromInv(Inv_01);
+                }
             }
 
            else if (Inv_01.Tag == Apple_02.Tag)
             {
-                TakeFromInv(Inv_01);
-                GainHealth(5);
+                if (Life.Value == Life.Maximum)
+                {
+                    System.Console.WriteLine("Health Max");
+                }
+                else if (Life.Value + Apple < Life.Maximum)
+                {
+                    GainHealth(Apple);
+                    TakeFromInv(Inv_01);
+                }
             }
 
             // Bananas
