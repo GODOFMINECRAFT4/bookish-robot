@@ -64,6 +64,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.LifeLabel = new System.Windows.Forms.Label();
             this.SpeedLabel = new System.Windows.Forms.Label();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Enemy_01)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pear_02)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Banana_02)).BeginInit();
@@ -298,6 +299,7 @@
             // TextBoxGod
             // 
             this.TextBoxGod.Name = "TextBoxGod";
+            this.TextBoxGod.ReadOnly = true;
             this.TextBoxGod.Size = new System.Drawing.Size(125, 23);
             // 
             // toolStripSeparator2
@@ -318,15 +320,15 @@
             // SpeedMenuItem
             // 
             this.SpeedMenuItem.Name = "SpeedMenuItem";
-            this.SpeedMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.SpeedMenuItem.Text = "Speed Increase";
+            this.SpeedMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.SpeedMenuItem.Text = "Speed Increase + 5";
             this.SpeedMenuItem.Click += new System.EventHandler(this.SpeedMenuItem_Click);
             // 
             // SpeedMenuItem2
             // 
             this.SpeedMenuItem2.Name = "SpeedMenuItem2";
-            this.SpeedMenuItem2.Size = new System.Drawing.Size(160, 22);
-            this.SpeedMenuItem2.Text = "Speed Decrease";
+            this.SpeedMenuItem2.Size = new System.Drawing.Size(173, 22);
+            this.SpeedMenuItem2.Text = "Speed Decrease - 5";
             this.SpeedMenuItem2.Click += new System.EventHandler(this.SpeedMenuItem2_Click);
             // 
             // SpeedTextBox
@@ -337,6 +339,7 @@
             // DebugTextBox
             // 
             this.DebugTextBox.Name = "DebugTextBox";
+            this.DebugTextBox.ReadOnly = true;
             this.DebugTextBox.Size = new System.Drawing.Size(125, 23);
             // 
             // toolStripSeparator3
@@ -347,7 +350,7 @@
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Interval = 10;
+            this.timer1.Interval = 50;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // LifeLabel
@@ -369,6 +372,12 @@
             this.SpeedLabel.Size = new System.Drawing.Size(62, 13);
             this.SpeedLabel.TabIndex = 16;
             this.SpeedLabel.Text = "Speed = 10";
+            // 
+            // timer2
+            // 
+            this.timer2.Enabled = true;
+            this.timer2.Interval = 50;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // Game
             // 
@@ -454,5 +463,6 @@
         private System.Windows.Forms.ToolStripMenuItem SpeedMenuItem2;
         private System.Windows.Forms.ToolStripTextBox SpeedTextBox;
         private System.Windows.Forms.Label SpeedLabel;
+        private System.Windows.Forms.Timer timer2;
     }
 }

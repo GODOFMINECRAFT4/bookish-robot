@@ -17,7 +17,7 @@ namespace tutorial
         bool up;
         bool down;
         bool GodMode = false;
-        int Speed = 10;
+        int Speed = 5;
         string DebugText ;
         
         public Game()
@@ -28,10 +28,12 @@ namespace tutorial
         private void Game_Load(object sender, EventArgs e)
         {
             timer1.Start();
+            timer2.Start();
             Reset();
         }
 
-        #region Controls
+        #region Timers
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (up == true)
@@ -54,6 +56,29 @@ namespace tutorial
                 Player.Left += Speed;
             }
         }
+
+        public void timer2_Tick(object sender, EventArgs time)
+        {
+           if (timer2.Equals(timer2))
+            {
+                if (Player.Bounds.IntersectsWith(Enemy_01.Bounds))
+                {
+                    if (GodMode == false)
+                    {
+                        //DamageValues(10);
+                        LoseHealth(1 * 5);
+                    }
+
+                    if (GodMode == true)
+                    {
+                        LoseHealth(1 * 0);
+                    }
+                }
+            }
+        }
+
+        #endregion
+        #region Controls
 
         private void Game_KeyUp(object sender, KeyEventArgs key)
         {
@@ -208,6 +233,8 @@ namespace tutorial
             if (Life.Value == Life.Minimum)
             {
                 MessageBox.Show("Error Cannot Go Lower Than 0");
+                Application.Exit();
+
             }
             else if (Life.Value > Life.Minimum)
             {
@@ -285,21 +312,21 @@ namespace tutorial
 
         public void Reset()
         {
-            SpeedLabel.Text = "Speed = " + Speed;
-            DebugTextBox.Text = "Speed = " + Speed;
-            SpeedTextBox.Text = "Speed = " + Speed;
-            TextBoxGod.Text = "God Mode = " + GodMode;
-            LifeLabel.Text = "Health - " + Life.Value;
-            DebugMenuItem.Visible = false;
+            Text = "Game";
+            GodMode = false;
+            Life.Value = 100;
             Inv_01.Tag = null;
             Inv_02.Tag = null;
             Inv_03.Tag = null;
             Inv_04.Tag = null;
             Inv_05.Tag = null;
             DebugText = null;
-            Life.Value = 100;
-            GodMode = false;
-            Text = "Game";
+            DebugMenuItem.Visible = false;
+            SpeedLabel.Text = "Speed = " + Speed;
+            DebugTextBox.Text = "Speed = " + Speed;
+            SpeedTextBox.Text = "Speed = " + Speed;
+            TextBoxGod.Text = "God Mode = " + GodMode;
+            LifeLabel.Text = "Health - " + Life.Value;
         }
 
         #region Inv_Click
@@ -542,7 +569,7 @@ namespace tutorial
             if (Inv_01.Tag != null)
             {
                 System.Console.WriteLine("Inv_01 is Full");
-                System.Console.WriteLine(Inv_01);
+                System.Console.WriteLine(Inv_01.Tag);
                 System.Console.WriteLine(" ");
             }
             else if (Inv_01.Tag == null)
@@ -568,7 +595,7 @@ namespace tutorial
             if (Inv_03.Tag != null)
             {
                 System.Console.WriteLine("Inv_03 is Full");
-                System.Console.WriteLine(Inv_01.Tag);
+                System.Console.WriteLine(Inv_03.Tag);
                 System.Console.WriteLine(" ");
             }
             else if (Inv_03.Tag == null)
@@ -581,7 +608,7 @@ namespace tutorial
             if (Inv_04.Tag != null)
             {
                 System.Console.WriteLine("Inv_04 is Full");
-                System.Console.WriteLine(Inv_01.Tag);
+                System.Console.WriteLine(Inv_04.Tag);
                 System.Console.WriteLine(" ");
             }
             else if (Inv_04.Tag == null)
@@ -594,7 +621,7 @@ namespace tutorial
             if (Inv_05.Tag != null)
             {
                 System.Console.WriteLine("Inv_05 is Full");
-                System.Console.WriteLine(Inv_01.Tag);
+                System.Console.WriteLine(Inv_05.Tag);
                 System.Console.WriteLine(" ");
             }
             else if (Inv_05.Tag == null)
@@ -611,51 +638,61 @@ namespace tutorial
             if (Inv_01.Tag != null)
             {
                 DebugText = "Inv_01 is Full \n";
+                DebugText = DebugText + Inv_01.Tag + "\n";
             }
             else if (Inv_01.Tag == null)
             {
                 DebugText = "Inv_01 is Empty \n";
+                DebugText = DebugText + "Inv_01 = null \n";
             }
 
             if (Inv_02.Tag != null)
             {
                 DebugText = DebugText + "Inv_02 is Full \n";
+                DebugText = DebugText + Inv_02.Tag + "\n";
             }
             else if (Inv_02.Tag == null)
             {
                 DebugText = DebugText + "Inv_02 is Empty \n";
+                DebugText = DebugText + "Inv_02 = null \n";
             }
 
             if (Inv_03.Tag != null)
             {
                 DebugText = DebugText + "Inv_03 is Full \n";
+                DebugText = DebugText + Inv_03.Tag + "\n";
             }
             else if (Inv_03.Tag == null)
             {
                 DebugText = DebugText + "Inv_03 is Empty \n";
+                DebugText = DebugText + "Inv_03 = null \n";
             }
 
             if (Inv_04.Tag != null)
             {
                 DebugText = DebugText + "Inv_04 is Full \n";
+                DebugText = DebugText + Inv_04.Tag + "\n";
             }
             else if (Inv_04.Tag == null)
             {
                 DebugText = DebugText + "Inv_04 is Empty \n";
+                DebugText = DebugText + "Inv_04 = null \n";
             }
 
             if (Inv_05.Tag != null)
             {
                 DebugText = DebugText + "Inv_05 is Full \n";
+                DebugText = DebugText + Inv_05.Tag + "\n";
             }
             else if (Inv_05.Tag == null)
             {
                 DebugText = DebugText + "Inv_05 is Empty \n";
+                DebugText = DebugText + "Inv_05 = null \n";
             }
             #endregion
             
-            MessageBox.Show(Text);
-            Text = "Game";
+            MessageBox.Show(DebugText);
+            DebugText = null;
         }
         #endregion
         #region Debug Menu 2
@@ -690,14 +727,14 @@ namespace tutorial
 
         private void SpeedMenuItem_Click(object sender, EventArgs e)
         {
-            Speed = Speed + 1;
+            Speed = Speed + 5;
             SpeedTextBox.Text = "Speed = " + Speed;
             DebugTextBox.Text = "Speed = " + Speed;
         }
 
         private void SpeedMenuItem2_Click(object sender, EventArgs e)
         {
-            Speed = Speed - 1;
+            Speed = Speed - 5;
             SpeedTextBox.Text = "Speed = " + Speed;
             DebugTextBox.Text = "Speed = " + Speed;
         }
@@ -709,6 +746,5 @@ namespace tutorial
             Application.Exit();
             Reset();
         }
-
     }
 }
