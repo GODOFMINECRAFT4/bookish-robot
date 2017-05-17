@@ -251,10 +251,15 @@ namespace tutorial
             {
                 System.Console.WriteLine("Health Max");
             }
-            else if (Life.Value < Life.Maximum)
+            else if (Life.Value + gain < Life.Maximum + 1)
             {
                 Life.Value += gain;
                 LifeLabel.Text = "Health - " + Life.Value;
+            }
+
+            else if (Life.Value + gain > Life.Maximum)
+            {
+                System.Console.WriteLine("Health Cant Go Above 100 Idiot");
             }
             //Life.Value += 10;
         }
@@ -745,6 +750,7 @@ namespace tutorial
             Speed = Speed + 5;
             SpeedTextBox.Text = "Speed = " + Speed;
             DebugTextBox.Text = "Speed = " + Speed;
+            SpeedLabel.Text = "Speed = " + Speed;
         }
 
         private void SpeedMenuItem2_Click(object sender, EventArgs e)
@@ -752,6 +758,7 @@ namespace tutorial
             Speed = Speed - 5;
             SpeedTextBox.Text = "Speed = " + Speed;
             DebugTextBox.Text = "Speed = " + Speed;
+            SpeedLabel.Text = "Speed = " + Speed;
         }
 
         #endregion

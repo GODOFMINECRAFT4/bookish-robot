@@ -20,6 +20,15 @@ namespace tutorial
         private void Form1_Load(object sender, EventArgs e)
         {
             DebugButton.Visible = false;
+            username_box.Text = "YouTube";
+            password_box.Text = "Videos_2_@";
+        }
+
+        public void Skip()
+        {
+            Main_Menu open_form = new Main_Menu();
+            open_form.Visible = true;
+            this.Hide();
         }
 
 //Submit Button
@@ -28,9 +37,7 @@ namespace tutorial
             if (username_box.Text == "YouTube" && password_box.Text == "Videos_2_@") 
             {
                 main_text.Text = "Successfully Logged In!";
-                Main_Menu open_form = new Main_Menu();
-                open_form.Visible = true;
-                this.Hide();
+                Skip();
             }
             else
             {
@@ -47,9 +54,7 @@ namespace tutorial
 //Debug Button Run
         private void DebugButton_Click(object sender, EventArgs e)
         {
-            Main_Menu open_form = new Main_Menu();
-            open_form.Visible = true;
-            this.Hide();
+            Skip();
         }
         #endregion
 
