@@ -32,7 +32,6 @@ namespace tutorial
         {
             timer1.Start();
             timer2.Start();
-            timer2.Tag = "on";
             Reset();
         }
 
@@ -326,6 +325,7 @@ namespace tutorial
             Inv_04.Tag = null;
             Inv_05.Tag = null;
             DebugText = null;
+            timer2.Tag = "on";
             DebugMenuItem.Visible = false;
             SpeedLabel.Text = "Speed = " + Speed;
             DebugTextBox.Text = "Speed = " + Speed;
@@ -370,14 +370,14 @@ namespace tutorial
             else if (Inv_01.Tag == Banana_01.Tag)
             {
                 TakeFromInv(Inv_01);
-                GainHealth(10);
+                GainHealth(Banana);
 
             }
             else if (Inv_01.Tag == Banana_02.Tag)
             {
 
                 TakeFromInv(Inv_01);
-                GainHealth(10);
+                GainHealth(Banana);
             }
 
             // Pears
@@ -385,14 +385,14 @@ namespace tutorial
             {
 
                 TakeFromInv(Inv_01);
-                GainHealth(10);
+                GainHealth(Pear);
             }
 
             else if (Inv_01.Tag == Pear_02.Tag)
             {
 
                 TakeFromInv(Inv_01);
-                GainHealth(10);
+                GainHealth(Pear);
             }
 
         }
