@@ -60,7 +60,6 @@ namespace tutorial
                 Player.Left += Speed;
             }
         }
-
         public void timer2_Tick(object sender, EventArgs time)
         {
   /*         if (timer2.Equals(timer2))
@@ -271,7 +270,7 @@ namespace tutorial
         }
 
         #endregion
-
+        #region Inv
         public void AddToInv(PictureBox item)
         {
             if (Inv_01.Tag == null)
@@ -315,7 +314,7 @@ namespace tutorial
             item.Image = null;
             item.Tag = null;
         }
-
+        #endregion
         public void Reset()
         {
             Text = "Game";
