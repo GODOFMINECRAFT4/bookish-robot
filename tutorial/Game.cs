@@ -42,21 +42,25 @@ namespace tutorial
             if (up == true)
             {
                 Player.Top -= Speed;
+                System.Console.WriteLine("Down = " + down + " Up = " + up + " Left = " + left + " Right = " + right);
             }
 
             if (down == true)
             {
                 Player.Top += Speed;
+                System.Console.WriteLine("Down = " + down + " Up = " + up + " Left = " + left + " Right = " + right);
             }
 
             if (left == true)
             {
                 Player.Left -= Speed;
+                System.Console.WriteLine("Down = " + down + " Up = " + up + " Left = " + left + " Right = " + right);
             }
 
             if (right == true)
             {
                 Player.Left += Speed;
+                System.Console.WriteLine("Down = " + down + " Up = " + up + " Left = " + left + " Right = " + right);
             }
         }
         public void timer2_Tick(object sender, EventArgs time)
@@ -171,6 +175,13 @@ namespace tutorial
            
 
             #endregion
+/*            #region Collisions loop
+            while (up || down || left || right == true)
+            {
+                Collisions();
+                EnemyCollisons();
+            }
+            #endregion   */
             Collisions();
             EnemyCollisons();
         }
