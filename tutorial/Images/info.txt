@@ -30,3 +30,4 @@ Life.Value = 100
 DebugMenuItem.Visible = false
 
 https://github.com/jitbit/CsvExport
+https://stackoverflow.com/questions/13318561/adding-new-line-of-data-to-textbox

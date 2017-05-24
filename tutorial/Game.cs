@@ -21,8 +21,13 @@ namespace tutorial
         int Pear = 10;
         int Banana = 15;
         int Speed = 5;
-        string DebugText ;
-        
+        string DebugText;
+        string downtext;
+        string uptext;
+        string lefttext;
+        string righttext;
+        string WASDText;
+
         public Game()
         {
             InitializeComponent();
@@ -39,28 +44,38 @@ namespace tutorial
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            downtext = "Down = " + down + "   ";
+            uptext = "Up = " + up + "   ";
+            lefttext = "Left = " + left + "   ";
+            righttext = "Right = " + right + "   ";
+            WASDText = downtext + uptext + lefttext + righttext;
+
             if (up == true)
             {
                 Player.Top -= Speed;
-                System.Console.WriteLine("Down = " + down + " Up = " + up + " Left = " + left + " Right = " + right);
+                textBox1.Text = textBox1.Text + WASDText + Environment.NewLine;
+                System.Console.WriteLine(WASDText);
             }
 
             if (down == true)
             {
                 Player.Top += Speed;
-                System.Console.WriteLine("Down = " + down + " Up = " + up + " Left = " + left + " Right = " + right);
+                textBox1.Text = textBox1.Text + WASDText + Environment.NewLine;
+                System.Console.WriteLine(WASDText);
             }
 
             if (left == true)
             {
                 Player.Left -= Speed;
-                System.Console.WriteLine("Down = " + down + " Up = " + up + " Left = " + left + " Right = " + right);
+                textBox1.Text = textBox1.Text + WASDText + Environment.NewLine;
+                System.Console.WriteLine(WASDText);
             }
 
             if (right == true)
             {
                 Player.Left += Speed;
-                System.Console.WriteLine("Down = " + down + " Up = " + up + " Left = " + left + " Right = " + right);
+                textBox1.Text = textBox1.Text + WASDText + Environment.NewLine;
+                System.Console.WriteLine(WASDText);
             }
         }
         public void timer2_Tick(object sender, EventArgs time)
@@ -337,12 +352,18 @@ namespace tutorial
             Inv_05.Tag = null;
             DebugText = null;
             timer2.Tag = "on";
+            textBox1.Visible = false;
             DebugMenuItem.Visible = false;
             SpeedLabel.Text = "Speed = " + Speed;
             DebugTextBox.Text = "Speed = " + Speed;
             SpeedTextBox.Text = "Speed = " + Speed;
             TextBoxGod.Text = "God Mode = " + GodMode;
             LifeLabel.Text = "Health - " + Life.Value;
+            downtext = "Down = " + down;
+            uptext = "Up = " + up;
+            lefttext = "Left = " + left;
+            righttext = "Right = " + right;
+            WASDText = downtext + uptext + lefttext + righttext;
         }
 
         #region Inv_Click
@@ -380,30 +401,55 @@ namespace tutorial
             // Bananas
             else if (Inv_01.Tag == Banana_01.Tag)
             {
-                TakeFromInv(Inv_01);
-                GainHealth(Banana);
-
+                if (Life.Value == Life.Maximum)
+                {
+                    System.Console.WriteLine("Health Max");
+                }
+                else if (Life.Value + Banana < Life.Maximum)
+                {
+                    GainHealth(Banana);
+                    TakeFromInv(Inv_01);
+                }
             }
+
             else if (Inv_01.Tag == Banana_02.Tag)
             {
-
-                TakeFromInv(Inv_01);
-                GainHealth(Banana);
+                if (Life.Value == Life.Maximum)
+                {
+                    System.Console.WriteLine("Health Max");
+                }
+                else if (Life.Value + Banana < Life.Maximum)
+                {
+                    GainHealth(Banana);
+                    TakeFromInv(Inv_01);
+                }
             }
 
             // Pears
             else if (Inv_01.Tag == Pear_01.Tag)
             {
-
-                TakeFromInv(Inv_01);
-                GainHealth(Pear);
+                if (Life.Value == Life.Maximum)
+                {
+                    System.Console.WriteLine("Health Max");
+                }
+                else if (Life.Value + Pear < Life.Maximum)
+                {
+                    GainHealth(Pear);
+                    TakeFromInv(Inv_01);
+                }
             }
 
             else if (Inv_01.Tag == Pear_02.Tag)
             {
-
-                TakeFromInv(Inv_01);
-                GainHealth(Pear);
+                if (Life.Value == Life.Maximum)
+                {
+                    System.Console.WriteLine("Health Max");
+                }
+                else if (Life.Value + Pear < Life.Maximum)
+                {
+                    GainHealth(Pear);
+                    TakeFromInv(Inv_01);
+                }
             }
 
         }
@@ -414,28 +460,55 @@ namespace tutorial
             // Apples           
             if (Inv_02.Tag == Apple_01.Tag)
             {
-                TakeFromInv(Inv_02);
-                GainHealth(5);
+                if (Life.Value == Life.Maximum)
+                {
+                    System.Console.WriteLine("Health Max");
+                }
+                else if (Life.Value + Apple < Life.Maximum)
+                {
+                    GainHealth(Apple);
+                    TakeFromInv(Inv_02);
+                }
             }
 
             else if (Inv_02.Tag == Apple_02.Tag)
             {
-                TakeFromInv(Inv_02);
-                GainHealth(5);
+                if (Life.Value == Life.Maximum)
+                {
+                    System.Console.WriteLine("Health Max");
+                }
+                else if (Life.Value + Apple < Life.Maximum)
+                {
+                    GainHealth(Apple);
+                    TakeFromInv(Inv_02);
+                }
             }
 
             // Bananas
             else if (Inv_02.Tag == Banana_01.Tag)
             {
-                TakeFromInv(Inv_02);
-                GainHealth(10);
-
+                if (Life.Value == Life.Maximum)
+                {
+                    System.Console.WriteLine("Health Max");
+                }
+                else if (Life.Value + Banana < Life.Maximum)
+                {
+                    GainHealth(Banana);
+                    TakeFromInv(Inv_02);
+                }
             }
+
             else if (Inv_02.Tag == Banana_02.Tag)
             {
-
-                TakeFromInv(Inv_02);
-                GainHealth(10);
+                if (Life.Value == Life.Maximum)
+                {
+                    System.Console.WriteLine("Health Max");
+                }
+                else if (Life.Value + Banana < Life.Maximum)
+                {
+                    GainHealth(Banana);
+                    TakeFromInv(Inv_02);
+                }
             }
 
             // Pears
@@ -460,28 +533,55 @@ namespace tutorial
             // Apples           
             if (Inv_03.Tag == Apple_01.Tag)
             {
-                TakeFromInv(Inv_03);
-                GainHealth(5);
+                if (Life.Value == Life.Maximum)
+                {
+                    System.Console.WriteLine("Health Max");
+                }
+                else if (Life.Value + Apple < Life.Maximum)
+                {
+                    GainHealth(Apple);
+                    TakeFromInv(Inv_03);
+                }
             }
 
             else if (Inv_03.Tag == Apple_02.Tag)
             {
-                TakeFromInv(Inv_03);
-                GainHealth(5);
+                if (Life.Value == Life.Maximum)
+                {
+                    System.Console.WriteLine("Health Max");
+                }
+                else if (Life.Value + Apple < Life.Maximum)
+                {
+                    GainHealth(Apple);
+                    TakeFromInv(Inv_03);
+                }
             }
 
             // Bananas
             else if (Inv_03.Tag == Banana_01.Tag)
             {
-                TakeFromInv(Inv_03);
-                GainHealth(10);
-
+                if (Life.Value == Life.Maximum)
+                {
+                    System.Console.WriteLine("Health Max");
+                }
+                else if (Life.Value + Banana < Life.Maximum)
+                {
+                    GainHealth(Banana);
+                    TakeFromInv(Inv_03);
+                }
             }
+
             else if (Inv_03.Tag == Banana_02.Tag)
             {
-
-                TakeFromInv(Inv_03);
-                GainHealth(10);
+                if (Life.Value == Life.Maximum)
+                {
+                    System.Console.WriteLine("Health Max");
+                }
+                else if (Life.Value + Banana < Life.Maximum)
+                {
+                    GainHealth(Banana);
+                    TakeFromInv(Inv_03);
+                }
             }
 
             // Pears
@@ -506,28 +606,55 @@ namespace tutorial
             // Apples           
             if (Inv_04.Tag == Apple_01.Tag)
             {
-                TakeFromInv(Inv_04);
-                GainHealth(5);
+                if (Life.Value == Life.Maximum)
+                {
+                    System.Console.WriteLine("Health Max");
+                }
+                else if (Life.Value + Apple < Life.Maximum)
+                {
+                    GainHealth(Apple);
+                    TakeFromInv(Inv_04);
+                }
             }
 
             else if (Inv_04.Tag == Apple_02.Tag)
             {
-                TakeFromInv(Inv_04);
-                GainHealth(5);
+                if (Life.Value == Life.Maximum)
+                {
+                    System.Console.WriteLine("Health Max");
+                }
+                else if (Life.Value + Apple < Life.Maximum)
+                {
+                    GainHealth(Apple);
+                    TakeFromInv(Inv_04);
+                }
             }
 
             // Bananas
             else if (Inv_04.Tag == Banana_01.Tag)
             {
-                TakeFromInv(Inv_04);
-                GainHealth(10);
-
+                if (Life.Value == Life.Maximum)
+                {
+                    System.Console.WriteLine("Health Max");
+                }
+                else if (Life.Value + Banana < Life.Maximum)
+                {
+                    GainHealth(Banana);
+                    TakeFromInv(Inv_04);
+                }
             }
+
             else if (Inv_04.Tag == Banana_02.Tag)
             {
-
-                TakeFromInv(Inv_04);
-                GainHealth(10);
+                if (Life.Value == Life.Maximum)
+                {
+                    System.Console.WriteLine("Health Max");
+                }
+                else if (Life.Value + Banana < Life.Maximum)
+                {
+                    GainHealth(Banana);
+                    TakeFromInv(Inv_04);
+                }
             }
 
             // Pears
@@ -552,28 +679,55 @@ namespace tutorial
             // Apples           
             if (Inv_05.Tag == Apple_01.Tag)
             {
-                TakeFromInv(Inv_05);
-                GainHealth(5);
+                if (Life.Value == Life.Maximum)
+                {
+                    System.Console.WriteLine("Health Max");
+                }
+                else if (Life.Value + Apple < Life.Maximum)
+                {
+                    GainHealth(Apple);
+                    TakeFromInv(Inv_05);
+                }
             }
 
             else if (Inv_05.Tag == Apple_02.Tag)
             {
-                TakeFromInv(Inv_05);
-                GainHealth(5);
+                if (Life.Value == Life.Maximum)
+                {
+                    System.Console.WriteLine("Health Max");
+                }
+                else if (Life.Value + Apple < Life.Maximum)
+                {
+                    GainHealth(Apple);
+                    TakeFromInv(Inv_05);
+                }
             }
 
             // Bananas
             else if (Inv_05.Tag == Banana_01.Tag)
             {
-                TakeFromInv(Inv_05);
-                GainHealth(10);
-
+                if (Life.Value == Life.Maximum)
+                {
+                    System.Console.WriteLine("Health Max");
+                }
+                else if (Life.Value + Banana < Life.Maximum)
+                {
+                    GainHealth(Banana);
+                    TakeFromInv(Inv_05);
+                }
             }
+
             else if (Inv_05.Tag == Banana_02.Tag)
             {
-
-                TakeFromInv(Inv_05);
-                GainHealth(10);
+                if (Life.Value == Life.Maximum)
+                {
+                    System.Console.WriteLine("Health Max");
+                }
+                else if (Life.Value + Banana < Life.Maximum)
+                {
+                    GainHealth(Banana);
+                    TakeFromInv(Inv_05);
+                }
             }
 
             // Pears
@@ -777,6 +931,20 @@ namespace tutorial
         {
             Application.Exit();
             Reset();
+        }
+
+        private void Game_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Visible == false)
+            {
+                textBox1.Visible = true;
+            }
+
+            else if (textBox1.Visible == true)
+            {
+                textBox1.Visible = false;
+            }
+                
         }
     }
 }

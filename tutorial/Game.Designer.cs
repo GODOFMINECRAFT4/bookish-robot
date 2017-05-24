@@ -65,6 +65,7 @@
             this.LifeLabel = new System.Windows.Forms.Label();
             this.SpeedLabel = new System.Windows.Forms.Label();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.Enemy_01)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pear_02)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Banana_02)).BeginInit();
@@ -378,6 +379,18 @@
             this.timer2.Enabled = true;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
+            // textBox1
+            // 
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Location = new System.Drawing.Point(12, 608);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox1.Size = new System.Drawing.Size(984, 109);
+            this.textBox1.TabIndex = 17;
+            this.textBox1.Visible = false;
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -401,10 +414,13 @@
             this.Controls.Add(this.Life);
             this.Controls.Add(this.Player);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.textBox1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Game";
             this.Text = " Game";
+            this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.Load += new System.EventHandler(this.Game_Load);
+            this.Click += new System.EventHandler(this.Game_Click);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Game_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Game_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.Enemy_01)).EndInit();
@@ -463,5 +479,6 @@
         private System.Windows.Forms.ToolStripTextBox SpeedTextBox;
         private System.Windows.Forms.Label SpeedLabel;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
