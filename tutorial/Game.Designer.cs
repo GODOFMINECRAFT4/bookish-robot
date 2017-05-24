@@ -66,6 +66,12 @@
             this.SpeedLabel = new System.Windows.Forms.Label();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.SpeedLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.LifeLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.Life2 = new System.Windows.Forms.ToolStripProgressBar();
+            this.Spacer = new System.Windows.Forms.ToolStripStatusLabel();
+            this.Spacer2 = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.Enemy_01)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pear_02)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Banana_02)).BeginInit();
@@ -79,6 +85,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Inv_02)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Inv_01)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Player
@@ -368,7 +375,7 @@
             // SpeedLabel
             // 
             this.SpeedLabel.AutoSize = true;
-            this.SpeedLabel.Location = new System.Drawing.Point(188, 10);
+            this.SpeedLabel.Location = new System.Drawing.Point(185, 9);
             this.SpeedLabel.Name = "SpeedLabel";
             this.SpeedLabel.Size = new System.Drawing.Size(62, 13);
             this.SpeedLabel.TabIndex = 16;
@@ -391,12 +398,56 @@
             this.textBox1.TabIndex = 17;
             this.textBox1.Visible = false;
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Life2,
+            this.Spacer,
+            this.LifeLabel2,
+            this.Spacer2,
+            this.SpeedLabel2});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 707);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1008, 22);
+            this.statusStrip1.TabIndex = 18;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // SpeedLabel2
+            // 
+            this.SpeedLabel2.Name = "SpeedLabel2";
+            this.SpeedLabel2.Size = new System.Drawing.Size(65, 17);
+            this.SpeedLabel2.Text = "Speed = 10";
+            // 
+            // LifeLabel2
+            // 
+            this.LifeLabel2.Name = "LifeLabel2";
+            this.LifeLabel2.Size = new System.Drawing.Size(71, 17);
+            this.LifeLabel2.Text = "Health - 100";
+            // 
+            // Life2
+            // 
+            this.Life2.Name = "Life2";
+            this.Life2.Size = new System.Drawing.Size(100, 16);
+            // 
+            // Spacer
+            // 
+            this.Spacer.Name = "Spacer";
+            this.Spacer.Size = new System.Drawing.Size(16, 17);
+            this.Spacer.Text = "   ";
+            // 
+            // Spacer2
+            // 
+            this.Spacer2.Name = "Spacer2";
+            this.Spacer2.Size = new System.Drawing.Size(16, 17);
+            this.Spacer2.Text = "   ";
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.SpeedLabel);
             this.Controls.Add(this.LifeLabel);
             this.Controls.Add(this.Enemy_01);
@@ -437,6 +488,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Inv_01)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -480,5 +533,11 @@
         private System.Windows.Forms.Label SpeedLabel;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripProgressBar Life2;
+        private System.Windows.Forms.ToolStripStatusLabel Spacer;
+        private System.Windows.Forms.ToolStripStatusLabel SpeedLabel2;
+        private System.Windows.Forms.ToolStripStatusLabel Spacer2;
+        private System.Windows.Forms.ToolStripStatusLabel LifeLabel2;
     }
 }

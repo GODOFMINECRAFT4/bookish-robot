@@ -178,6 +178,7 @@ namespace tutorial
                 SpeedTextBox.Text = "Speed = " + Speed;
                 DebugTextBox.Text = "Speed = " + Speed;
                 SpeedLabel.Text = "Speed = " + Speed;
+                SpeedLabel2.Text = "Speed = " + Speed;
             }
 
             if(key.KeyCode == Keys.PageDown)
@@ -186,6 +187,7 @@ namespace tutorial
                 SpeedTextBox.Text = "Speed = " + Speed;
                 DebugTextBox.Text = "Speed = " + Speed;
                 SpeedLabel.Text = "Speed = " + Speed;
+                SpeedLabel2.Text = "Speed = " + Speed;
             }
            
 
@@ -265,6 +267,8 @@ namespace tutorial
             {
                 Life.Value -= lose;
                 LifeLabel.Text = "Health - " + Life.Value;
+                Life2.Value -= lose;
+                LifeLabel2.Text = "Health - " + Life2.Value;
             }
             //Life.Value -= 10;
         }
@@ -279,6 +283,8 @@ namespace tutorial
             {
                 Life.Value += gain;
                 LifeLabel.Text = "Health - " + Life.Value;
+                Life2.Value += gain;
+                LifeLabel2.Text = "Health - " + Life2.Value;
             }
 
             else if (Life.Value + gain > Life.Maximum)
@@ -345,6 +351,7 @@ namespace tutorial
             Text = "Game";
             GodMode = false;
             Life.Value = 100;
+            Life2.Value = 100;
             Inv_01.Tag = null;
             Inv_02.Tag = null;
             Inv_03.Tag = null;
@@ -355,10 +362,12 @@ namespace tutorial
             textBox1.Visible = false;
             DebugMenuItem.Visible = false;
             SpeedLabel.Text = "Speed = " + Speed;
+            SpeedLabel2.Text = "Speed = " + Speed;
             DebugTextBox.Text = "Speed = " + Speed;
             SpeedTextBox.Text = "Speed = " + Speed;
             TextBoxGod.Text = "God Mode = " + GodMode;
             LifeLabel.Text = "Health - " + Life.Value;
+            LifeLabel2.Text = "Health - " + Life2.Value;
             downtext = "Down = " + down;
             uptext = "Up = " + up;
             lefttext = "Left = " + left;
@@ -367,7 +376,7 @@ namespace tutorial
         }
 
         #region Inv_Click
-        // Inv_01
+// Inv_01
         private void Inv_01_Click(object sender, EventArgs e)
         {
             System.Console.WriteLine(Inv_01.Tag);
@@ -514,16 +523,28 @@ namespace tutorial
             // Pears
             else if (Inv_02.Tag == Pear_01.Tag)
             {
-
-                TakeFromInv(Inv_02);
-                GainHealth(10);
+                if (Life.Value == Life.Maximum)
+                {
+                    System.Console.WriteLine("Health Max");
+                }
+                else if (Life.Value + Pear < Life.Maximum)
+                {
+                    GainHealth(Pear);
+                    TakeFromInv(Inv_02);
+                }
             }
 
             else if (Inv_02.Tag == Pear_02.Tag)
             {
-
-                TakeFromInv(Inv_02);
-                GainHealth(10);
+                if (Life.Value == Life.Maximum)
+                {
+                    System.Console.WriteLine("Health Max");
+                }
+                else if (Life.Value + Pear < Life.Maximum)
+                {
+                    GainHealth(Pear);
+                    TakeFromInv(Inv_02);
+                }
             }
         }
 // Inv_03
@@ -587,16 +608,28 @@ namespace tutorial
             // Pears
             else if (Inv_03.Tag == Pear_01.Tag)
             {
-
-                TakeFromInv(Inv_03);
-                GainHealth(10);
+                if (Life.Value == Life.Maximum)
+                {
+                    System.Console.WriteLine("Health Max");
+                }
+                else if (Life.Value + Pear < Life.Maximum)
+                {
+                    GainHealth(Pear);
+                    TakeFromInv(Inv_03);
+                }
             }
 
             else if (Inv_03.Tag == Pear_02.Tag)
             {
-
-                TakeFromInv(Inv_03);
-                GainHealth(10);
+                if (Life.Value == Life.Maximum)
+                {
+                    System.Console.WriteLine("Health Max");
+                }
+                else if (Life.Value + Pear < Life.Maximum)
+                {
+                    GainHealth(Pear);
+                    TakeFromInv(Inv_03);
+                }
             }
         }
 // Inv_04
@@ -660,16 +693,28 @@ namespace tutorial
             // Pears
             else if (Inv_04.Tag == Pear_01.Tag)
             {
-
-                TakeFromInv(Inv_04);
-                GainHealth(10);
+                if (Life.Value == Life.Maximum)
+                {
+                    System.Console.WriteLine("Health Max");
+                }
+                else if (Life.Value + Pear < Life.Maximum)
+                {
+                    GainHealth(Pear);
+                    TakeFromInv(Inv_04);
+                }
             }
 
             else if (Inv_04.Tag == Pear_02.Tag)
             {
-
-                TakeFromInv(Inv_04);
-                GainHealth(10);
+                if (Life.Value == Life.Maximum)
+                {
+                    System.Console.WriteLine("Health Max");
+                }
+                else if (Life.Value + Pear < Life.Maximum)
+                {
+                    GainHealth(Pear);
+                    TakeFromInv(Inv_04);
+                }
             }
         }
 // Inv_05
@@ -733,16 +778,28 @@ namespace tutorial
             // Pears
             else if (Inv_05.Tag == Pear_01.Tag)
             {
-
-                TakeFromInv(Inv_05);
-                GainHealth(10);
+                if (Life.Value == Life.Maximum)
+                {
+                    System.Console.WriteLine("Health Max");
+                }
+                else if (Life.Value + Pear < Life.Maximum)
+                {
+                    GainHealth(Pear);
+                    TakeFromInv(Inv_05);
+                }
             }
 
             else if (Inv_05.Tag == Pear_02.Tag)
             {
-
-                TakeFromInv(Inv_05);
-                GainHealth(10);
+                if (Life.Value == Life.Maximum)
+                {
+                    System.Console.WriteLine("Health Max");
+                }
+                else if (Life.Value + Pear < Life.Maximum)
+                {
+                    GainHealth(Pear);
+                    TakeFromInv(Inv_05);
+                }
             }
         }
         #endregion
@@ -874,7 +931,7 @@ namespace tutorial
                 DebugText = DebugText + "Inv_05 = null \n";
             }
             #endregion
-            
+
             MessageBox.Show(DebugText);
             DebugText = null;
         }
@@ -900,6 +957,8 @@ namespace tutorial
                 TextBoxGod.Text = "God Mode = " + GodMode ;
                 Life.Value = 100;
                 LifeLabel.Text = "Health - " + Life.Value;
+                Life2.Value = 100;
+                LifeLabel2.Text = "Health - " + Life2.Value;
             }
 
             else
@@ -915,6 +974,7 @@ namespace tutorial
             SpeedTextBox.Text = "Speed = " + Speed;
             DebugTextBox.Text = "Speed = " + Speed;
             SpeedLabel.Text = "Speed = " + Speed;
+            SpeedLabel2.Text = "Speed = " + Speed;
         }
 
         private void SpeedMenuItem2_Click(object sender, EventArgs e)
@@ -923,12 +983,14 @@ namespace tutorial
             SpeedTextBox.Text = "Speed = " + Speed;
             DebugTextBox.Text = "Speed = " + Speed;
             SpeedLabel.Text = "Speed = " + Speed;
+            SpeedLabel2.Text = "Speed = " + Speed;
         }
 
         #endregion
 
         private void MenuItemExit_Click(object sender, EventArgs e)
         {
+            
             Application.Exit();
             Reset();
         }
@@ -943,8 +1005,7 @@ namespace tutorial
             else if (textBox1.Visible == true)
             {
                 textBox1.Visible = false;
-            }
-                
+            }               
         }
     }
 }
