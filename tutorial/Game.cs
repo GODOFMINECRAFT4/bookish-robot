@@ -54,28 +54,28 @@ namespace tutorial
             if (up == true)
             {
                 Player.Top -= Speed;
-                textBox1.Text = textBox1.Text + WASDText + Environment.NewLine;
+                richTextBox1.Text = richTextBox1.Text + WASDText + Environment.NewLine;
                 System.Console.WriteLine(WASDText);
             }
 
             if (down == true)
             {
                 Player.Top += Speed;
-                textBox1.Text = textBox1.Text + WASDText + Environment.NewLine;
+                richTextBox1.Text = richTextBox1.Text + WASDText + Environment.NewLine;
                 System.Console.WriteLine(WASDText);
             }
 
             if (left == true)
             {
                 Player.Left -= Speed;
-                textBox1.Text = textBox1.Text + WASDText + Environment.NewLine;
+                richTextBox1.Text = richTextBox1.Text + WASDText + Environment.NewLine;
                 System.Console.WriteLine(WASDText);
             }
 
             if (right == true)
             {
                 Player.Left += Speed;
-                textBox1.Text = textBox1.Text + WASDText + Environment.NewLine;
+                richTextBox1.Text = richTextBox1.Text + WASDText + Environment.NewLine;
                 System.Console.WriteLine(WASDText);
             }
         }
@@ -173,7 +173,7 @@ namespace tutorial
             #endregion
             #region Speed Test
             //Speed Values
-            if (key.KeyCode == Keys.PageUp)
+            if (key.KeyCode == Keys.VolumeUp)
             {
                 Speed = Speed + 1;
                 SpeedTextBox.Text = "Speed = " + Speed;
@@ -182,7 +182,7 @@ namespace tutorial
                 SpeedLabel2.Text = "Speed = " + Speed;
             }
 
-            if(key.KeyCode == Keys.PageDown)
+            if(key.KeyCode == Keys.VolumeDown)
             {
                 Speed = Speed - 1;
                 SpeedTextBox.Text = "Speed = " + Speed;
@@ -190,8 +190,16 @@ namespace tutorial
                 SpeedLabel.Text = "Speed = " + Speed;
                 SpeedLabel2.Text = "Speed = " + Speed;
             }
-           
 
+            if (key.KeyCode == Keys.VolumeMute)
+            {
+                Speed = 5;
+                SpeedTextBox.Text = "Speed = " + Speed;
+                DebugTextBox.Text = "Speed = " + Speed;
+                SpeedLabel.Text = "Speed = " + Speed;
+                SpeedLabel2.Text = "Speed = " + Speed;
+            }
+           
             #endregion
 /*            #region Collisions loop
             while (up || down || left || right == true)
@@ -360,7 +368,7 @@ namespace tutorial
             Inv_05.Tag = null;
             DebugText = null;
             timer2.Tag = "on";
-            textBox1.Visible = false;
+            richTextBox1.Visible = false;
             DebugMenuItem.Visible = false;
             SpeedLabel.Text = "Speed = " + Speed;
             SpeedLabel2.Text = "Speed = " + Speed;
@@ -1010,14 +1018,14 @@ namespace tutorial
 
         private void Game_Click(object sender, EventArgs e)
         {
-            if (textBox1.Visible == false)
+            if (richTextBox1.Visible == false)
             {
-                textBox1.Visible = true;
+                richTextBox1.Visible = true;
             }
 
-            else if (textBox1.Visible == true)
+            else if (richTextBox1.Visible == true)
             {
-                textBox1.Visible = false;
+                richTextBox1.Visible = false;
             }               
         }
     }
