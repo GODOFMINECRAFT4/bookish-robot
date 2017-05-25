@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.submit_button = new System.Windows.Forms.Button();
             this.main_text = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -116,7 +117,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.main_text);
             this.Controls.Add(this.submit_button);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Login Menu";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);

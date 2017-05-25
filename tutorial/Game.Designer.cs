@@ -67,11 +67,12 @@
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.SpeedLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.LifeLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.Life2 = new System.Windows.Forms.ToolStripProgressBar();
             this.Spacer = new System.Windows.Forms.ToolStripStatusLabel();
+            this.LifeLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.Spacer2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.SpeedLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.Enemy_01)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pear_02)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Banana_02)).BeginInit();
@@ -388,8 +389,9 @@
             // 
             // textBox1
             // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(12, 608);
+            this.textBox1.Location = new System.Drawing.Point(73, 561);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
@@ -408,21 +410,11 @@
             this.SpeedLabel2});
             this.statusStrip1.Location = new System.Drawing.Point(0, 707);
             this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.statusStrip1.Size = new System.Drawing.Size(1008, 22);
+            this.statusStrip1.SizingGrip = false;
             this.statusStrip1.TabIndex = 18;
             this.statusStrip1.Text = "statusStrip1";
-            // 
-            // SpeedLabel2
-            // 
-            this.SpeedLabel2.Name = "SpeedLabel2";
-            this.SpeedLabel2.Size = new System.Drawing.Size(65, 17);
-            this.SpeedLabel2.Text = "Speed = 10";
-            // 
-            // LifeLabel2
-            // 
-            this.LifeLabel2.Name = "LifeLabel2";
-            this.LifeLabel2.Size = new System.Drawing.Size(71, 17);
-            this.LifeLabel2.Text = "Health - 100";
             // 
             // Life2
             // 
@@ -435,11 +427,31 @@
             this.Spacer.Size = new System.Drawing.Size(16, 17);
             this.Spacer.Text = "   ";
             // 
+            // LifeLabel2
+            // 
+            this.LifeLabel2.Name = "LifeLabel2";
+            this.LifeLabel2.Size = new System.Drawing.Size(71, 17);
+            this.LifeLabel2.Text = "Health - 100";
+            // 
             // Spacer2
             // 
             this.Spacer2.Name = "Spacer2";
             this.Spacer2.Size = new System.Drawing.Size(16, 17);
             this.Spacer2.Text = "   ";
+            // 
+            // SpeedLabel2
+            // 
+            this.SpeedLabel2.Name = "SpeedLabel2";
+            this.SpeedLabel2.Size = new System.Drawing.Size(65, 17);
+            this.SpeedLabel2.Text = "Speed = 10";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(24, 561);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(984, 109);
+            this.richTextBox1.TabIndex = 19;
+            this.richTextBox1.Text = "";
             // 
             // Game
             // 
@@ -447,6 +459,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.SpeedLabel);
             this.Controls.Add(this.LifeLabel);
@@ -466,8 +479,12 @@
             this.Controls.Add(this.Player);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.textBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Game";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = " Game";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.Load += new System.EventHandler(this.Game_Load);
@@ -539,5 +556,6 @@
         private System.Windows.Forms.ToolStripStatusLabel SpeedLabel2;
         private System.Windows.Forms.ToolStripStatusLabel Spacer2;
         private System.Windows.Forms.ToolStripStatusLabel LifeLabel2;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -85,7 +86,7 @@ namespace tutorial
                 EnemyCollisons();
             }  */
 
-            if (timer2.Tag == "on")
+            if (timer2.Tag.Equals("on"))
             {
                 EnemyCollisons();
             }
@@ -937,7 +938,7 @@ namespace tutorial
         }
         #endregion
         #region Debug Menu 2
-
+        #region Show Hidden Debug
         private void LifeLabel_Click(object sender, EventArgs e)
         {
             DebugMenuItem.Visible = false;
@@ -947,6 +948,18 @@ namespace tutorial
         {
             DebugMenuItem.Visible = true;
         }
+
+        private void LifeLabel2_Click(object sender, EventArgs e)
+        {
+            DebugMenuItem.Visible = false;
+        }
+
+        private void Life2_Click(object sender, EventArgs e)
+        {
+            DebugMenuItem.Visible = true;
+        }
+
+        #endregion
 
         private void DebugMenuItem2_Click(object sender, EventArgs e)
         {
