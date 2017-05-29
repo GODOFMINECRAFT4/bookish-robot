@@ -72,6 +72,7 @@
             this.Spacer2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.SpeedLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Enemy_01)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pear_02)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Banana_02)).BeginInit();
@@ -443,6 +444,10 @@
             this.richTextBox1.TabIndex = 19;
             this.richTextBox1.Text = "";
             // 
+            // timer3
+            // 
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -545,5 +550,6 @@
         private System.Windows.Forms.ToolStripStatusLabel Spacer2;
         private System.Windows.Forms.ToolStripStatusLabel LifeLabel2;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Timer timer3;
     }
 }

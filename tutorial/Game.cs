@@ -13,6 +13,7 @@ namespace tutorial
 {
     public partial class Game : Form
     {
+        #region Vars
         bool right;
         bool left;
         bool up;
@@ -28,6 +29,7 @@ namespace tutorial
         string lefttext;
         string righttext;
         string WASDText;
+        #endregion
 
         public Game()
         {
@@ -79,6 +81,7 @@ namespace tutorial
                 System.Console.WriteLine(WASDText);
             }
         }
+
         public void timer2_Tick(object sender, EventArgs time)
         {
   /*         if (timer2.Equals(timer2))
@@ -89,6 +92,19 @@ namespace tutorial
             if (timer2.Tag.Equals("on"))
             {
                 EnemyCollisons();
+            }
+        }
+
+        public void timer3_Tick(object sender, EventArgs time)
+        {
+            /*        if (timer3.Equals(timer2))
+                       {
+                           Collisions();
+                       }  */
+
+            if (timer3.Tag.Equals("on"))
+            {
+                Collisions();
             }
         }
 
@@ -275,9 +291,9 @@ namespace tutorial
             else if (Life.Value > Life.Minimum)
             {
                 Life.Value -= lose;
-                LifeLabel.Text = "Health - " + Life.Value;
+                LifeLabel.Text = "Health = " + Life.Value;
                 Life2.Value -= lose;
-                LifeLabel2.Text = "Health - " + Life2.Value;
+                LifeLabel2.Text = "Health = " + Life2.Value;
             }
             //Life.Value -= 10;
         }
@@ -291,9 +307,9 @@ namespace tutorial
             else if (Life.Value + gain < Life.Maximum + 1)
             {
                 Life.Value += gain;
-                LifeLabel.Text = "Health - " + Life.Value;
+                LifeLabel.Text = "Health = " + Life.Value;
                 Life2.Value += gain;
-                LifeLabel2.Text = "Health - " + Life2.Value;
+                LifeLabel2.Text = "Health = " + Life2.Value;
             }
 
             else if (Life.Value + gain > Life.Maximum)
@@ -355,35 +371,6 @@ namespace tutorial
             item.Tag = null;
         }
         #endregion
-        public void Reset()
-        {
-            Text = "Game";
-            GodMode = false;
-            Life.Value = 100;
-            Life2.Value = 100;
-            Inv_01.Tag = null;
-            Inv_02.Tag = null;
-            Inv_03.Tag = null;
-            Inv_04.Tag = null;
-            Inv_05.Tag = null;
-            DebugText = null;
-            timer2.Tag = "on";
-            richTextBox1.Visible = false;
-            DebugMenuItem.Visible = false;
-            SpeedLabel.Text = "Speed = " + Speed;
-            SpeedLabel2.Text = "Speed = " + Speed;
-            DebugTextBox.Text = "Speed = " + Speed;
-            SpeedTextBox.Text = "Speed = " + Speed;
-            TextBoxGod.Text = "God Mode = " + GodMode;
-            LifeLabel.Text = "Health - " + Life.Value;
-            LifeLabel2.Text = "Health - " + Life2.Value;
-            downtext = "Down = " + down;
-            uptext = "Up = " + up;
-            lefttext = "Left = " + left;
-            righttext = "Right = " + right;
-            WASDText = downtext + uptext + lefttext + righttext;
-        }
-
         #region Inv_Click
 // Inv_01
         private void Inv_01_Click(object sender, EventArgs e)
@@ -1008,6 +995,35 @@ namespace tutorial
         }
 
         #endregion
+
+        public void Reset()
+        {
+            Text = "Game";
+            GodMode = false;
+            Life.Value = 100;
+            Life2.Value = 100;
+            Inv_01.Tag = null;
+            Inv_02.Tag = null;
+            Inv_03.Tag = null;
+            Inv_04.Tag = null;
+            Inv_05.Tag = null;
+            DebugText = null;
+            timer2.Tag = "on";
+            richTextBox1.Visible = false;
+            DebugMenuItem.Visible = false;
+            SpeedLabel.Text = "Speed = " + Speed;
+            SpeedLabel2.Text = "Speed = " + Speed;
+            DebugTextBox.Text = "Speed = " + Speed;
+            SpeedTextBox.Text = "Speed = " + Speed;
+            TextBoxGod.Text = "God Mode = " + GodMode;
+            LifeLabel.Text = "Health = " + Life.Value;
+            LifeLabel2.Text = "Health = " + Life2.Value;
+            downtext = "Down = " + down;
+            uptext = "Up = " + up;
+            lefttext = "Left = " + left;
+            righttext = "Right = " + right;
+            WASDText = downtext + uptext + lefttext + righttext;
+        }
 
         private void MenuItemExit_Click(object sender, EventArgs e)
         {
