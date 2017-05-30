@@ -113,7 +113,8 @@ namespace tutorial
 
         private void Game_KeyUp(object sender, KeyEventArgs key)
         {
-// Up And Down Movement
+            #region WASD Keys
+            // Up And Down Movement
          if (key.KeyCode == Keys.W)
             {
              //enter Code Here
@@ -132,16 +133,69 @@ namespace tutorial
              //enter Code Here
              left = false;
             }
+
             if (key.KeyCode == Keys.D)
             {
              //enter Code Here
              right = false;
             }
+            #endregion
+            #region NumPad Keys
+            if (key.KeyCode == Keys.NumPad0)
+            {
+                // Enter Code here
+            }
+
+            if (key.KeyCode == Keys.NumPad1)
+            {
+                // Enter Code here
+            }
+
+            if (key.KeyCode == Keys.NumPad2)
+            {
+                // Enter Code here
+            }
+
+            if (key.KeyCode == Keys.NumPad3)
+            {
+                // Enter Code here
+            }
+
+            if (key.KeyCode == Keys.NumPad4)
+            {
+                // Enter Code here
+            }
+
+            if (key.KeyCode == Keys.NumPad5)
+            {
+                // Enter Code here
+            }
+
+            if (key.KeyCode == Keys.NumPad6)
+            {
+                // Enter Code here
+            }
+
+            if (key.KeyCode == Keys.NumPad7)
+            {
+                // Enter Code here
+            }
+
+            if (key.KeyCode == Keys.NumPad8)
+            {
+                // Enter Code here
+            }
+
+            if (key.KeyCode == Keys.NumPad9)
+            {
+                // Enter Code here
+            }
+            #endregion
         }
 
         private void Game_KeyDown(object sender, KeyEventArgs key)
         {
-            #region Movement
+            #region WASD Keys
 // Up And Down Movement
             if (key.KeyCode == Keys.W)
             {
@@ -172,6 +226,57 @@ namespace tutorial
             { 
                 right = false;
                 left = false;
+            }
+            #endregion
+            #region NumPad Keys
+            if (key.KeyCode == Keys.NumPad0)
+            {
+                // Enter Code here
+            }
+
+            if (key.KeyCode == Keys.NumPad1)
+            {
+                // Enter Code here
+            }
+
+            if (key.KeyCode == Keys.NumPad2)
+            {
+                // Enter Code here
+            }
+
+            if (key.KeyCode == Keys.NumPad3)
+            {
+                // Enter Code here
+            }
+
+            if (key.KeyCode == Keys.NumPad4)
+            {
+                // Enter Code here
+            }
+
+            if (key.KeyCode == Keys.NumPad5)
+            {
+                // Enter Code here
+            }
+
+            if (key.KeyCode == Keys.NumPad6)
+            {
+                // Enter Code here
+            }
+
+            if (key.KeyCode == Keys.NumPad7)
+            {
+                // Enter Code here
+            }
+
+            if (key.KeyCode == Keys.NumPad8)
+            {
+                // Enter Code here
+            }
+
+            if (key.KeyCode == Keys.NumPad9)
+            {
+                // Enter Code here
             }
             #endregion
             #region Life_Test
@@ -217,18 +322,13 @@ namespace tutorial
             }
            
             #endregion
-/*            #region Collisions loop
-            while (up || down || left || right == true)
-            {
-                Collisions();
-                EnemyCollisons();
-            }
-            #endregion   */
             Collisions();
             EnemyCollisons();
         }
 
         #endregion
+
+
         #region Collisions
         public void Collisions()
         {
@@ -978,7 +1078,7 @@ namespace tutorial
 
         private void SpeedMenuItem_Click(object sender, EventArgs e)
         {
-            Speed = Speed + 5;
+            Speed = Speed + 10;
             SpeedTextBox.Text = "Speed = " + Speed;
             DebugTextBox.Text = "Speed = " + Speed;
             SpeedLabel.Text = "Speed = " + Speed;
@@ -987,7 +1087,16 @@ namespace tutorial
 
         private void SpeedMenuItem2_Click(object sender, EventArgs e)
         {
-            Speed = Speed - 5;
+            Speed = Speed - 10;
+            SpeedTextBox.Text = "Speed = " + Speed;
+            DebugTextBox.Text = "Speed = " + Speed;
+            SpeedLabel.Text = "Speed = " + Speed;
+            SpeedLabel2.Text = "Speed = " + Speed;
+        }
+
+        private void SpeedMenuItem3_Click(object sender, EventArgs e)
+        {
+            Speed = 5;
             SpeedTextBox.Text = "Speed = " + Speed;
             DebugTextBox.Text = "Speed = " + Speed;
             SpeedLabel.Text = "Speed = " + Speed;

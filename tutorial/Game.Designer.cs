@@ -73,6 +73,10 @@
             this.SpeedLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.SpeedMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.Enemy_01)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pear_02)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Banana_02)).BeginInit();
@@ -321,7 +325,10 @@
             this.toolStripMenuItem4.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SpeedMenuItem,
             this.SpeedMenuItem2,
-            this.SpeedTextBox});
+            this.SpeedMenuItem3,
+            this.toolStripSeparator4,
+            this.SpeedTextBox,
+            this.toolStripSeparator5});
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
             this.toolStripMenuItem4.Size = new System.Drawing.Size(185, 22);
             this.toolStripMenuItem4.Text = "Movement Speed";
@@ -329,15 +336,15 @@
             // SpeedMenuItem
             // 
             this.SpeedMenuItem.Name = "SpeedMenuItem";
-            this.SpeedMenuItem.Size = new System.Drawing.Size(173, 22);
-            this.SpeedMenuItem.Text = "Speed Increase + 5";
+            this.SpeedMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.SpeedMenuItem.Text = "Speed Increase + 10";
             this.SpeedMenuItem.Click += new System.EventHandler(this.SpeedMenuItem_Click);
             // 
             // SpeedMenuItem2
             // 
             this.SpeedMenuItem2.Name = "SpeedMenuItem2";
-            this.SpeedMenuItem2.Size = new System.Drawing.Size(173, 22);
-            this.SpeedMenuItem2.Text = "Speed Decrease - 5";
+            this.SpeedMenuItem2.Size = new System.Drawing.Size(179, 22);
+            this.SpeedMenuItem2.Text = "Speed Decrease - 10";
             this.SpeedMenuItem2.Click += new System.EventHandler(this.SpeedMenuItem2_Click);
             // 
             // SpeedTextBox
@@ -407,6 +414,7 @@
             // 
             this.Life2.Name = "Life2";
             this.Life2.Size = new System.Drawing.Size(100, 16);
+            this.Life2.Click += new System.EventHandler(this.Life2_Click);
             // 
             // Spacer
             // 
@@ -419,6 +427,7 @@
             this.LifeLabel2.Name = "LifeLabel2";
             this.LifeLabel2.Size = new System.Drawing.Size(71, 17);
             this.LifeLabel2.Text = "Health - 100";
+            this.LifeLabel2.Click += new System.EventHandler(this.LifeLabel2_Click);
             // 
             // Spacer2
             // 
@@ -447,6 +456,29 @@
             // timer3
             // 
             this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(176, 6);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(176, 6);
+            // 
+            // SpeedMenuItem3
+            // 
+            this.SpeedMenuItem3.Name = "SpeedMenuItem3";
+            this.SpeedMenuItem3.Size = new System.Drawing.Size(179, 22);
+            this.SpeedMenuItem3.Text = "Speed Default";
+            this.SpeedMenuItem3.Click += new System.EventHandler(this.SpeedMenuItem3_Click);
             // 
             // Game
             // 
@@ -551,5 +583,9 @@
         private System.Windows.Forms.ToolStripStatusLabel LifeLabel2;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Timer timer3;
+        private System.Windows.Forms.ToolStripMenuItem SpeedMenuItem3;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }
