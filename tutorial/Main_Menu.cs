@@ -44,5 +44,15 @@ namespace tutorial
         {
             Application.Exit();
         }
+
+        private void LoadGameButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
     }
 }

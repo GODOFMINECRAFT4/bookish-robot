@@ -327,8 +327,6 @@ namespace tutorial
         }
 
         #endregion
-
-
         #region Collisions
         public void Collisions()
         {
@@ -1104,6 +1102,21 @@ namespace tutorial
         }
 
         #endregion
+        #region Game Form Voids
+        private void Game_Activated(object sender, EventArgs e)
+        {
+            notifyIcon1.Visible = true;
+            notifyIcon1.Text = "Game";
+            notifyIcon1.BalloonTipTitle = "Game";
+            notifyIcon1.BalloonTipText = "Game Form Active";
+            notifyIcon1.ShowBalloonTip(10000);
+        }
+
+        private void Game_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            notifyIcon1.Visible = false;
+        }
+        #endregion
 
         public void Reset()
         {
@@ -1153,5 +1166,22 @@ namespace tutorial
                 richTextBox1.Visible = false;
             }               
         }
+
+        public void ButtonIDSaveAs_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Title = "Save an Image File";
+            saveFileDialog1.ShowDialog();
+
+            if (saveFileDialog1.FileName != "test.txt")
+            {
+                using (StreamWriter sw = new StreamWriter(saveFileDialog1.OpenFile()))
+                {
+                    sw.Write(richTextBox1.Text);
+                }
+            }
+        }
+
+
     }
 }

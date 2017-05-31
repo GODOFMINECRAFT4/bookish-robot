@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Game));
             this.Player = new System.Windows.Forms.Label();
             this.Life = new System.Windows.Forms.ProgressBar();
-            this.Enemy_01 = new System.Windows.Forms.PictureBox();
             this.Pear_02 = new System.Windows.Forms.PictureBox();
             this.Banana_02 = new System.Windows.Forms.PictureBox();
             this.Apple_02 = new System.Windows.Forms.PictureBox();
@@ -58,7 +57,10 @@
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.SpeedMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SpeedMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.SpeedMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.SpeedTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.DebugTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -74,10 +76,9 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.SpeedMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.Enemy_01)).BeginInit();
+            this.Enemy_01 = new System.Windows.Forms.PictureBox();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.ButtonIDSaveAs = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.Pear_02)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Banana_02)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Apple_02)).BeginInit();
@@ -91,6 +92,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Inv_01)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Enemy_01)).BeginInit();
             this.SuspendLayout();
             // 
             // Player
@@ -111,22 +113,13 @@
             this.Life.TabIndex = 1;
             this.Life.Click += new System.EventHandler(this.Life_Click);
             // 
-            // Enemy_01
-            // 
-            this.Enemy_01.Image = global::tutorial.Properties.Resources.Enemy_01;
-            this.Enemy_01.Location = new System.Drawing.Point(604, 77);
-            this.Enemy_01.Name = "Enemy_01";
-            this.Enemy_01.Size = new System.Drawing.Size(32, 32);
-            this.Enemy_01.TabIndex = 13;
-            this.Enemy_01.TabStop = false;
-            this.Enemy_01.Tag = "Enemy";
-            // 
             // Pear_02
             // 
             this.Pear_02.Image = global::tutorial.Properties.Resources.untitled;
             this.Pear_02.Location = new System.Drawing.Point(796, 523);
             this.Pear_02.Name = "Pear_02";
             this.Pear_02.Size = new System.Drawing.Size(32, 32);
+            this.Pear_02.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.Pear_02.TabIndex = 12;
             this.Pear_02.TabStop = false;
             this.Pear_02.Tag = "Pear";
@@ -137,6 +130,7 @@
             this.Banana_02.Location = new System.Drawing.Point(85, 214);
             this.Banana_02.Name = "Banana_02";
             this.Banana_02.Size = new System.Drawing.Size(32, 32);
+            this.Banana_02.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.Banana_02.TabIndex = 11;
             this.Banana_02.TabStop = false;
             this.Banana_02.Tag = "Banana";
@@ -147,6 +141,7 @@
             this.Apple_02.Location = new System.Drawing.Point(771, 174);
             this.Apple_02.Name = "Apple_02";
             this.Apple_02.Size = new System.Drawing.Size(32, 32);
+            this.Apple_02.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.Apple_02.TabIndex = 10;
             this.Apple_02.TabStop = false;
             this.Apple_02.Tag = "Apple";
@@ -157,6 +152,7 @@
             this.Pear_01.Location = new System.Drawing.Point(368, 105);
             this.Pear_01.Name = "Pear_01";
             this.Pear_01.Size = new System.Drawing.Size(32, 32);
+            this.Pear_01.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.Pear_01.TabIndex = 9;
             this.Pear_01.TabStop = false;
             this.Pear_01.Tag = "Pear";
@@ -167,6 +163,7 @@
             this.Banana_01.Location = new System.Drawing.Point(504, 591);
             this.Banana_01.Name = "Banana_01";
             this.Banana_01.Size = new System.Drawing.Size(32, 32);
+            this.Banana_01.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.Banana_01.TabIndex = 8;
             this.Banana_01.TabStop = false;
             this.Banana_01.Tag = "Banana";
@@ -177,6 +174,7 @@
             this.Apple_01.Location = new System.Drawing.Point(104, 591);
             this.Apple_01.Name = "Apple_01";
             this.Apple_01.Size = new System.Drawing.Size(32, 32);
+            this.Apple_01.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.Apple_01.TabIndex = 7;
             this.Apple_01.TabStop = false;
             this.Apple_01.Tag = "Apple";
@@ -249,7 +247,8 @@
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuItemDebug,
             this.toolStripSeparator1,
-            this.MenuItemExit});
+            this.MenuItemExit,
+            this.ButtonIDSaveAs});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(61, 20);
             this.toolStripMenuItem1.Text = "Options";
@@ -260,7 +259,7 @@
             this.MenuItemDebugInfo,
             this.MenuItemDebugInfo_2});
             this.MenuItemDebug.Name = "MenuItemDebug";
-            this.MenuItemDebug.Size = new System.Drawing.Size(109, 22);
+            this.MenuItemDebug.Size = new System.Drawing.Size(152, 22);
             this.MenuItemDebug.Text = "Debug";
             // 
             // MenuItemDebugInfo
@@ -280,12 +279,12 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(106, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
             // 
             // MenuItemExit
             // 
             this.MenuItemExit.Name = "MenuItemExit";
-            this.MenuItemExit.Size = new System.Drawing.Size(109, 22);
+            this.MenuItemExit.Size = new System.Drawing.Size(152, 22);
             this.MenuItemExit.Text = "Exit";
             this.MenuItemExit.Click += new System.EventHandler(this.MenuItemExit_Click);
             // 
@@ -347,10 +346,27 @@
             this.SpeedMenuItem2.Text = "Speed Decrease - 10";
             this.SpeedMenuItem2.Click += new System.EventHandler(this.SpeedMenuItem2_Click);
             // 
+            // SpeedMenuItem3
+            // 
+            this.SpeedMenuItem3.Name = "SpeedMenuItem3";
+            this.SpeedMenuItem3.Size = new System.Drawing.Size(179, 22);
+            this.SpeedMenuItem3.Text = "Speed Default";
+            this.SpeedMenuItem3.Click += new System.EventHandler(this.SpeedMenuItem3_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(176, 6);
+            // 
             // SpeedTextBox
             // 
             this.SpeedTextBox.Name = "SpeedTextBox";
             this.SpeedTextBox.Size = new System.Drawing.Size(100, 23);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(176, 6);
             // 
             // DebugTextBox
             // 
@@ -463,22 +479,29 @@
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
             // 
-            // toolStripSeparator4
+            // Enemy_01
             // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(176, 6);
+            this.Enemy_01.BackColor = System.Drawing.Color.Transparent;
+            this.Enemy_01.BackgroundImage = global::tutorial.Properties.Resources.Enemy_01;
+            this.Enemy_01.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.Enemy_01.Cursor = System.Windows.Forms.Cursors.No;
+            this.Enemy_01.ErrorImage = global::tutorial.Properties.Resources.Enemy_01;
+            this.Enemy_01.Image = global::tutorial.Properties.Resources.Enemy_01;
+            this.Enemy_01.InitialImage = global::tutorial.Properties.Resources.Enemy_01;
+            this.Enemy_01.Location = new System.Drawing.Point(605, 105);
+            this.Enemy_01.Name = "Enemy_01";
+            this.Enemy_01.Size = new System.Drawing.Size(32, 32);
+            this.Enemy_01.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.Enemy_01.TabIndex = 20;
+            this.Enemy_01.TabStop = false;
+            this.Enemy_01.Tag = "Enemy";
             // 
-            // toolStripSeparator5
+            // ButtonIDSaveAs
             // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(176, 6);
-            // 
-            // SpeedMenuItem3
-            // 
-            this.SpeedMenuItem3.Name = "SpeedMenuItem3";
-            this.SpeedMenuItem3.Size = new System.Drawing.Size(179, 22);
-            this.SpeedMenuItem3.Text = "Speed Default";
-            this.SpeedMenuItem3.Click += new System.EventHandler(this.SpeedMenuItem3_Click);
+            this.ButtonIDSaveAs.Name = "ButtonIDSaveAs";
+            this.ButtonIDSaveAs.Size = new System.Drawing.Size(152, 22);
+            this.ButtonIDSaveAs.Text = "Save Log";
+            this.ButtonIDSaveAs.Click += new System.EventHandler(this.ButtonIDSaveAs_Click);
             // 
             // Game
             // 
@@ -486,10 +509,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.Enemy_01);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.SpeedLabel);
             this.Controls.Add(this.LifeLabel);
-            this.Controls.Add(this.Enemy_01);
             this.Controls.Add(this.Pear_02);
             this.Controls.Add(this.Banana_02);
             this.Controls.Add(this.Apple_02);
@@ -513,11 +536,12 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = " Game";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Activated += new System.EventHandler(this.Game_Activated);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Game_FormClosing);
             this.Load += new System.EventHandler(this.Game_Load);
             this.Click += new System.EventHandler(this.Game_Click);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Game_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Game_KeyUp);
-            ((System.ComponentModel.ISupportInitialize)(this.Enemy_01)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pear_02)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Banana_02)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Apple_02)).EndInit();
@@ -533,6 +557,7 @@
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Enemy_01)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -553,7 +578,6 @@
         private System.Windows.Forms.PictureBox Apple_02;
         private System.Windows.Forms.PictureBox Banana_02;
         private System.Windows.Forms.PictureBox Pear_02;
-        private System.Windows.Forms.PictureBox Enemy_01;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem MenuItemDebug;
@@ -587,5 +611,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.PictureBox Enemy_01;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.ToolStripMenuItem ButtonIDSaveAs;
     }
 }
