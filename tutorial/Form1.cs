@@ -54,6 +54,9 @@ namespace tutorial
 //Debug Button Run
         private void DebugButton_Click(object sender, EventArgs e)
         {
+            LevelCodeGen open_form = new LevelCodeGen();
+            open_form.Visible = true;
+            this.Hide();
             Skip();
         }
         #endregion
