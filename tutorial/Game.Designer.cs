@@ -50,6 +50,7 @@
             this.MenuItemDebugInfo_2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.MenuItemExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.ButtonIDSaveAs = new System.Windows.Forms.ToolStripMenuItem();
             this.DebugMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DebugMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.TextBoxGod = new System.Windows.Forms.ToolStripTextBox();
@@ -78,7 +79,6 @@
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.Enemy_01 = new System.Windows.Forms.PictureBox();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.ButtonIDSaveAs = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.Pear_02)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Banana_02)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Apple_02)).BeginInit();
@@ -259,7 +259,7 @@
             this.MenuItemDebugInfo,
             this.MenuItemDebugInfo_2});
             this.MenuItemDebug.Name = "MenuItemDebug";
-            this.MenuItemDebug.Size = new System.Drawing.Size(152, 22);
+            this.MenuItemDebug.Size = new System.Drawing.Size(121, 22);
             this.MenuItemDebug.Text = "Debug";
             // 
             // MenuItemDebugInfo
@@ -279,14 +279,21 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(118, 6);
             // 
             // MenuItemExit
             // 
             this.MenuItemExit.Name = "MenuItemExit";
-            this.MenuItemExit.Size = new System.Drawing.Size(152, 22);
+            this.MenuItemExit.Size = new System.Drawing.Size(121, 22);
             this.MenuItemExit.Text = "Exit";
             this.MenuItemExit.Click += new System.EventHandler(this.MenuItemExit_Click);
+            // 
+            // ButtonIDSaveAs
+            // 
+            this.ButtonIDSaveAs.Name = "ButtonIDSaveAs";
+            this.ButtonIDSaveAs.Size = new System.Drawing.Size(121, 22);
+            this.ButtonIDSaveAs.Text = "Save Log";
+            this.ButtonIDSaveAs.Click += new System.EventHandler(this.ButtonIDSaveAs_Click);
             // 
             // DebugMenuItem
             // 
@@ -495,13 +502,6 @@
             this.Enemy_01.TabIndex = 20;
             this.Enemy_01.TabStop = false;
             this.Enemy_01.Tag = "Enemy";
-            // 
-            // ButtonIDSaveAs
-            // 
-            this.ButtonIDSaveAs.Name = "ButtonIDSaveAs";
-            this.ButtonIDSaveAs.Size = new System.Drawing.Size(152, 22);
-            this.ButtonIDSaveAs.Text = "Save Log";
-            this.ButtonIDSaveAs.Click += new System.EventHandler(this.ButtonIDSaveAs_Click);
             // 
             // Game
             // 

@@ -1170,7 +1170,7 @@ namespace tutorial
         public void ButtonIDSaveAs_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-            saveFileDialog1.Title = "Save an Image File";
+            saveFileDialog1.Title = "Save KeyLog Output File";
             saveFileDialog1.ShowDialog();
 
             if (saveFileDialog1.FileName != "test.txt")
