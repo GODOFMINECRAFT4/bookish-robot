@@ -39,3 +39,5 @@ https://msdn.microsoft.com/en-us/library/system.io.file.writealltext.aspx
 https://msdn.microsoft.com/en-us/library/sfezx97z(v=vs.110).aspx
 https://msdn.microsoft.com/en-us/library/6ka1wd3w(v=vs.110).aspx
 https://www.google.co.nz/search?q=c%23+export+textbox+to+txt+file&oq=C%23+export+to+txt&aqs=chrome.2.69i57j69i58j0l4.15352j0j3&sourceid=chrome&ie=UTF-8#safe=strict&q=c%23+save+textbox+to+file+dialog
+
+https://discordapp.com/channels/212455432491499520/322180846939537418 - Discord Update channel
