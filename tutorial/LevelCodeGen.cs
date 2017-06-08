@@ -15,7 +15,9 @@ namespace tutorial
     {
         int i = 0;
         int NumericBox = 0;
+        int NumericBox2 = 0;
         int Number = 0;
+        int Number2 = 0;
 
         public LevelCodeGen()
         {
@@ -59,7 +61,8 @@ namespace tutorial
         private void timer1_Tick(object sender, EventArgs e)
         {
             Number = NumericBox;
-            System.Console.WriteLine("NumericBox = " + NumericBox + "   " + "Number = " + Number + "   " + "i = " + i);
+            Number2 = NumericBox2;
+            System.Console.WriteLine("NumericBox = " + NumericBox + "   " + "NumericBox 2 = " + NumericBox2 + "   " + "Number = " + Number + "   " + "Number 2 = " + Number2 + "   " + "i = " + i);
         }
 
         private void LevelCodeGen_Load(object sender, EventArgs e)
@@ -83,5 +86,21 @@ namespace tutorial
             }
         }
 
+        private void CodeLength_x_ValueChanged(object sender, EventArgs e)
+        {
+            int NumberLocal2 = Decimal.ToInt32(CodeLength.Value);
+            NumericBox2 = NumberLocal2;
+            System.Console.WriteLine(CodeLength.Value);
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void GoBackButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Not Added Yet", "Error");
+        }
     }
 }

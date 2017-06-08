@@ -12,6 +12,7 @@ namespace tutorial
 {
     public partial class Main_Menu : Form
     {
+        int Troll;
         public Main_Menu()
         {
             InitializeComponent();
@@ -28,9 +29,7 @@ namespace tutorial
 //(GoBackButton) Go Back To Login Menu
         private void GoBackButton_Click(object sender, EventArgs e)
         {
-            Form1 open_form = new Form1();
-            open_form.Visible = true;
-            this.Hide();
+            HideForms();
         }
 
 //(Exit_Button) Closes Program/Application
@@ -53,6 +52,16 @@ namespace tutorial
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
 
+        }
+        public void HideForms()
+        {
+            Form1 open_form = new Form1();
+            open_form.Visible = true;
+            this.Hide();
+            if (Troll == 1)
+            {
+
+            }
         }
     }
 }

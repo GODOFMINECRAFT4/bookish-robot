@@ -20,13 +20,29 @@ namespace tutorial
         private void Form1_Load(object sender, EventArgs e)
         {
             DebugButton.Visible = false;
+            numericUpDown1.Visible = false;
             username_box.Text = "YouTube";
             password_box.Text = "Videos_2_@";
+            if (numericUpDown1.Value == 1)
+            {
+                DebugLoad();
+            }
+            else if (numericUpDown1.Value == 0)
+            {
+                // Do Nothing
+            }
         }
 
         public void Skip()
         {
             Main_Menu open_form = new Main_Menu();
+            open_form.Visible = true;
+            this.Hide();
+        }
+
+        public void DebugLoad()
+        {
+            LevelCodeGen open_form = new LevelCodeGen();
             open_form.Visible = true;
             this.Hide();
         }

@@ -99,6 +99,7 @@
             this.GoBackButton.TabIndex = 5;
             this.GoBackButton.Text = "Go Back";
             this.GoBackButton.UseVisualStyleBackColor = true;
+            this.GoBackButton.Click += new System.EventHandler(this.GoBackButton_Click);
             // 
             // ExitButton
             // 
@@ -108,6 +109,7 @@
             this.ExitButton.TabIndex = 6;
             this.ExitButton.Text = "Exit Program";
             this.ExitButton.UseVisualStyleBackColor = true;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // timer1
             // 
@@ -120,6 +122,7 @@
             this.CodeLength_x.Name = "CodeLength_x";
             this.CodeLength_x.Size = new System.Drawing.Size(50, 20);
             this.CodeLength_x.TabIndex = 7;
+            this.CodeLength_x.ValueChanged += new System.EventHandler(this.CodeLength_x_ValueChanged);
             // 
             // textBox1
             // 

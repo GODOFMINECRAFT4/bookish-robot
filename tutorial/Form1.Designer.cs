@@ -36,6 +36,8 @@
             this.username_box = new System.Windows.Forms.TextBox();
             this.password_box = new System.Windows.Forms.TextBox();
             this.DebugButton = new System.Windows.Forms.Button();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // submit_button
@@ -105,11 +107,19 @@
             this.DebugButton.UseVisualStyleBackColor = true;
             this.DebugButton.Click += new System.EventHandler(this.DebugButton_Click);
             // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(13, 102);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(36, 20);
+            this.numericUpDown1.TabIndex = 7;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 134);
+            this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.DebugButton);
             this.Controls.Add(this.password_box);
             this.Controls.Add(this.username_box);
@@ -125,6 +135,7 @@
             this.Text = "Login Menu";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,6 +150,7 @@
         private System.Windows.Forms.TextBox username_box;
         private System.Windows.Forms.TextBox password_box;
         private System.Windows.Forms.Button DebugButton;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }
 
