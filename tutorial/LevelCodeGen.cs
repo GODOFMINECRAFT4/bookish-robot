@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Text;
 
 namespace tutorial
 {
@@ -50,6 +51,11 @@ namespace tutorial
                 i++;
                 System.Console.WriteLine("i = " + i);
             }
+
+            if (i == NumberTotal)
+            {
+                i = 0;
+            }
         }
 
         public void CodeLength_ValueChanged(object sender, EventArgs e)
@@ -76,10 +82,11 @@ namespace tutorial
         public void ButtonIDSaveAs_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-            saveFileDialog1.Title = "Save KeyLog Output File";
+            saveFileDialog1.Title = "Save Generated Codes To A File";
             saveFileDialog1.ShowDialog();
+            saveFileDialog1.FileName = "Codes";
 
-            if (saveFileDialog1.FileName != "test.txt")
+            if (saveFileDialog1.FileName != "Codes.rft")
             {
                 using (StreamWriter sw = new StreamWriter(saveFileDialog1.OpenFile()))
                 {
