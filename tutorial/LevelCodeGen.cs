@@ -14,10 +14,11 @@ namespace tutorial
     public partial class LevelCodeGen : Form
     {
         int i = 0;
-        int NumericBox = 0;
-        int NumericBox2 = 0;
-        int Number = 0;
-        int Number2 = 0;
+        int NumericBox;
+        int NumericBox2;
+        int Number;
+        int Number2;
+        int NumberTotal;
 
         public LevelCodeGen()
         {
@@ -43,7 +44,7 @@ namespace tutorial
 
         private void Generate2Button_Click(object sender, EventArgs e)
         {
-            while (i < Number)
+            while (i < NumberTotal)
             {
                  richTextBox1.Text += RandomUtil.GetRandomString() + Environment.NewLine;
                 i++;
@@ -62,22 +63,23 @@ namespace tutorial
         {
             Number = NumericBox;
             Number2 = NumericBox2;
-            System.Console.WriteLine("NumericBox = " + NumericBox + "   " + "NumericBox 2 = " + NumericBox2 + "   " + "Number = " + Number + "   " + "Number 2 = " + Number2 + "   " + "i = " + i);
+            System.Console.WriteLine("NumericBox = " + NumericBox + "   " + "NumericBox 2 = " + NumericBox2 + "   " + "Number = " + Number + "   " + "Number 2 = " + Number2 + "   " + "Number Total = " + NumberTotal + "   " + "i = " + i);
         }
 
         private void LevelCodeGen_Load(object sender, EventArgs e)
         {
             timer1.Start();
+            timer2.Start();
             i = 0;
         }
 
         public void ButtonIDSaveAs_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-            saveFileDialog1.Title = "Save Code Text File File";
+            saveFileDialog1.Title = "Save KeyLog Output File";
             saveFileDialog1.ShowDialog();
 
-            if (saveFileDialog1.FileName != "Codes.txt")
+            if (saveFileDialog1.FileName != "test.txt")
             {
                 using (StreamWriter sw = new StreamWriter(saveFileDialog1.OpenFile()))
                 {
@@ -86,11 +88,11 @@ namespace tutorial
             }
         }
 
-        private void CodeLength_x_ValueChanged(object sender, EventArgs e)
+        public void CodeLength_x_ValueChanged(object sender, EventArgs e)
         {
-            int NumberLocal2 = Decimal.ToInt32(CodeLength.Value);
+            int NumberLocal2 = Decimal.ToInt32(CodeLength_x.Value);
             NumericBox2 = NumberLocal2;
-            System.Console.WriteLine(CodeLength.Value);
+            System.Console.WriteLine(CodeLength_x.Value);
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
@@ -101,6 +103,19 @@ namespace tutorial
         private void GoBackButton_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Not Added Yet", "Error");
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            if (Number2 == 0)
+            {
+                NumberTotal = Number + Number2;
+            }
+
+            else if (Number2 >= 0)
+            {
+                NumberTotal = Number * Number2;
+            }
         }
     }
 }

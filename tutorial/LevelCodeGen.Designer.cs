@@ -34,19 +34,22 @@
             this.CodeLength = new System.Windows.Forms.NumericUpDown();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.Generate2Button = new System.Windows.Forms.Button();
-            this.ButtonIDSaveAs = new System.Windows.Forms.Button();
             this.GoBackButton = new System.Windows.Forms.Button();
             this.ExitButton = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.CodeLength_x = new System.Windows.Forms.NumericUpDown();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.ButtonIDSaveAs = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.CodeLength)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CodeLength_x)).BeginInit();
+            this.ButtonIDSaveAs.SuspendLayout();
             this.SuspendLayout();
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(13, 13);
+            this.richTextBox1.Location = new System.Drawing.Point(13, 31);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
             this.richTextBox1.Size = new System.Drawing.Size(440, 96);
@@ -55,7 +58,7 @@
             // 
             // GenerateButton
             // 
-            this.GenerateButton.Location = new System.Drawing.Point(13, 115);
+            this.GenerateButton.Location = new System.Drawing.Point(13, 133);
             this.GenerateButton.Name = "GenerateButton";
             this.GenerateButton.Size = new System.Drawing.Size(190, 25);
             this.GenerateButton.TabIndex = 1;
@@ -65,31 +68,30 @@
             // 
             // CodeLength
             // 
-            this.CodeLength.Location = new System.Drawing.Point(403, 120);
+            this.CodeLength.Location = new System.Drawing.Point(403, 138);
             this.CodeLength.MinimumSize = new System.Drawing.Size(50, 0);
             this.CodeLength.Name = "CodeLength";
             this.CodeLength.Size = new System.Drawing.Size(50, 20);
             this.CodeLength.TabIndex = 2;
             this.CodeLength.ValueChanged += new System.EventHandler(this.CodeLength_ValueChanged);
             // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.CheckFileExists = true;
+            this.saveFileDialog1.CreatePrompt = true;
+            this.saveFileDialog1.DefaultExt = "rtf";
+            this.saveFileDialog1.RestoreDirectory = true;
+            this.saveFileDialog1.SupportMultiDottedExtensions = true;
+            // 
             // Generate2Button
             // 
-            this.Generate2Button.Location = new System.Drawing.Point(207, 115);
+            this.Generate2Button.Location = new System.Drawing.Point(207, 133);
             this.Generate2Button.Name = "Generate2Button";
             this.Generate2Button.Size = new System.Drawing.Size(190, 25);
             this.Generate2Button.TabIndex = 3;
             this.Generate2Button.Text = "Generate Multiple";
             this.Generate2Button.UseVisualStyleBackColor = true;
             this.Generate2Button.Click += new System.EventHandler(this.Generate2Button_Click);
-            // 
-            // ButtonIDSaveAs
-            // 
-            this.ButtonIDSaveAs.Location = new System.Drawing.Point(12, 375);
-            this.ButtonIDSaveAs.Name = "ButtonIDSaveAs";
-            this.ButtonIDSaveAs.Size = new System.Drawing.Size(441, 23);
-            this.ButtonIDSaveAs.TabIndex = 4;
-            this.ButtonIDSaveAs.Text = "Save Codes To File";
-            this.ButtonIDSaveAs.UseVisualStyleBackColor = true;
             // 
             // GoBackButton
             // 
@@ -118,7 +120,7 @@
             // 
             // CodeLength_x
             // 
-            this.CodeLength_x.Location = new System.Drawing.Point(403, 147);
+            this.CodeLength_x.Location = new System.Drawing.Point(403, 164);
             this.CodeLength_x.Name = "CodeLength_x";
             this.CodeLength_x.Size = new System.Drawing.Size(50, 20);
             this.CodeLength_x.TabIndex = 7;
@@ -127,13 +129,33 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox1.Location = new System.Drawing.Point(13, 147);
+            this.textBox1.Location = new System.Drawing.Point(13, 164);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(384, 20);
             this.textBox1.TabIndex = 8;
             this.textBox1.Text = "For Generating More Than 100 Codes  Incease This ->";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // timer2
+            // 
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // ButtonIDSaveAs
+            // 
+            this.ButtonIDSaveAs.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1});
+            this.ButtonIDSaveAs.Location = new System.Drawing.Point(0, 0);
+            this.ButtonIDSaveAs.Name = "ButtonIDSaveAs";
+            this.ButtonIDSaveAs.Size = new System.Drawing.Size(465, 24);
+            this.ButtonIDSaveAs.TabIndex = 9;
+            this.ButtonIDSaveAs.Text = "Save Codes";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(79, 20);
+            this.toolStripMenuItem1.Text = "Save Codes";
             // 
             // LevelCodeGen
             // 
@@ -144,11 +166,12 @@
             this.Controls.Add(this.CodeLength_x);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.GoBackButton);
-            this.Controls.Add(this.ButtonIDSaveAs);
             this.Controls.Add(this.Generate2Button);
             this.Controls.Add(this.CodeLength);
             this.Controls.Add(this.GenerateButton);
             this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.ButtonIDSaveAs);
+            this.MainMenuStrip = this.ButtonIDSaveAs;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "LevelCodeGen";
@@ -158,6 +181,8 @@
             this.Load += new System.EventHandler(this.LevelCodeGen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CodeLength)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CodeLength_x)).EndInit();
+            this.ButtonIDSaveAs.ResumeLayout(false);
+            this.ButtonIDSaveAs.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,13 +193,15 @@
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button GenerateButton;
         private System.Windows.Forms.NumericUpDown CodeLength;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Button Generate2Button;
-        private System.Windows.Forms.Button ButtonIDSaveAs;
         private System.Windows.Forms.Button GoBackButton;
         private System.Windows.Forms.Button ExitButton;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.NumericUpDown CodeLength_x;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Timer timer2;
+        public System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.MenuStrip ButtonIDSaveAs;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }
