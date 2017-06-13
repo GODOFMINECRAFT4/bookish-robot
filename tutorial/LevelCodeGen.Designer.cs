@@ -35,7 +35,6 @@
             this.ExitButton = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.CodeLength_x = new System.Windows.Forms.NumericUpDown();
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.ButtonIDSaveAs = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.ResetButton = new System.Windows.Forms.Button();
@@ -58,9 +57,10 @@
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.NumberLabel = new System.Windows.Forms.Label();
-            this.Mult = new System.Windows.Forms.Label();
+            this.MultplierLabel = new System.Windows.Forms.Label();
             this.TotalAmountLabel = new System.Windows.Forms.Label();
             this.TotalAmount = new System.Windows.Forms.Label();
+            this.ValueTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.CodeLength_x)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CodeLength)).BeginInit();
@@ -120,10 +120,6 @@
             this.CodeLength_x.TabIndex = 7;
             this.CodeLength_x.ValueChanged += new System.EventHandler(this.CodeLength_x_ValueChanged);
             // 
-            // timer2
-            // 
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
-            // 
             // ButtonIDSaveAs
             // 
             this.ButtonIDSaveAs.Location = new System.Drawing.Point(6, 46);
@@ -138,7 +134,7 @@
             // 
             this.groupBox2.Controls.Add(this.TotalAmount);
             this.groupBox2.Controls.Add(this.TotalAmountLabel);
-            this.groupBox2.Controls.Add(this.Mult);
+            this.groupBox2.Controls.Add(this.MultplierLabel);
             this.groupBox2.Controls.Add(this.NumberLabel);
             this.groupBox2.Controls.Add(this.ResetButton);
             this.groupBox2.Controls.Add(this.button1);
@@ -353,15 +349,15 @@
             this.NumberLabel.Text = "Number";
             this.NumberLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Mult
+            // MultplierLabel
             // 
-            this.Mult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Mult.Location = new System.Drawing.Point(202, 45);
-            this.Mult.Name = "Mult";
-            this.Mult.Size = new System.Drawing.Size(78, 23);
-            this.Mult.TabIndex = 10;
-            this.Mult.Text = "Multiplier";
-            this.Mult.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.MultplierLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MultplierLabel.Location = new System.Drawing.Point(202, 45);
+            this.MultplierLabel.Name = "MultplierLabel";
+            this.MultplierLabel.Size = new System.Drawing.Size(78, 23);
+            this.MultplierLabel.TabIndex = 10;
+            this.MultplierLabel.Text = "Multiplier";
+            this.MultplierLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TotalAmountLabel
             // 
@@ -382,6 +378,11 @@
             this.TotalAmount.TabIndex = 12;
             this.TotalAmount.Text = "0";
             this.TotalAmount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ValueTimer
+            // 
+            this.ValueTimer.Interval = 50;
+            this.ValueTimer.Tick += new System.EventHandler(this.ValueTimer_Tick);
             // 
             // LevelCodeGen
             // 
@@ -418,7 +419,6 @@
         private System.Windows.Forms.Button ExitButton;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.NumericUpDown CodeLength_x;
-        private System.Windows.Forms.Timer timer2;
         public System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Button ButtonIDSaveAs;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -441,9 +441,10 @@
         private System.Windows.Forms.Button LogClearButton;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.Label Mult;
+        private System.Windows.Forms.Label MultplierLabel;
         private System.Windows.Forms.Label NumberLabel;
         private System.Windows.Forms.Label TotalAmount;
         private System.Windows.Forms.Label TotalAmountLabel;
+        private System.Windows.Forms.Timer ValueTimer;
     }
 }

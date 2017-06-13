@@ -19,6 +19,8 @@ namespace tutorial
         int Number;
         int Number2;
         int NumberTotal;
+        int NumberTotalValue;
+        
 
         public LevelCodeGen()
         {
@@ -37,6 +39,31 @@ namespace tutorial
                 return path;
             }
         }
+
+        private void LevelCodeGen_Load(object sender, EventArgs e)
+        {
+            timer1.Start();
+            //timer2.Start();
+            ValueTimer.Start();
+            i = 0;
+        }
+
+        #region NumericUpDownBoxs
+        public void CodeLength_ValueChanged(object sender, EventArgs e)
+        {
+           int NumberLocal = Decimal.ToInt32(CodeLength.Value);
+           NumericBox = NumberLocal;
+           System.Console.WriteLine(CodeLength.Value);
+        }
+
+        public void CodeLength_x_ValueChanged(object sender, EventArgs e)
+        {
+            int NumberLocal2 = Decimal.ToInt32(CodeLength_x.Value);
+            NumericBox2 = NumberLocal2;
+            System.Console.WriteLine(CodeLength_x.Value);
+        }
+        #endregion
+        #region Buttons
         private void GenerateButton_Click(object sender, EventArgs e)
         {
             richTextBox1.Text = richTextBox1.Text + RandomUtil.GetRandomString() + Environment.NewLine;
@@ -46,7 +73,7 @@ namespace tutorial
         {
             while (i < NumberTotal)
             {
-                 richTextBox1.Text += RandomUtil.GetRandomString() + Environment.NewLine;
+                richTextBox1.Text += RandomUtil.GetRandomString() + Environment.NewLine;
                 i++;
                 System.Console.WriteLine("i = " + i);
             }
@@ -55,27 +82,6 @@ namespace tutorial
             {
                 i = 0;
             }
-        }
-
-        public void CodeLength_ValueChanged(object sender, EventArgs e)
-        {
-           int NumberLocal = Decimal.ToInt32(CodeLength.Value);
-           NumericBox = NumberLocal;
-           System.Console.WriteLine(CodeLength.Value);
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            Number = NumericBox;
-            Number2 = NumericBox2;
-            System.Console.WriteLine("NumericBox = " + NumericBox + "   " + "NumericBox 2 = " + NumericBox2 + "   " + "Number = " + Number + "   " + "Number 2 = " + Number2 + "   " + "Number Total = " + NumberTotal + "   " + "i = " + i);
-        }
-
-        private void LevelCodeGen_Load(object sender, EventArgs e)
-        {
-            timer1.Start();
-            timer2.Start();
-            i = 0;
         }
 
         public void ButtonIDSaveAs_Click(object sender, EventArgs e)
@@ -95,13 +101,6 @@ namespace tutorial
             }
         }
 
-        public void CodeLength_x_ValueChanged(object sender, EventArgs e)
-        {
-            int NumberLocal2 = Decimal.ToInt32(CodeLength_x.Value);
-            NumericBox2 = NumberLocal2;
-            System.Console.WriteLine(CodeLength_x.Value);
-        }
-
         private void ExitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -112,6 +111,19 @@ namespace tutorial
             MessageBox.Show("Not Added Yet", "Error");
         }
 
+        private void ResetButton_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
+        #region Timers
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            System.Console.WriteLine("NumericBox = " + NumericBox + "   " + "NumericBox 2 = " + NumericBox2 + "   " + "Number = " + Number + "   " + "Number 2 = " + Number2 + "   " + "Number Total = " + NumberTotal + "   " + "i = " + i);
+        }
+
+/*----------------------------------------------------------------------------\    
         private void timer2_Tick(object sender, EventArgs e)
         {
             if (Number2 == 0)
@@ -124,10 +136,23 @@ namespace tutorial
                 NumberTotal = Number * Number2;
             }
         }
+\*----------------------------------------------------------------------------*/
 
-        private void ResetButton_Click(object sender, EventArgs e)
+        private void ValueTimer_Tick(object sender, EventArgs e)
         {
+            if (Number2 == 0)
+            {
+                NumberTotal = Number + Number2;
+            }
 
+            else if (Number2 >= 0)
+            {
+                NumberTotal = Number * Number2;
+            }
+            Number = NumericBox;
+            Number2 = NumericBox2;
+            TotalAmount.Text.Equals(Convert.ToString(NumberTotal, NumberTotalValue));
         }
+        #endregion
     }
 }
