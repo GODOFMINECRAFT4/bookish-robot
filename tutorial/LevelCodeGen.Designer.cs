@@ -54,9 +54,13 @@
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.LogClearButton = new System.Windows.Forms.Button();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.NumberLabel = new System.Windows.Forms.Label();
+            this.Mult = new System.Windows.Forms.Label();
+            this.TotalAmountLabel = new System.Windows.Forms.Label();
+            this.TotalAmount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.CodeLength_x)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CodeLength)).BeginInit();
@@ -110,7 +114,7 @@
             // 
             // CodeLength_x
             // 
-            this.CodeLength_x.Location = new System.Drawing.Point(342, 50);
+            this.CodeLength_x.Location = new System.Drawing.Point(311, 45);
             this.CodeLength_x.Name = "CodeLength_x";
             this.CodeLength_x.Size = new System.Drawing.Size(50, 20);
             this.CodeLength_x.TabIndex = 7;
@@ -132,6 +136,10 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.TotalAmount);
+            this.groupBox2.Controls.Add(this.TotalAmountLabel);
+            this.groupBox2.Controls.Add(this.Mult);
+            this.groupBox2.Controls.Add(this.NumberLabel);
             this.groupBox2.Controls.Add(this.ResetButton);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.button2);
@@ -142,7 +150,7 @@
             this.groupBox2.Size = new System.Drawing.Size(440, 112);
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.groupBox2.Text = "Generation Menu";
             // 
             // ResetButton
             // 
@@ -174,7 +182,7 @@
             // 
             // CodeLength
             // 
-            this.CodeLength.Location = new System.Drawing.Point(342, 24);
+            this.CodeLength.Location = new System.Drawing.Point(311, 19);
             this.CodeLength.MinimumSize = new System.Drawing.Size(50, 0);
             this.CodeLength.Name = "CodeLength";
             this.CodeLength.Size = new System.Drawing.Size(50, 20);
@@ -198,7 +206,7 @@
             this.groupBox1.Size = new System.Drawing.Size(207, 140);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "Options";
             // 
             // checkBox10
             // 
@@ -302,7 +310,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.button3);
+            this.groupBox3.Controls.Add(this.LogClearButton);
             this.groupBox3.Controls.Add(this.ExitButton);
             this.groupBox3.Controls.Add(this.ButtonIDSaveAs);
             this.groupBox3.Controls.Add(this.GoBackButton);
@@ -311,16 +319,16 @@
             this.groupBox3.Size = new System.Drawing.Size(224, 136);
             this.groupBox3.TabIndex = 17;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "groupBox3";
+            this.groupBox3.Text = "Menu";
             // 
-            // button3
+            // LogClearButton
             // 
-            this.button3.Location = new System.Drawing.Point(6, 19);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(211, 23);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.LogClearButton.Location = new System.Drawing.Point(6, 19);
+            this.LogClearButton.Name = "LogClearButton";
+            this.LogClearButton.Size = new System.Drawing.Size(211, 23);
+            this.LogClearButton.TabIndex = 10;
+            this.LogClearButton.Text = "Clear Log ";
+            this.LogClearButton.UseVisualStyleBackColor = true;
             // 
             // notifyIcon1
             // 
@@ -334,6 +342,46 @@
             this.statusStrip1.Size = new System.Drawing.Size(465, 22);
             this.statusStrip1.TabIndex = 18;
             this.statusStrip1.Text = "statusStrip1";
+            // 
+            // NumberLabel
+            // 
+            this.NumberLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NumberLabel.Location = new System.Drawing.Point(201, 19);
+            this.NumberLabel.Name = "NumberLabel";
+            this.NumberLabel.Size = new System.Drawing.Size(78, 23);
+            this.NumberLabel.TabIndex = 9;
+            this.NumberLabel.Text = "Number";
+            this.NumberLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Mult
+            // 
+            this.Mult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Mult.Location = new System.Drawing.Point(202, 45);
+            this.Mult.Name = "Mult";
+            this.Mult.Size = new System.Drawing.Size(78, 23);
+            this.Mult.TabIndex = 10;
+            this.Mult.Text = "Multiplier";
+            this.Mult.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TotalAmountLabel
+            // 
+            this.TotalAmountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalAmountLabel.Location = new System.Drawing.Point(201, 81);
+            this.TotalAmountLabel.Name = "TotalAmountLabel";
+            this.TotalAmountLabel.Size = new System.Drawing.Size(106, 23);
+            this.TotalAmountLabel.TabIndex = 11;
+            this.TotalAmountLabel.Text = "Total Amount";
+            this.TotalAmountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TotalAmount
+            // 
+            this.TotalAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalAmount.Location = new System.Drawing.Point(314, 82);
+            this.TotalAmount.Name = "TotalAmount";
+            this.TotalAmount.Size = new System.Drawing.Size(47, 22);
+            this.TotalAmount.TabIndex = 12;
+            this.TotalAmount.Text = "0";
+            this.TotalAmount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LevelCodeGen
             // 
@@ -390,8 +438,12 @@
         private System.Windows.Forms.NumericUpDown CodeLength;
         private System.Windows.Forms.Button ResetButton;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button LogClearButton;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.Label Mult;
+        private System.Windows.Forms.Label NumberLabel;
+        private System.Windows.Forms.Label TotalAmount;
+        private System.Windows.Forms.Label TotalAmountLabel;
     }
 }
