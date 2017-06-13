@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using System.Text;
 
 namespace tutorial
 {
@@ -83,10 +82,11 @@ namespace tutorial
         {
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
             saveFileDialog1.Title = "Save Generated Codes To A File";
+            saveFileDialog1.FileName = "Generated Codes.rft";
+            saveFileDialog1.DefaultExt = ".rtf";
             saveFileDialog1.ShowDialog();
-            saveFileDialog1.FileName = "Codes";
 
-            if (saveFileDialog1.FileName != "Codes.rft")
+            if (saveFileDialog1.FileName != "Codes")
             {
                 using (StreamWriter sw = new StreamWriter(saveFileDialog1.OpenFile()))
                 {
@@ -123,6 +123,11 @@ namespace tutorial
             {
                 NumberTotal = Number * Number2;
             }
+        }
+
+        private void ResetButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
