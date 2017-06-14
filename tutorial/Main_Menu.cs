@@ -12,7 +12,7 @@ namespace tutorial
 {
     public partial class Main_Menu : Form
     {
-        int Troll;
+        int Troll = 0;
         public Main_Menu()
         {
             InitializeComponent();
@@ -58,10 +58,30 @@ namespace tutorial
             Form1 open_form = new Form1();
             open_form.Visible = true;
             this.Hide();
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
             if (Troll == 1)
             {
-
+                Troll = 2;
             }
+            else if (Troll == 50)
+            {
+                Application.Restart();
+                Application.Exit();
+            }
+
+            if (Troll >= 2)
+            {
+                Troll++;
+            }
+        }
+
+        private void Main_Menu_Load(object sender, EventArgs e)
+        {
+            timer1.Start();
         }
     }
 }

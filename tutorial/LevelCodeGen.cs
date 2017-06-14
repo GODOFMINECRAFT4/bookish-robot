@@ -14,12 +14,13 @@ namespace tutorial
     public partial class LevelCodeGen : Form
     {
         int i = 0;
-        int NumericBox;
-        int NumericBox2;
-        int Number;
-        int Number2;
-        int NumberTotal;
-        int NumberTotalValue;
+        int Running = 0;
+        int NumericBox = 0;
+        int NumericBox2 = 0;
+        int Number = 0;
+        int Number2 = 0;
+        int NumberTotal = 0;
+        //int NumberTotalValue = 0;
         
 
         public LevelCodeGen()
@@ -43,7 +44,7 @@ namespace tutorial
         private void LevelCodeGen_Load(object sender, EventArgs e)
         {
             timer1.Start();
-            //timer2.Start();
+            timer2.Start();
             ValueTimer.Start();
             i = 0;
         }
@@ -73,6 +74,7 @@ namespace tutorial
         {
             while (i < NumberTotal)
             {
+                Running = 1;
                 richTextBox1.Text += RandomUtil.GetRandomString() + Environment.NewLine;
                 i++;
                 System.Console.WriteLine("i = " + i);
@@ -81,6 +83,7 @@ namespace tutorial
             if (i == NumberTotal)
             {
                 i = 0;
+                Running = 0;
             }
         }
 
@@ -113,7 +116,13 @@ namespace tutorial
 
         private void ResetButton_Click(object sender, EventArgs e)
         {
-
+            Number = 0;
+            Number2 = 0;
+            NumberTotal = 0;
+            NumericBox = 0;
+            NumericBox2 = 0;
+            CodeLength.Value = 0;
+            CodeLength_x.Value = 0;
         }
         #endregion
         #region Timers
@@ -123,20 +132,11 @@ namespace tutorial
             System.Console.WriteLine("NumericBox = " + NumericBox + "   " + "NumericBox 2 = " + NumericBox2 + "   " + "Number = " + Number + "   " + "Number 2 = " + Number2 + "   " + "Number Total = " + NumberTotal + "   " + "i = " + i);
         }
 
-/*----------------------------------------------------------------------------\    
         private void timer2_Tick(object sender, EventArgs e)
         {
-            if (Number2 == 0)
-            {
-                NumberTotal = Number + Number2;
-            }
-
-            else if (Number2 >= 0)
-            {
-                NumberTotal = Number * Number2;
-            }
+            Number = NumericBox;
+            Number2 = NumericBox2;
         }
-\*----------------------------------------------------------------------------*/
 
         private void ValueTimer_Tick(object sender, EventArgs e)
         {
@@ -149,10 +149,66 @@ namespace tutorial
             {
                 NumberTotal = Number * Number2;
             }
-            Number = NumericBox;
-            Number2 = NumericBox2;
-            TotalAmount.Text.Equals(Convert.ToString(NumberTotal, NumberTotalValue));
+            TotalAmount.Text = NumberTotal.ToString();
+
         }
         #endregion
+        #region Options
+        private void Option1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Option2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Option3_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Option4_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Option5_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Option6_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Option7_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Option8_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Option9_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Option10_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Option1.CheckState == CheckState.Checked)
+            {
+                if (Running == 1)
+                {
+                    //NumberTotal = NumberTotal + 1;
+                }
+            }
+        }
+#endregion
     }
 }
