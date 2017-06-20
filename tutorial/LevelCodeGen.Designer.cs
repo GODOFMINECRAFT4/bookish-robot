@@ -378,6 +378,7 @@
             this.LogClearButton.TabIndex = 10;
             this.LogClearButton.Text = "Clear Log ";
             this.LogClearButton.UseVisualStyleBackColor = true;
+            this.LogClearButton.Click += new System.EventHandler(this.LogClearButton_Click);
             // 
             // notifyIcon1
             // 

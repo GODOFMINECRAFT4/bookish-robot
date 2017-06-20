@@ -124,6 +124,11 @@ namespace tutorial
             CodeLength.Value = 0;
             CodeLength_x.Value = 0;
         }
+
+        private void LogClearButton_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Clear();
+        }
         #endregion
         #region Timers
 
