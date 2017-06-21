@@ -46,7 +46,7 @@ namespace tutorial
             timer1.Start();
             timer2.Start();
             ValueTimer.Start();
-            i = 0;
+            i = 0;                                    
         }
 
         #region NumericUpDownBoxs
@@ -214,6 +214,7 @@ namespace tutorial
                 }
             }
         }
-#endregion
+
+        #endregion
     }
 }
