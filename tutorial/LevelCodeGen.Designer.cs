@@ -110,7 +110,7 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 1000;
+            this.timer1.Interval = 1500;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // CodeLength_x
@@ -414,8 +414,11 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.richTextBox1);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(481, 480);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(481, 480);
             this.Name = "LevelCodeGen";
+            this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LevelCodeGen";

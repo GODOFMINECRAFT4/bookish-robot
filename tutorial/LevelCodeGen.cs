@@ -71,19 +71,35 @@ namespace tutorial
 
         private void Generate2Button_Click(object sender, EventArgs e)
         {
-            while (i < NumberTotal)
-            {
-                Running = 1;
-                richTextBox1.Text += RandomUtil.GetRandomString() + Environment.NewLine;
-                i++;
-                System.Console.WriteLine("i = " + i);
-            }
+            timer1.Stop();
+            string message = "Warning All User Interfaces Will Freeze While Mass Generating Codes";
+            string message2 = "Are Your Sure You Want To Cancel";
+            string caption = "WARNING";
+            MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+            MessageBoxButtons buttons2 = MessageBoxButtons.YesNo;
+            DialogResult result;
+            DialogResult result2;
+            System.Console.WriteLine(caption + ": " + message);
 
-            if (i == NumberTotal)
+            result = MessageBox.Show(message, caption, buttons);
+            if (result == System.Windows.Forms.DialogResult.OK)
             {
-                i = 0;
-                Running = 0;
-            } 
+                CodeGen();
+            }
+            if (result == System.Windows.Forms.DialogResult.Cancel)
+            {
+                result2 = MessageBox.Show(message2, caption, buttons2);
+                if (result2 == System.Windows.Forms.DialogResult.Yes)
+                {
+                      System.Console.WriteLine(caption + ": " + "Canceling Generation Of Codes");
+                      MessageBox.Show("Canceling Generation Of Codes", caption);
+                }
+
+                if (result2 == System.Windows.Forms.DialogResult.No)
+                {
+                    CodeGen();
+                }
+            }
         }
 
         public void ButtonIDSaveAs_Click(object sender, EventArgs e)
@@ -216,5 +232,22 @@ namespace tutorial
 
         #endregion
 
+        public void CodeGen()
+        {
+            while (i < NumberTotal)
+            {
+                Running = 1;
+                richTextBox1.Text += RandomUtil.GetRandomString() + Environment.NewLine;
+                i++;
+                System.Console.WriteLine("i = " + i);
+            }
+
+            if (i == NumberTotal)
+            {
+                i = 0;
+                Running = 0;
+                timer1.Start();
+            }
+        }
     }
 }
