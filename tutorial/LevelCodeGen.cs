@@ -20,13 +20,12 @@ namespace tutorial
         int Number = 0;
         int Number2 = 0;
         int NumberTotal = 0;
-        //int NumberTotalValue = 0;
-        
 
         public LevelCodeGen()
         {
             InitializeComponent();
         }
+
         public class RandomUtil
         {
             /// <summary>
@@ -84,7 +83,7 @@ namespace tutorial
             {
                 i = 0;
                 Running = 0;
-            }
+            } 
         }
 
         public void ButtonIDSaveAs_Click(object sender, EventArgs e)
@@ -216,5 +215,6 @@ namespace tutorial
         }
 
         #endregion
+
     }
 }
