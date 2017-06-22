@@ -79,6 +79,8 @@
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.Enemy_01 = new System.Windows.Forms.PictureBox();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.ArrayMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.Pear_02)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Banana_02)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Apple_02)).BeginInit();
@@ -303,7 +305,8 @@
             this.toolStripSeparator2,
             this.toolStripMenuItem4,
             this.DebugTextBox,
-            this.toolStripSeparator3});
+            this.toolStripSeparator3,
+            this.ArrayMenuItem});
             this.DebugMenuItem.Name = "DebugMenuItem";
             this.DebugMenuItem.Size = new System.Drawing.Size(57, 20);
             this.DebugMenuItem.Text = "Debug ";
@@ -503,6 +506,19 @@
             this.Enemy_01.TabStop = false;
             this.Enemy_01.Tag = "Enemy";
             // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // ArrayMenuItem
+            // 
+            this.ArrayMenuItem.Name = "ArrayMenuItem";
+            this.ArrayMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.ArrayMenuItem.Text = "Display Entity List";
+            this.ArrayMenuItem.Click += new System.EventHandler(this.ArrayMenuItem_Click);
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -614,5 +630,7 @@
         private System.Windows.Forms.PictureBox Enemy_01;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.ToolStripMenuItem ButtonIDSaveAs;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.ToolStripMenuItem ArrayMenuItem;
     }
 }

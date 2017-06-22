@@ -23,6 +23,7 @@ namespace tutorial
         int Pear = 10;
         int Banana = 15;
         int Speed = 5;
+        int Debug = 0;
         string DebugText;
         string downtext;
         string uptext;
@@ -30,7 +31,7 @@ namespace tutorial
         string righttext;
         string WASDText;
         #endregion
-
+        #region Form Init
         public Game()
         {
             InitializeComponent();
@@ -41,8 +42,9 @@ namespace tutorial
             timer1.Start();
             timer2.Start();
             Reset();
+            LevelLoad();
         }
-
+        #endregion
         #region Timers
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -326,6 +328,42 @@ namespace tutorial
             EnemyCollisons();
         }
 
+        #endregion
+        #region _Click
+        private void MenuItemExit_Click(object sender, EventArgs e)
+        {
+
+            Application.Exit();
+            Reset();
+        }
+
+        private void Game_Click(object sender, EventArgs e)
+        {
+            if (richTextBox1.Visible == false)
+            {
+                richTextBox1.Visible = true;
+            }
+
+            else if (richTextBox1.Visible == true)
+            {
+                richTextBox1.Visible = false;
+            }
+        }
+
+        public void ButtonIDSaveAs_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Title = "Save KeyLog Output File";
+            saveFileDialog1.ShowDialog();
+
+            if (saveFileDialog1.FileName != "test.txt")
+            {
+                using (StreamWriter sw = new StreamWriter(saveFileDialog1.OpenFile()))
+                {
+                    sw.Write(richTextBox1.Text);
+                }
+            }
+        }
         #endregion
         #region Collisions
         public void Collisions()
@@ -1034,21 +1072,25 @@ namespace tutorial
         #region Show Hidden Debug
         private void LifeLabel_Click(object sender, EventArgs e)
         {
+            Debug = 0;
             DebugMenuItem.Visible = false;
         }
 
         private void Life_Click(object sender, EventArgs e)
         {
+            Debug = 1;
             DebugMenuItem.Visible = true;
         }
 
         private void LifeLabel2_Click(object sender, EventArgs e)
         {
+            Debug = 0;
             DebugMenuItem.Visible = false;
         }
 
         private void Life2_Click(object sender, EventArgs e)
         {
+            Debug = 1;
             DebugMenuItem.Visible = true;
         }
 
@@ -1116,7 +1158,6 @@ namespace tutorial
         {
             notifyIcon1.Visible = false;
         }
-        #endregion
 
         public void Reset()
         {
@@ -1147,38 +1188,17 @@ namespace tutorial
             WASDText = downtext + uptext + lefttext + righttext;
         }
 
-        private void MenuItemExit_Click(object sender, EventArgs e)
+        public void LevelLoad()
         {
-            
-            Application.Exit();
-            Reset();
+            object[] entitylist = { Player, Apple_01, Apple_02, Banana_01, Banana_02, Pear_01, Pear_02, Enemy_01 };
         }
+        #endregion
 
-        private void Game_Click(object sender, EventArgs e)
+        public void ArrayMenuItem_Click(object sender, EventArgs e)
         {
-            if (richTextBox1.Visible == false)
+            if (Player.Visible == true)
             {
-                richTextBox1.Visible = true;
-            }
-
-            else if (richTextBox1.Visible == true)
-            {
-                richTextBox1.Visible = false;
-            }               
-        }
-
-        public void ButtonIDSaveAs_Click(object sender, EventArgs e)
-        {
-            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-            saveFileDialog1.Title = "Save KeyLog Output File";
-            saveFileDialog1.ShowDialog();
-
-            if (saveFileDialog1.FileName != "test.txt")
-            {
-                using (StreamWriter sw = new StreamWriter(saveFileDialog1.OpenFile()))
-                {
-                    sw.Write(richTextBox1.Text);
-                }
+                entitylist[0]
             }
         }
     }
