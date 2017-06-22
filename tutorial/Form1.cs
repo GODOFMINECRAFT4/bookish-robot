@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace tutorial
 {
     public partial class Form1 : Form
     {
+        int LoginBypass;
         public Form1()
         {
             InitializeComponent();
@@ -87,5 +89,27 @@ namespace tutorial
 
         }
 
+        private void Form1_Activated(object sender, EventArgs e)
+        {
+            LoginBypass = Convert.ToInt32(numericUpDown2.Value);
+            if (LoginBypass == 1)
+            {
+                notifyIcon1.Visible = true;
+                notifyIcon1.Text = "Login Menu Bypassed";
+                notifyIcon1.BalloonTipTitle = "Login Menu";
+                notifyIcon1.BalloonTipText = "Login Menu Bypassed";
+                notifyIcon1.ShowBalloonTip(5000);
+                Skip();
+            }
+
+            else if (LoginBypass == 0)
+            {
+                notifyIcon1.Visible = true;
+                notifyIcon1.Text = "Login Menu";
+                notifyIcon1.BalloonTipTitle = "Login Menu";
+                notifyIcon1.BalloonTipText = "Login Menu";
+                notifyIcon1.ShowBalloonTip(5000);
+            }
+        }
     }
 }

@@ -31,19 +31,34 @@ namespace tutorial
         string righttext;
         string WASDText;
         #endregion
+        #region Entity List Vars
+        int player;
+        int apple_01;
+        int apple_02;
+        int banana_01;
+        int banana_02;
+        int pear_01;
+        int pear_02;
+        int enemy_01;
+        string EntityList = "";
+        #endregion
+        #region Level Vars
+        int Level = 1;
+        #endregion
         #region Form Init
         public Game()
         {
             InitializeComponent();
+
         }
 
         private void Game_Load(object sender, EventArgs e)
         {
             timer1.Start();
             timer2.Start();
+            FormLoad();
             Reset();
-            LevelLoad();
-        }
+    }
         #endregion
         #region Timers
 
@@ -329,7 +344,7 @@ namespace tutorial
         }
 
         #endregion
-        #region _Click
+        #region -Click
         private void MenuItemExit_Click(object sender, EventArgs e)
         {
 
@@ -339,14 +354,21 @@ namespace tutorial
 
         private void Game_Click(object sender, EventArgs e)
         {
-            if (richTextBox1.Visible == false)
+            if (Debug == 1)
             {
-                richTextBox1.Visible = true;
-            }
+                if (richTextBox1.Visible == false)
+                {
+                    richTextBox1.Visible = true;
+                }
 
-            else if (richTextBox1.Visible == true)
-            {
-                richTextBox1.Visible = false;
+                else if (richTextBox1.Visible == true)
+                {
+                    richTextBox1.Visible = false;
+                }
+                else if (Debug == 0)
+                {
+                    richTextBox1.Visible = false;
+                }
             }
         }
 
@@ -364,6 +386,20 @@ namespace tutorial
                 }
             }
         }
+
+        public void ArrayMenuItem_Click(object sender, EventArgs e)
+        {
+            EntityList = "Player = " + player + Environment.NewLine;
+            EntityList += "Apple_01 = " + apple_01 + Environment.NewLine;
+            EntityList += "Apple_02 = " + apple_02 + Environment.NewLine;
+            EntityList += "Banana_01 = " + banana_01 + Environment.NewLine;
+            EntityList += "Banana_02 = " + banana_02 + Environment.NewLine;
+            EntityList += "Pear_01 = " + pear_01 + Environment.NewLine;
+            EntityList += "Pear_02 = " + pear_02 + Environment.NewLine;
+            EntityList += "Enemy_01 = " + enemy_01 + Environment.NewLine;
+            MessageBox.Show(EntityList, "EntityList");
+        }
+
         #endregion
         #region Collisions
         public void Collisions()
@@ -1186,20 +1222,205 @@ namespace tutorial
             lefttext = "Left = " + left;
             righttext = "Right = " + right;
             WASDText = downtext + uptext + lefttext + righttext;
+            Debug = 0;
+        }
+
+        #endregion
+        #region Level Area
+
+        public void FormLoad()
+        {
+            player = 0;
+            apple_01 = 0;
+            apple_02 = 0;
+            banana_01 = 0;
+            banana_02 = 0;
+            pear_01 = 0;
+            pear_02 = 0;
+            enemy_01 = 0;
+            Level = 1;
+            LevelCheck();
         }
 
         public void LevelLoad()
         {
-            object[] entitylist = { Player, Apple_01, Apple_02, Banana_01, Banana_02, Pear_01, Pear_02, Enemy_01 };
-        }
-        #endregion
-
-        public void ArrayMenuItem_Click(object sender, EventArgs e)
-        {
-            if (Player.Visible == true)
+            #region Visible = true
+            if (player == 1)
             {
-                entitylist[0]
+                Player.Visible = true;
+            }
+
+            if (apple_01 == 1)
+            {
+                Apple_01.Visible = true;
+            }
+
+            if (apple_02 == 1)
+            {
+                Apple_02.Visible = true;
+            }
+
+            if (banana_01 == 1)
+            {
+                Banana_01.Visible = true;
+            }
+
+            if (banana_02 == 1)
+            {
+                Banana_02.Visible = true;
+            }
+
+            if (pear_01 == 1)
+            {
+                Pear_01.Visible = true;
+            }
+
+            if (pear_02 == 1)
+            {
+                Pear_02.Visible = true;
+            }
+
+            if (enemy_01 == 1)
+            {
+                Enemy_01.Visible = true;
+            }
+            #endregion
+            #region Visible = False
+            if (player == 0)
+            {
+                Player.Visible = false;
+            }
+
+            if (apple_01 == 0)
+            {
+                Apple_01.Visible = false;
+            }
+
+            if (apple_02 == 0)
+            {
+                Apple_02.Visible = false;
+            }
+
+            if (banana_01 == 0)
+            {
+                Banana_01.Visible = false;
+            }
+
+            if (banana_02 == 0)
+            {
+                Banana_02.Visible = false;
+            }
+
+            if (pear_01 == 0)
+            {
+                Pear_01.Visible = false;
+            }
+
+            if (pear_02 == 0)
+            {
+                Pear_02.Visible = false;
+            }
+
+            if (enemy_01 == 0)
+            {
+                Enemy_01.Visible = false;
+            }
+            #endregion
+        }
+
+        public void LevelCheck()
+        {
+            if (Level == 1)
+            {
+                Level1();
+            }
+
+            else if (Level == 2)
+            {
+                Level2();
+            }
+
+            else if (Level == 3)
+            {
+                Level3();
+            }
+
+            else if (Level == 4)
+            {
+                Level4();
+            }
+
+            else if (Level == 5)
+            {
+                Level5();
             }
         }
+
+        #region Levels
+        public void Level1()
+        {
+            // object[] entitylist = { player, apple_01, apple_02, banana_01, banana_02, pear_01, pear_02, enemy_01 };
+            player = 1;
+            apple_01 = 1;
+            apple_02 = 1;
+            banana_01 = 1;
+            banana_02 = 1;
+            pear_01 = 1;
+            pear_02 = 1;
+            enemy_01 = 1;
+            LevelLoad();
+        }
+
+        public void Level2()
+        {
+            player = 0;
+            apple_01 = 0;
+            apple_02 = 0;
+            banana_01 = 0;
+            banana_02 = 0;
+            pear_01 = 0;
+            pear_02 = 0;
+            enemy_01 = 0;
+        }
+
+        public void Level3()
+        {
+            player = 0;
+            apple_01 = 0;
+            apple_02 = 0;
+            banana_01 = 0;
+            banana_02 = 0;
+            pear_01 = 0;
+            pear_02 = 0;
+            enemy_01 = 0;
+        }
+
+        public void Level4()
+        {
+            player = 0;
+            apple_01 = 0;
+            apple_02 = 0;
+            banana_01 = 0;
+            banana_02 = 0;
+            pear_01 = 0;
+            pear_02 = 0;
+            enemy_01 = 0;
+        }
+
+        public void Level5()
+        {
+            player = 0;
+            apple_01 = 0;
+            apple_02 = 0;
+            banana_01 = 0;
+            banana_02 = 0;
+            pear_01 = 0;
+            pear_02 = 0;
+            enemy_01 = 0;
+        }
+
+        #endregion
+        #endregion
+
     }
 }
