@@ -1359,7 +1359,7 @@ namespace tutorial
         #region Levels
         public void Level1()
         {
-            // object[] entitylist = { player, apple_01, apple_02, banana_01, banana_02, pear_01, pear_02, enemy_01 };
+            //entitylist = player, apple_01, apple_02, banana_01, banana_02, pear_01, pear_02, enemy_01 
             player = 1;
             apple_01 = 1;
             apple_02 = 1;
