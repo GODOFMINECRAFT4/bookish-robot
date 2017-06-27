@@ -128,6 +128,10 @@
   <ItemGroup>
     <Content Include="Images\info.txt" />
     <Content Include="Images\CsvExport Readme.txt" />
+    <Content Include="Images\Level Elements\1x10 Pixel Wall.jpg" />
+    <Content Include="Images\Level Elements\2x10 Pixel Wall.jpg" />
+    <Content Include="Images\Level Elements\3x10 Pixel Wall.jpg" />
+    <Content Include="Images\Level Elements\walls.jpg" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
