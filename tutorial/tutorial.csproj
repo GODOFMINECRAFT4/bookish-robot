@@ -126,12 +126,13 @@
     <None Include="Images\Entities\Enemy_01.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\Entities\PlayerIcon1.png" />
+    <Content Include="Images\Entities\PlayerIcon2.png" />
     <Content Include="Images\info.txt" />
     <Content Include="Images\CsvExport Readme.txt" />
     <Content Include="Images\Level Elements\1x10 Pixel Wall.jpg" />
     <Content Include="Images\Level Elements\2x10 Pixel Wall.jpg" />
     <Content Include="Images\Level Elements\3x10 Pixel Wall.jpg" />
-    <Content Include="Images\Level Elements\walls.jpg" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

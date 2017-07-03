@@ -459,6 +459,22 @@ namespace tutorial
             {
                 System.Console.WriteLine("Health Min");
 
+                string LHMessage = "You Died, Game Over" + Environment.NewLine + " Would You Like to Restart The Level";
+                string LHCaption = "Game Over";
+                MessageBoxButtons LHButtons = MessageBoxButtons.RetryCancel;
+                DialogResult LHResult;
+
+                LHResult = MessageBox.Show(LHMessage, LHCaption, LHButtons);
+                if (LHResult == System.Windows.Forms.DialogResult.Retry)
+                {
+                    Level = 1;
+                    LevelLoad();
+                }
+                else if(LHResult == System.Windows.Forms.DialogResult.Cancel)
+                {
+                    Application.Exit();
+                }
+
             }
             else if (Life.Value > Life.Minimum)
             {
