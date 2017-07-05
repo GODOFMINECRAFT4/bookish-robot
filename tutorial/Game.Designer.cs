@@ -81,6 +81,7 @@
             this.Enemy_01 = new System.Windows.Forms.PictureBox();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.Player1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Pear_02)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Banana_02)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Apple_02)).BeginInit();
@@ -95,6 +96,7 @@
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Enemy_01)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Player1)).BeginInit();
             this.SuspendLayout();
             // 
             // Player
@@ -519,12 +521,22 @@
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
+            // Player1
+            // 
+            this.Player1.Image = global::tutorial.Properties.Resources.PlayerIcon1;
+            this.Player1.Location = new System.Drawing.Point(329, 482);
+            this.Player1.Name = "Player1";
+            this.Player1.Size = new System.Drawing.Size(64, 64);
+            this.Player1.TabIndex = 21;
+            this.Player1.TabStop = false;
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.Player1);
             this.Controls.Add(this.Enemy_01);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.SpeedLabel);
@@ -574,6 +586,7 @@
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Enemy_01)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Player1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -632,5 +645,6 @@
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.ToolStripMenuItem ArrayMenuItem;
         public System.Windows.Forms.PictureBox Enemy_01;
+        private System.Windows.Forms.PictureBox Player1;
     }
 }

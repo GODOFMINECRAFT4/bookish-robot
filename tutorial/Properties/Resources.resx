@@ -124,13 +124,16 @@
   <data name="Apple" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Food\Apple.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Enemy_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Entities\Enemy_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="banana" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Food\banana.jpg.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Blank_Inv" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\GUI\Blank_Inv.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Enemy_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\Entities\Enemy_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PlayerIcon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Entities\PlayerIcon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

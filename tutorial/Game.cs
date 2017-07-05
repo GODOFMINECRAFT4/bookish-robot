@@ -23,7 +23,7 @@ namespace tutorial
         int Pear = 10;
         int Banana = 15;
         int Speed = 5;
-        int Debug = 0;
+        int Debug = 1;
         string DebugText;
         string downtext;
         string uptext;
@@ -43,7 +43,9 @@ namespace tutorial
         string EntityList = "";
         #endregion
         #region Level Vars
+        int Wall = 10;
         int Level = 1;
+        int[] Walls;
         #endregion
         #region Form Init
         public Game()
@@ -72,28 +74,28 @@ namespace tutorial
 
             if (up == true)
             {
-                Player.Top -= Speed;
+                Player1.Top -= Speed;
                 richTextBox1.Text = richTextBox1.Text + WASDText + Environment.NewLine;
                 System.Console.WriteLine(WASDText);
             }
 
             if (down == true)
             {
-                Player.Top += Speed;
+                Player1.Top += Speed;
                 richTextBox1.Text = richTextBox1.Text + WASDText + Environment.NewLine;
                 System.Console.WriteLine(WASDText);
             }
 
             if (left == true)
             {
-                Player.Left -= Speed;
+                Player1.Left -= Speed;
                 richTextBox1.Text = richTextBox1.Text + WASDText + Environment.NewLine;
                 System.Console.WriteLine(WASDText);
             }
 
             if (right == true)
             {
-                Player.Left += Speed;
+                Player1.Left += Speed;
                 richTextBox1.Text = richTextBox1.Text + WASDText + Environment.NewLine;
                 System.Console.WriteLine(WASDText);
             }
@@ -405,29 +407,29 @@ namespace tutorial
         public void Collisions()
         {
 //Apples
-            if (Player.Bounds.IntersectsWith(Apple_01.Bounds))
+            if (Player1.Bounds.IntersectsWith(Apple_01.Bounds))
             {          
                 AddToInv(Apple_01);
             }
-           else if (Player.Bounds.IntersectsWith(Apple_02.Bounds))
+           else if (Player1.Bounds.IntersectsWith(Apple_02.Bounds))
             {
                 AddToInv(Apple_02);
             }
 //Bananas
-            else if (Player.Bounds.IntersectsWith(Banana_01.Bounds))
+            else if (Player1.Bounds.IntersectsWith(Banana_01.Bounds))
             {
                 AddToInv(Banana_01);
             }
-            else if (Player.Bounds.IntersectsWith(Banana_02.Bounds))
+            else if (Player1.Bounds.IntersectsWith(Banana_02.Bounds))
             {
                 AddToInv(Banana_02);
             }
 //Pears
-            else if (Player.Bounds.IntersectsWith(Pear_01.Bounds))
+            else if (Player1.Bounds.IntersectsWith(Pear_01.Bounds))
             {
                 AddToInv(Pear_01);
             }
-            else if (Player.Bounds.IntersectsWith(Pear_02.Bounds))
+            else if (Player1.Bounds.IntersectsWith(Pear_02.Bounds))
             {
                AddToInv(Pear_02);
             }
@@ -435,7 +437,7 @@ namespace tutorial
 
         public void EnemyCollisons()
         {
-            if (Player.Bounds.IntersectsWith(Enemy_01.Bounds))
+            if (Player1.Bounds.IntersectsWith(Enemy_01.Bounds))
             {
                 if (GodMode == false)
                 {
@@ -447,6 +449,7 @@ namespace tutorial
                 {
                     LoseHealth(1 * 0);
                 }
+
             }
         }
          
@@ -1239,6 +1242,7 @@ namespace tutorial
             righttext = "Right = " + right;
             WASDText = downtext + uptext + lefttext + righttext;
             Debug = 0;
+            Walls = new int[10];
         }
 
         #endregion
@@ -1255,15 +1259,19 @@ namespace tutorial
             pear_02 = 0;
             enemy_01 = 0;
             Level = 1;
+            int[] Walls = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
             LevelCheck();
         }
 
         public void LevelLoad()
         {
             #region Visible = true
+
+            #region Player/Fruits/Enemys
             if (player == 1)
             {
-                Player.Visible = true;
+                //Player.Visible = true;
+                Player1.Visible = true;
             }
 
             if (apple_01 == 1)
@@ -1300,11 +1308,74 @@ namespace tutorial
             {
                 Enemy_01.Visible = true;
             }
+
+            #endregion
+            #region Walls
+            if (Walls[0] == 1)
+            {
+
+            }
+
+            if (Walls[1] == 1)
+            {
+
+            }
+
+            if (Walls[2] == 1)
+            {
+
+            }
+
+            if (Walls[3] == 1)
+            {
+
+            }
+
+            if (Walls[4] == 1)
+            {
+
+            }
+
+            if (Walls[5] == 1)
+            {
+
+            }
+
+            if (Walls[6] == 1)
+            {
+
+            }
+
+            if (Walls[7] == 1)
+            {
+
+            }
+
+            if (Walls[8] == 1)
+            {
+
+            }
+
+            if (Walls[9] == 1)
+            {
+
+            }
+
+            if (Walls[10] == 1)
+            {
+
+            }
+
+            #endregion
+
             #endregion
             #region Visible = False
+
+            #region Player/Fruits/Enemys
             if (player == 0)
             {
-                Player.Visible = false;
+                //Player.Visible = false;
+                Player1.Visible = false;
             }
 
             if (apple_01 == 0)
@@ -1341,6 +1412,64 @@ namespace tutorial
             {
                 Enemy_01.Visible = false;
             }
+            #endregion
+            #region Walls
+            if (Walls[0] == 0)
+            {
+
+            }
+
+            if (Walls[1] == 0)
+            {
+
+            }
+
+            if (Walls[2] == 0)
+            {
+
+            }
+
+            if (Walls[3] == 0)
+            {
+
+            }
+
+            if (Walls[4] == 0)
+            {
+
+            }
+
+            if (Walls[5] == 0)
+            {
+
+            }
+
+            if (Walls[6] == 0)
+            {
+
+            }
+
+            if (Walls[7] == 0)
+            {
+
+            }
+
+            if (Walls[8] == 0)
+            {
+
+            }
+
+            if (Walls[9] == 0)
+            {
+
+            }
+
+            if (Walls[10] == 0)
+            {
+
+            }
+
+            #endregion
             #endregion
         }
 
@@ -1384,6 +1513,7 @@ namespace tutorial
             pear_01 = 1;
             pear_02 = 1;
             enemy_01 = 1;
+            int[] Walls = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
             LevelLoad();
         }
 
