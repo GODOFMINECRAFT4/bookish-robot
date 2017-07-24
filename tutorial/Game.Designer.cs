@@ -526,7 +526,7 @@
             this.Player1.Image = global::tutorial.Properties.Resources.PlayerIcon1;
             this.Player1.Location = new System.Drawing.Point(329, 482);
             this.Player1.Name = "Player1";
-            this.Player1.Size = new System.Drawing.Size(64, 64);
+            this.Player1.Size = new System.Drawing.Size(32, 32);
             this.Player1.TabIndex = 21;
             this.Player1.TabStop = false;
             // 

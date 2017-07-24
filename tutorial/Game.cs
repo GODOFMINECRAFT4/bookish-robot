@@ -218,26 +218,22 @@ namespace tutorial
 // Up And Down Movement
             if (key.KeyCode == Keys.W)
             {
-                //Player.Top -= 5;
                 up = true;
             }
 
             if (key.KeyCode == Keys.S)
             {
-                //Player.Top += 5;
                 down = true;
             }
 
             // Left And Right Movement
             if (key.KeyCode == Keys.A)
             {
-                //Player.Left -= 5;
                 left = true;
             }
 
             if (key.KeyCode == Keys.D)
             {
-                //Player.Left += 5;
                 right = true;
             }
             // Left + Right  Movement keys at once
@@ -1259,7 +1255,10 @@ namespace tutorial
             pear_02 = 0;
             enemy_01 = 0;
             Level = 1;
-            int[] Walls = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+            if (Wall == 10)
+            {
+                int[] Walls = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+            }
             LevelCheck();
         }
 
