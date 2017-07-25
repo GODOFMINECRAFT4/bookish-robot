@@ -108,6 +108,7 @@
             this.Player.Size = new System.Drawing.Size(98, 25);
             this.Player.TabIndex = 0;
             this.Player.Text = "Character";
+            this.Player.Visible = false;
             // 
             // Life
             // 

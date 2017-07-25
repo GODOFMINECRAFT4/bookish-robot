@@ -1257,7 +1257,7 @@ namespace tutorial
             Level = 1;
             if (Wall == 10)
             {
-                int[] Walls = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+                Walls = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
             }
             LevelCheck();
         }
@@ -1360,11 +1360,6 @@ namespace tutorial
 
             }
 
-            if (Walls[10] == 1)
-            {
-
-            }
-
             #endregion
 
             #endregion
@@ -1459,11 +1454,6 @@ namespace tutorial
             }
 
             if (Walls[9] == 0)
-            {
-
-            }
-
-            if (Walls[10] == 0)
             {
 
             }
