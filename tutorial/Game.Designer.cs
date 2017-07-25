@@ -82,6 +82,7 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.Player1 = new System.Windows.Forms.PictureBox();
+            this.Inv_Blank = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Pear_02)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Banana_02)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Apple_02)).BeginInit();
@@ -97,6 +98,7 @@
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Enemy_01)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Player1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Inv_Blank)).BeginInit();
             this.SuspendLayout();
             // 
             // Player
@@ -113,9 +115,11 @@
             // Life
             // 
             this.Life.Location = new System.Drawing.Point(0, 28);
+            this.Life.MarqueeAnimationSpeed = 50;
             this.Life.Name = "Life";
             this.Life.Size = new System.Drawing.Size(183, 23);
             this.Life.TabIndex = 1;
+            this.Life.Value = 100;
             this.Life.Click += new System.EventHandler(this.Life_Click);
             // 
             // Pear_02
@@ -187,6 +191,7 @@
             // Inv_05
             // 
             this.Inv_05.Image = ((System.Drawing.Image)(resources.GetObject("Inv_05.Image")));
+            this.Inv_05.InitialImage = ((System.Drawing.Image)(resources.GetObject("Inv_05.InitialImage")));
             this.Inv_05.Location = new System.Drawing.Point(812, 12);
             this.Inv_05.Name = "Inv_05";
             this.Inv_05.Size = new System.Drawing.Size(32, 32);
@@ -197,6 +202,7 @@
             // Inv_03
             // 
             this.Inv_03.Image = ((System.Drawing.Image)(resources.GetObject("Inv_03.Image")));
+            this.Inv_03.InitialImage = ((System.Drawing.Image)(resources.GetObject("Inv_03.InitialImage")));
             this.Inv_03.Location = new System.Drawing.Point(888, 12);
             this.Inv_03.Name = "Inv_03";
             this.Inv_03.Size = new System.Drawing.Size(32, 32);
@@ -206,7 +212,8 @@
             // 
             // Inv_04
             // 
-            this.Inv_04.Image = global::tutorial.Properties.Resources.Blank_Inv;
+            this.Inv_04.Image = ((System.Drawing.Image)(resources.GetObject("Inv_04.Image")));
+            this.Inv_04.InitialImage = ((System.Drawing.Image)(resources.GetObject("Inv_04.InitialImage")));
             this.Inv_04.Location = new System.Drawing.Point(850, 12);
             this.Inv_04.Name = "Inv_04";
             this.Inv_04.Size = new System.Drawing.Size(32, 32);
@@ -217,6 +224,7 @@
             // Inv_02
             // 
             this.Inv_02.Image = ((System.Drawing.Image)(resources.GetObject("Inv_02.Image")));
+            this.Inv_02.InitialImage = ((System.Drawing.Image)(resources.GetObject("Inv_02.InitialImage")));
             this.Inv_02.Location = new System.Drawing.Point(926, 12);
             this.Inv_02.Name = "Inv_02";
             this.Inv_02.Size = new System.Drawing.Size(32, 32);
@@ -227,6 +235,7 @@
             // Inv_01
             // 
             this.Inv_01.Image = ((System.Drawing.Image)(resources.GetObject("Inv_01.Image")));
+            this.Inv_01.InitialImage = ((System.Drawing.Image)(resources.GetObject("Inv_01.InitialImage")));
             this.Inv_01.Location = new System.Drawing.Point(964, 12);
             this.Inv_01.Name = "Inv_01";
             this.Inv_01.Size = new System.Drawing.Size(32, 32);
@@ -448,8 +457,10 @@
             // 
             // Life2
             // 
+            this.Life2.MarqueeAnimationSpeed = 50;
             this.Life2.Name = "Life2";
             this.Life2.Size = new System.Drawing.Size(100, 16);
+            this.Life2.Value = 100;
             this.Life2.Click += new System.EventHandler(this.Life2_Click);
             // 
             // Spacer
@@ -531,12 +542,23 @@
             this.Player1.TabIndex = 21;
             this.Player1.TabStop = false;
             // 
+            // Inv_Blank
+            // 
+            this.Inv_Blank.Image = global::tutorial.Properties.Resources.Blank_Inv;
+            this.Inv_Blank.Location = new System.Drawing.Point(812, 9);
+            this.Inv_Blank.Name = "Inv_Blank";
+            this.Inv_Blank.Size = new System.Drawing.Size(32, 32);
+            this.Inv_Blank.TabIndex = 22;
+            this.Inv_Blank.TabStop = false;
+            this.Inv_Blank.Visible = false;
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.Inv_05);
             this.Controls.Add(this.Player1);
             this.Controls.Add(this.Enemy_01);
             this.Controls.Add(this.statusStrip1);
@@ -548,7 +570,6 @@
             this.Controls.Add(this.Pear_01);
             this.Controls.Add(this.Banana_01);
             this.Controls.Add(this.Apple_01);
-            this.Controls.Add(this.Inv_05);
             this.Controls.Add(this.Inv_03);
             this.Controls.Add(this.Inv_04);
             this.Controls.Add(this.Inv_02);
@@ -557,6 +578,7 @@
             this.Controls.Add(this.Player);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.Inv_Blank);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
@@ -588,6 +610,7 @@
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Enemy_01)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Player1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Inv_Blank)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -647,5 +670,6 @@
         private System.Windows.Forms.ToolStripMenuItem ArrayMenuItem;
         public System.Windows.Forms.PictureBox Enemy_01;
         private System.Windows.Forms.PictureBox Player1;
+        private System.Windows.Forms.PictureBox Inv_Blank;
     }
 }

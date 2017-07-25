@@ -104,11 +104,19 @@ namespace tutorial
 
             else if (LoginBypass == 0)
             {
-                notifyIcon1.Visible = true;
+                notifyIcon1.Visible = false;
                 notifyIcon1.Text = "Login Menu";
                 notifyIcon1.BalloonTipTitle = "Login Menu";
                 notifyIcon1.BalloonTipText = "Login Menu";
                 notifyIcon1.ShowBalloonTip(5000);
+            }
+            else if (LoginBypass == 2)
+            {
+                notifyIcon1.Visible = false;
+                notifyIcon1.Text = "Login Menu Bypassed";
+                notifyIcon1.BalloonTipTitle = "Login Menu";
+                notifyIcon1.BalloonTipText = "Login Menu Bypassed";
+                Skip();
             }
         }
     }

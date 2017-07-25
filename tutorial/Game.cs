@@ -14,6 +14,8 @@ namespace tutorial
     public partial class Game : Form
     {
         #region Vars
+        int Popup = 0;
+        int WASDTextConsole = 0;
         bool right;
         bool left;
         bool up;
@@ -76,28 +78,40 @@ namespace tutorial
             {
                 Player1.Top -= Speed;
                 richTextBox1.Text = richTextBox1.Text + WASDText + Environment.NewLine;
-                System.Console.WriteLine(WASDText);
+                if (WASDTextConsole == 1)
+                {
+                    System.Console.WriteLine(WASDText);
+                }
             }
 
             if (down == true)
             {
                 Player1.Top += Speed;
                 richTextBox1.Text = richTextBox1.Text + WASDText + Environment.NewLine;
-                System.Console.WriteLine(WASDText);
+                if (WASDTextConsole == 1)
+                {
+                    System.Console.WriteLine(WASDText);
+                }
             }
 
             if (left == true)
             {
                 Player1.Left -= Speed;
                 richTextBox1.Text = richTextBox1.Text + WASDText + Environment.NewLine;
-                System.Console.WriteLine(WASDText);
+                if (WASDTextConsole == 1)
+                {
+                    System.Console.WriteLine(WASDText);
+                }
             }
 
             if (right == true)
             {
                 Player1.Left += Speed;
                 richTextBox1.Text = richTextBox1.Text + WASDText + Environment.NewLine;
-                System.Console.WriteLine(WASDText);
+                if (WASDTextConsole == 1)
+                {
+                    System.Console.WriteLine(WASDText);
+                }
             }
         }
 
@@ -481,6 +495,8 @@ namespace tutorial
                 LifeLabel.Text = "Health = " + Life.Value;
                 Life2.Value -= lose;
                 LifeLabel2.Text = "Health = " + Life2.Value;
+                System.Console.Write("Life Value = " + Life.Value + "   " + "Life2 Value = " + Life2.Value + "   " + "Lose Value = " + lose + "   ");
+                System.Console.WriteLine(Life.Value > Life.Minimum);
             }
             //Life.Value -= 10;
         }
@@ -497,9 +513,11 @@ namespace tutorial
                 LifeLabel.Text = "Health = " + Life.Value;
                 Life2.Value += gain;
                 LifeLabel2.Text = "Health = " + Life2.Value;
+                System.Console.Write("Life Value = " + Life.Value + "   " + "Life2 Value = " + Life2.Value + "   " + "Gain Value = " + gain + "   ");
+                System.Console.WriteLine(Life.Value + gain < Life.Maximum + 1);
             }
 
-            else if (Life.Value + gain > Life.Maximum)
+            else if (Life.Value + gain > Life.Maximum + 1 )
             {
                 System.Console.WriteLine("Health Cant Go Above 100 Idiot");
             }
@@ -574,6 +592,7 @@ namespace tutorial
                 {
                     GainHealth(Apple);
                     TakeFromInv(Inv_01);
+                    Inv_01.Image = Inv_Blank.Image;
                 }
             }
 
@@ -587,6 +606,7 @@ namespace tutorial
                 {
                     GainHealth(Apple);
                     TakeFromInv(Inv_01);
+                    Inv_01.Image = Inv_Blank.Image;
                 }
             }
 
@@ -601,6 +621,7 @@ namespace tutorial
                 {
                     GainHealth(Banana);
                     TakeFromInv(Inv_01);
+                    Inv_01.Image = Inv_Blank.Image;
                 }
             }
 
@@ -614,6 +635,7 @@ namespace tutorial
                 {
                     GainHealth(Banana);
                     TakeFromInv(Inv_01);
+                    Inv_01.Image = Inv_Blank.Image;
                 }
             }
 
@@ -628,6 +650,7 @@ namespace tutorial
                 {
                     GainHealth(Pear);
                     TakeFromInv(Inv_01);
+                    Inv_01.Image = Inv_Blank.Image;
                 }
             }
 
@@ -641,6 +664,7 @@ namespace tutorial
                 {
                     GainHealth(Pear);
                     TakeFromInv(Inv_01);
+                    Inv_01.Image = Inv_Blank.Image;
                 }
             }
 
@@ -660,6 +684,7 @@ namespace tutorial
                 {
                     GainHealth(Apple);
                     TakeFromInv(Inv_02);
+                    Inv_02.Image = Inv_Blank.Image;
                 }
             }
 
@@ -673,6 +698,7 @@ namespace tutorial
                 {
                     GainHealth(Apple);
                     TakeFromInv(Inv_02);
+                    Inv_02.Image = Inv_Blank.Image;
                 }
             }
 
@@ -687,6 +713,7 @@ namespace tutorial
                 {
                     GainHealth(Banana);
                     TakeFromInv(Inv_02);
+                    Inv_02.Image = Inv_Blank.Image;
                 }
             }
 
@@ -700,6 +727,7 @@ namespace tutorial
                 {
                     GainHealth(Banana);
                     TakeFromInv(Inv_02);
+                    Inv_02.Image = Inv_Blank.Image;
                 }
             }
 
@@ -714,6 +742,7 @@ namespace tutorial
                 {
                     GainHealth(Pear);
                     TakeFromInv(Inv_02);
+                    Inv_02.Image = Inv_Blank.Image;
                 }
             }
 
@@ -727,6 +756,7 @@ namespace tutorial
                 {
                     GainHealth(Pear);
                     TakeFromInv(Inv_02);
+                    Inv_02.Image = Inv_Blank.Image;
                 }
             }
         }
@@ -745,6 +775,7 @@ namespace tutorial
                 {
                     GainHealth(Apple);
                     TakeFromInv(Inv_03);
+                    Inv_03.Image = Inv_Blank.Image;
                 }
             }
 
@@ -758,6 +789,7 @@ namespace tutorial
                 {
                     GainHealth(Apple);
                     TakeFromInv(Inv_03);
+                    Inv_03.Image = Inv_Blank.Image;
                 }
             }
 
@@ -772,6 +804,7 @@ namespace tutorial
                 {
                     GainHealth(Banana);
                     TakeFromInv(Inv_03);
+                    Inv_03.Image = Inv_Blank.Image;
                 }
             }
 
@@ -785,6 +818,7 @@ namespace tutorial
                 {
                     GainHealth(Banana);
                     TakeFromInv(Inv_03);
+                    Inv_03.Image = Inv_Blank.Image;
                 }
             }
 
@@ -799,6 +833,7 @@ namespace tutorial
                 {
                     GainHealth(Pear);
                     TakeFromInv(Inv_03);
+                    Inv_03.Image = Inv_Blank.Image;
                 }
             }
 
@@ -812,6 +847,7 @@ namespace tutorial
                 {
                     GainHealth(Pear);
                     TakeFromInv(Inv_03);
+                    Inv_03.Image = Inv_Blank.Image;
                 }
             }
         }
@@ -830,6 +866,7 @@ namespace tutorial
                 {
                     GainHealth(Apple);
                     TakeFromInv(Inv_04);
+                    Inv_04.Image = Inv_Blank.Image;
                 }
             }
 
@@ -843,6 +880,7 @@ namespace tutorial
                 {
                     GainHealth(Apple);
                     TakeFromInv(Inv_04);
+                    Inv_04.Image = Inv_Blank.Image;
                 }
             }
 
@@ -857,6 +895,7 @@ namespace tutorial
                 {
                     GainHealth(Banana);
                     TakeFromInv(Inv_04);
+                    Inv_04.Image = Inv_Blank.Image;
                 }
             }
 
@@ -870,6 +909,7 @@ namespace tutorial
                 {
                     GainHealth(Banana);
                     TakeFromInv(Inv_04);
+                    Inv_04.Image = Inv_Blank.Image;
                 }
             }
 
@@ -884,6 +924,7 @@ namespace tutorial
                 {
                     GainHealth(Pear);
                     TakeFromInv(Inv_04);
+                    Inv_04.Image = Inv_Blank.Image;
                 }
             }
 
@@ -897,6 +938,7 @@ namespace tutorial
                 {
                     GainHealth(Pear);
                     TakeFromInv(Inv_04);
+                    Inv_04.Image = Inv_Blank.Image;
                 }
             }
         }
@@ -915,6 +957,7 @@ namespace tutorial
                 {
                     GainHealth(Apple);
                     TakeFromInv(Inv_05);
+                    Inv_05.Image = Inv_Blank.Image;
                 }
             }
 
@@ -928,6 +971,7 @@ namespace tutorial
                 {
                     GainHealth(Apple);
                     TakeFromInv(Inv_05);
+                    Inv_05.Image = Inv_Blank.Image;
                 }
             }
 
@@ -942,6 +986,7 @@ namespace tutorial
                 {
                     GainHealth(Banana);
                     TakeFromInv(Inv_05);
+                    Inv_05.Image = Inv_Blank.Image;
                 }
             }
 
@@ -955,6 +1000,7 @@ namespace tutorial
                 {
                     GainHealth(Banana);
                     TakeFromInv(Inv_05);
+                    Inv_05.Image = Inv_Blank.Image;
                 }
             }
 
@@ -969,6 +1015,7 @@ namespace tutorial
                 {
                     GainHealth(Pear);
                     TakeFromInv(Inv_05);
+                    Inv_05.Image = Inv_Blank.Image;
                 }
             }
 
@@ -982,6 +1029,7 @@ namespace tutorial
                 {
                     GainHealth(Pear);
                     TakeFromInv(Inv_05);
+                    Inv_05.Image = Inv_Blank.Image;
                 }
             }
         }
@@ -1198,11 +1246,21 @@ namespace tutorial
         #region Game Form Voids
         private void Game_Activated(object sender, EventArgs e)
         {
-            notifyIcon1.Visible = true;
-            notifyIcon1.Text = "Game";
-            notifyIcon1.BalloonTipTitle = "Game";
-            notifyIcon1.BalloonTipText = "Game Form Active";
-            notifyIcon1.ShowBalloonTip(10000);
+            if (Popup == 1)
+            {
+                notifyIcon1.Visible = true;
+                notifyIcon1.Text = "Game";
+                notifyIcon1.BalloonTipTitle = "Game";
+                notifyIcon1.BalloonTipText = "Game Form Active";
+                notifyIcon1.ShowBalloonTip(10000);
+            }
+            else if (Popup == 0)
+            {
+                notifyIcon1.Visible = false;
+                notifyIcon1.Text = "Game";
+                notifyIcon1.BalloonTipTitle = "Game";
+                notifyIcon1.BalloonTipText = "Game Form Active";
+            }
         }
 
         private void Game_FormClosing(object sender, FormClosingEventArgs e)
@@ -1502,7 +1560,7 @@ namespace tutorial
             pear_01 = 1;
             pear_02 = 1;
             enemy_01 = 1;
-            int[] Walls = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
+            Walls = new int[] { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
             LevelLoad();
         }
 
