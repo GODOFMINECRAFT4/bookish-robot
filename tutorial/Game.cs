@@ -14,24 +14,26 @@ namespace tutorial
     public partial class Game : Form
     {
         #region Vars
-        int Popup = 0;
-        int WASDTextConsole = 0;
-        bool right;
-        bool left;
-        bool up;
-        bool down;
-        bool GodMode = false;
-        int Apple = 5;
-        int Pear = 10;
-        int Banana = 15;
-        int Speed = 5;
-        int Debug = 1;
-        string DebugText;
-        string downtext;
-        string uptext;
-        string lefttext;
-        string righttext;
-        string WASDText;
+        int Popup = 0;              // Show Game Start Notification       {1 = True, 0 = False}
+        int WASDTextConsole = 0;    // Show WASD KeyPress info In Console {1 = True, 0 = False}
+        bool right;                 // Right KeyPress   Var {True = Pressed, False = Not Pressed}
+        bool left;                  // Left  KeyPress   Var {True = Pressed, False = Not Pressed}
+        bool up;                    // Up    KeyPress   Var {True = Pressed, False = Not Pressed}
+        bool down;                  // Down  KeyPress   Var {True = Pressed, False = Not Pressed}
+        bool GodMode = false;       // God Mode Enabled Var {True = Pressed, False = Not Pressed}
+        int Apple = 5;              // Apple   Health Gain Value
+        int Pear = 10;              // Pear    Health Gain Value
+        int Banana = 15;            // Banana  Health Gain Value
+        int Speed = 5;              // Speed Value Var
+        int Debug = 1;              // Debug  Enabled Var {1 = True, 0 = False}
+        int NumPadEnable = 1;       // NumPad Enabled Var {1 = True, 0 = False}
+        int HealthBarTotal = 101;   // HealthBarTotal Var {Life.Maximum + 1}
+        string DebugText;           // Inv Check Text Store Var
+        string downtext;            // downtext = "Down = " + down + "   "
+        string uptext;              // uptext = "Up = " + up + "   "
+        string lefttext;            // lefttext = "Left = " + left + "   "
+        string righttext;           // righttext = "Right = " + right + "   "
+        string WASDText;            // WASDText = downtext + uptext + lefttext + righttext
         #endregion
         #region Entity List Vars
         int player;
@@ -45,6 +47,7 @@ namespace tutorial
         string EntityList = "";
         #endregion
         #region Level Vars
+        int tree1 = 0;
         int Wall = 10;
         int Level = 1;
         int[] Walls;
@@ -150,78 +153,84 @@ namespace tutorial
             // Up And Down Movement
          if (key.KeyCode == Keys.W)
             {
-             //enter Code Here
              up = false;
             }
 
             if (key.KeyCode == Keys.S)
             {
-             //enter Code Here
              down = false;
             }
 
             // Left And Right Movement
             if (key.KeyCode == Keys.A)
             {
-             //enter Code Here
              left = false;
             }
 
             if (key.KeyCode == Keys.D)
             {
-             //enter Code Here
              right = false;
             }
             #endregion
-            #region NumPad Keys
-            if (key.KeyCode == Keys.NumPad0)
+            #region Number Keys
+             if (key.KeyCode == Keys.D1)
             {
-                // Enter Code here
+                if (Inv_01.Tag == null)
+                {
+                    Console.WriteLine("Inv_01 Is Currently Null Aka Empty");
+                }
+                else if (Inv_01.Tag != null)
+                {
+                    Console.WriteLine("Inv_01 Has a " + Inv_01.Tag + " In it."); ;
+                }
             }
 
-            if (key.KeyCode == Keys.NumPad1)
+            if (key.KeyCode == Keys.D2)
             {
-                // Enter Code here
+                if (Inv_02.Tag == null)
+                {
+                    Console.WriteLine("Inv_02 Is Currently Null Aka Empty");
+                }
+                else if (Inv_02.Tag != null)
+                {
+                    Console.WriteLine("Inv_02 Has a " + Inv_02.Tag + " In it.");
+                }
             }
 
-            if (key.KeyCode == Keys.NumPad2)
+            if (key.KeyCode == Keys.D3)
             {
-                // Enter Code here
+                if (Inv_03.Tag == null)
+                {
+                    Console.WriteLine("Inv_03 Is Currently Null Aka Empty");
+                }
+                else if (Inv_03.Tag != null)
+                {
+                    Console.WriteLine("Inv_03 Has a " + Inv_03.Tag + " In it.");
+                }
             }
 
-            if (key.KeyCode == Keys.NumPad3)
+            if (key.KeyCode == Keys.D4)
             {
-                // Enter Code here
+                if (Inv_04.Tag == null)
+                {
+                    Console.WriteLine("Inv_04 Is Currently Null Aka Empty");
+                }
+                else if (Inv_04.Tag != null)
+                {
+                    Console.WriteLine("Inv_04 Has a " + Inv_04.Tag + " In it.");
+                }
             }
 
-            if (key.KeyCode == Keys.NumPad4)
+            if (key.KeyCode == Keys.D5)
             {
-                // Enter Code here
-            }
-
-            if (key.KeyCode == Keys.NumPad5)
-            {
-                // Enter Code here
-            }
-
-            if (key.KeyCode == Keys.NumPad6)
-            {
-                // Enter Code here
-            }
-
-            if (key.KeyCode == Keys.NumPad7)
-            {
-                // Enter Code here
-            }
-
-            if (key.KeyCode == Keys.NumPad8)
-            {
-                // Enter Code here
-            }
-
-            if (key.KeyCode == Keys.NumPad9)
-            {
-                // Enter Code here
+                if (Inv_05.Tag == null)
+                {
+                    Console.WriteLine("Inv_05 Is Currently Null Aka Empty");
+                }
+                else if (Inv_05.Tag != null)
+                {
+                    Console.WriteLine("Inv_05 Has a " + Inv_05.Tag + " In it.");
+                }
             }
             #endregion
         }
@@ -260,52 +269,82 @@ namespace tutorial
             #region NumPad Keys
             if (key.KeyCode == Keys.NumPad0)
             {
-                // Enter Code here
+                if (NumPadEnable == 1)
+                {}
+                else if(NumPadEnable == 0)
+                {}
             }
 
             if (key.KeyCode == Keys.NumPad1)
             {
-                // Enter Code here
+                if (NumPadEnable == 1)
+                {}
+                else if (NumPadEnable == 0)
+                {}
             }
 
             if (key.KeyCode == Keys.NumPad2)
             {
-                // Enter Code here
+                if (NumPadEnable == 1)
+                {}
+                else if (NumPadEnable == 0)
+                {}
             }
 
             if (key.KeyCode == Keys.NumPad3)
             {
-                // Enter Code here
+                if (NumPadEnable == 1)
+                {}
+                else if (NumPadEnable == 0)
+                { }
             }
 
             if (key.KeyCode == Keys.NumPad4)
             {
-                // Enter Code here
+                if (NumPadEnable == 1)
+                { }
+                else if (NumPadEnable == 0)
+                { }
             }
 
             if (key.KeyCode == Keys.NumPad5)
             {
-                // Enter Code here
+                if (NumPadEnable == 1)
+                { }
+                else if (NumPadEnable == 0)
+                { }
             }
 
             if (key.KeyCode == Keys.NumPad6)
             {
-                // Enter Code here
+                if (NumPadEnable == 1)
+                { }
+                else if (NumPadEnable == 0)
+                { }
             }
 
             if (key.KeyCode == Keys.NumPad7)
             {
-                // Enter Code here
+                if (NumPadEnable == 1)
+                { }
+                else if (NumPadEnable == 0)
+                { }
             }
 
             if (key.KeyCode == Keys.NumPad8)
             {
-                // Enter Code here
+                if (NumPadEnable == 1)
+                { }
+                else if (NumPadEnable == 0)
+                { }
             }
 
             if (key.KeyCode == Keys.NumPad9)
             {
-                // Enter Code here
+                if (NumPadEnable == 1)
+                { }
+                else if (NumPadEnable == 0)
+                { }
             }
             #endregion
             #region Life_Test
@@ -517,10 +556,46 @@ namespace tutorial
                 System.Console.WriteLine(Life.Value + gain < Life.Maximum + 1);
             }
 
-            else if (Life.Value + gain > Life.Maximum + 1 )
+            else if (Life.Value + gain >= Life.Maximum + 1 )
             {
                 System.Console.WriteLine("Health Cant Go Above 100 Idiot");
             }
+            /*
+            else if (gain == 5)
+            {
+                Life.PerformStep();
+                Life2.PerformStep();
+                LifeLabel.Text = "Health = " + Life.Value;
+                LifeLabel2.Text = "Health = " + Life2.Value;
+                System.Console.Write("Life Value = " + Life.Value + "   " + "Life2 Value = " + Life2.Value + "   " + "Gain Value = " + gain + "   ");
+                System.Console.WriteLine(Life.Value + gain < Life.Maximum + 1);
+            }
+
+            else if (gain == 10)
+            {
+                Life.PerformStep();
+                Life.PerformStep();
+                Life2.PerformStep();
+                Life2.PerformStep();
+                LifeLabel.Text = "Health = " + Life.Value;
+                LifeLabel2.Text = "Health = " + Life2.Value;
+                System.Console.Write("Life Value = " + Life.Value + "   " + "Life2 Value = " + Life2.Value + "   " + "Gain Value = " + gain + "   ");
+                System.Console.WriteLine(Life.Value + gain < Life.Maximum + 1);
+            }
+
+            else if (gain == 15)
+            {
+                Life.PerformStep();
+                Life.PerformStep();
+                Life.PerformStep();
+                Life2.PerformStep();
+                Life2.PerformStep();
+                Life2.PerformStep();
+                LifeLabel.Text = "Health = " + Life.Value;
+                LifeLabel2.Text = "Health = " + Life2.Value;
+                System.Console.Write("Life Value = " + Life.Value + "   " + "Life2 Value = " + Life2.Value + "   " + "Gain Value = " + gain + "   ");
+                System.Console.WriteLine(Life.Value + gain < Life.Maximum + 1);
+            }*/
             //Life.Value += 10;
         }
 
@@ -588,7 +663,7 @@ namespace tutorial
                 {
                     System.Console.WriteLine("Health Max");
                 }
-                else if (Life.Value  + Apple < Life.Maximum)
+                else if (Life.Value  + Apple < HealthBarTotal)
                 {
                     GainHealth(Apple);
                     TakeFromInv(Inv_01);
@@ -602,7 +677,7 @@ namespace tutorial
                 {
                     System.Console.WriteLine("Health Max");
                 }
-                else if (Life.Value + Apple < Life.Maximum)
+                else if (Life.Value + Apple < HealthBarTotal)
                 {
                     GainHealth(Apple);
                     TakeFromInv(Inv_01);
@@ -617,7 +692,7 @@ namespace tutorial
                 {
                     System.Console.WriteLine("Health Max");
                 }
-                else if (Life.Value + Banana < Life.Maximum)
+                else if (Life.Value + Banana < HealthBarTotal)
                 {
                     GainHealth(Banana);
                     TakeFromInv(Inv_01);
@@ -631,7 +706,7 @@ namespace tutorial
                 {
                     System.Console.WriteLine("Health Max");
                 }
-                else if (Life.Value + Banana < Life.Maximum)
+                else if (Life.Value + Banana < HealthBarTotal)
                 {
                     GainHealth(Banana);
                     TakeFromInv(Inv_01);
@@ -646,7 +721,7 @@ namespace tutorial
                 {
                     System.Console.WriteLine("Health Max");
                 }
-                else if (Life.Value + Pear < Life.Maximum)
+                else if (Life.Value + Pear < HealthBarTotal)
                 {
                     GainHealth(Pear);
                     TakeFromInv(Inv_01);
@@ -660,7 +735,7 @@ namespace tutorial
                 {
                     System.Console.WriteLine("Health Max");
                 }
-                else if (Life.Value + Pear < Life.Maximum)
+                else if (Life.Value + Pear < HealthBarTotal)
                 {
                     GainHealth(Pear);
                     TakeFromInv(Inv_01);
@@ -680,7 +755,7 @@ namespace tutorial
                 {
                     System.Console.WriteLine("Health Max");
                 }
-                else if (Life.Value + Apple < Life.Maximum)
+                else if (Life.Value + Apple < HealthBarTotal)
                 {
                     GainHealth(Apple);
                     TakeFromInv(Inv_02);
@@ -694,7 +769,7 @@ namespace tutorial
                 {
                     System.Console.WriteLine("Health Max");
                 }
-                else if (Life.Value + Apple < Life.Maximum)
+                else if (Life.Value + Apple < HealthBarTotal)
                 {
                     GainHealth(Apple);
                     TakeFromInv(Inv_02);
@@ -709,7 +784,7 @@ namespace tutorial
                 {
                     System.Console.WriteLine("Health Max");
                 }
-                else if (Life.Value + Banana < Life.Maximum)
+                else if (Life.Value + Banana < HealthBarTotal)
                 {
                     GainHealth(Banana);
                     TakeFromInv(Inv_02);
@@ -723,7 +798,7 @@ namespace tutorial
                 {
                     System.Console.WriteLine("Health Max");
                 }
-                else if (Life.Value + Banana < Life.Maximum)
+                else if (Life.Value + Banana < HealthBarTotal)
                 {
                     GainHealth(Banana);
                     TakeFromInv(Inv_02);
@@ -738,7 +813,7 @@ namespace tutorial
                 {
                     System.Console.WriteLine("Health Max");
                 }
-                else if (Life.Value + Pear < Life.Maximum)
+                else if (Life.Value + Pear < HealthBarTotal)
                 {
                     GainHealth(Pear);
                     TakeFromInv(Inv_02);
@@ -752,7 +827,7 @@ namespace tutorial
                 {
                     System.Console.WriteLine("Health Max");
                 }
-                else if (Life.Value + Pear < Life.Maximum)
+                else if (Life.Value + Pear < HealthBarTotal)
                 {
                     GainHealth(Pear);
                     TakeFromInv(Inv_02);
@@ -771,7 +846,7 @@ namespace tutorial
                 {
                     System.Console.WriteLine("Health Max");
                 }
-                else if (Life.Value + Apple < Life.Maximum)
+                else if (Life.Value + Apple < HealthBarTotal)
                 {
                     GainHealth(Apple);
                     TakeFromInv(Inv_03);
@@ -785,7 +860,7 @@ namespace tutorial
                 {
                     System.Console.WriteLine("Health Max");
                 }
-                else if (Life.Value + Apple < Life.Maximum)
+                else if (Life.Value + Apple < HealthBarTotal)
                 {
                     GainHealth(Apple);
                     TakeFromInv(Inv_03);
@@ -800,7 +875,7 @@ namespace tutorial
                 {
                     System.Console.WriteLine("Health Max");
                 }
-                else if (Life.Value + Banana < Life.Maximum)
+                else if (Life.Value + Banana < HealthBarTotal)
                 {
                     GainHealth(Banana);
                     TakeFromInv(Inv_03);
@@ -814,7 +889,7 @@ namespace tutorial
                 {
                     System.Console.WriteLine("Health Max");
                 }
-                else if (Life.Value + Banana < Life.Maximum)
+                else if (Life.Value + Banana < HealthBarTotal)
                 {
                     GainHealth(Banana);
                     TakeFromInv(Inv_03);
@@ -829,7 +904,7 @@ namespace tutorial
                 {
                     System.Console.WriteLine("Health Max");
                 }
-                else if (Life.Value + Pear < Life.Maximum)
+                else if (Life.Value + Pear < HealthBarTotal)
                 {
                     GainHealth(Pear);
                     TakeFromInv(Inv_03);
@@ -843,7 +918,7 @@ namespace tutorial
                 {
                     System.Console.WriteLine("Health Max");
                 }
-                else if (Life.Value + Pear < Life.Maximum)
+                else if (Life.Value + Pear < HealthBarTotal)
                 {
                     GainHealth(Pear);
                     TakeFromInv(Inv_03);
@@ -862,7 +937,7 @@ namespace tutorial
                 {
                     System.Console.WriteLine("Health Max");
                 }
-                else if (Life.Value + Apple < Life.Maximum)
+                else if (Life.Value + Apple < HealthBarTotal)
                 {
                     GainHealth(Apple);
                     TakeFromInv(Inv_04);
@@ -876,7 +951,7 @@ namespace tutorial
                 {
                     System.Console.WriteLine("Health Max");
                 }
-                else if (Life.Value + Apple < Life.Maximum)
+                else if (Life.Value + Apple < HealthBarTotal)
                 {
                     GainHealth(Apple);
                     TakeFromInv(Inv_04);
@@ -891,7 +966,7 @@ namespace tutorial
                 {
                     System.Console.WriteLine("Health Max");
                 }
-                else if (Life.Value + Banana < Life.Maximum)
+                else if (Life.Value + Banana < HealthBarTotal)
                 {
                     GainHealth(Banana);
                     TakeFromInv(Inv_04);
@@ -905,7 +980,7 @@ namespace tutorial
                 {
                     System.Console.WriteLine("Health Max");
                 }
-                else if (Life.Value + Banana < Life.Maximum)
+                else if (Life.Value + Banana < HealthBarTotal)
                 {
                     GainHealth(Banana);
                     TakeFromInv(Inv_04);
@@ -920,7 +995,7 @@ namespace tutorial
                 {
                     System.Console.WriteLine("Health Max");
                 }
-                else if (Life.Value + Pear < Life.Maximum)
+                else if (Life.Value + Pear < HealthBarTotal)
                 {
                     GainHealth(Pear);
                     TakeFromInv(Inv_04);
@@ -934,7 +1009,7 @@ namespace tutorial
                 {
                     System.Console.WriteLine("Health Max");
                 }
-                else if (Life.Value + Pear < Life.Maximum)
+                else if (Life.Value + Pear < HealthBarTotal)
                 {
                     GainHealth(Pear);
                     TakeFromInv(Inv_04);
@@ -953,7 +1028,7 @@ namespace tutorial
                 {
                     System.Console.WriteLine("Health Max");
                 }
-                else if (Life.Value + Apple < Life.Maximum)
+                else if (Life.Value + Apple < HealthBarTotal)
                 {
                     GainHealth(Apple);
                     TakeFromInv(Inv_05);
@@ -967,7 +1042,7 @@ namespace tutorial
                 {
                     System.Console.WriteLine("Health Max");
                 }
-                else if (Life.Value + Apple < Life.Maximum)
+                else if (Life.Value + Apple < HealthBarTotal)
                 {
                     GainHealth(Apple);
                     TakeFromInv(Inv_05);
@@ -982,7 +1057,7 @@ namespace tutorial
                 {
                     System.Console.WriteLine("Health Max");
                 }
-                else if (Life.Value + Banana < Life.Maximum)
+                else if (Life.Value + Banana < HealthBarTotal)
                 {
                     GainHealth(Banana);
                     TakeFromInv(Inv_05);
@@ -996,7 +1071,7 @@ namespace tutorial
                 {
                     System.Console.WriteLine("Health Max");
                 }
-                else if (Life.Value + Banana < Life.Maximum)
+                else if (Life.Value + Banana < HealthBarTotal)
                 {
                     GainHealth(Banana);
                     TakeFromInv(Inv_05);
@@ -1011,7 +1086,7 @@ namespace tutorial
                 {
                     System.Console.WriteLine("Health Max");
                 }
-                else if (Life.Value + Pear < Life.Maximum)
+                else if (Life.Value + Pear < HealthBarTotal)
                 {
                     GainHealth(Pear);
                     TakeFromInv(Inv_05);
@@ -1025,7 +1100,7 @@ namespace tutorial
                 {
                     System.Console.WriteLine("Health Max");
                 }
-                else if (Life.Value + Pear < Life.Maximum)
+                else if (Life.Value + Pear < HealthBarTotal)
                 {
                     GainHealth(Pear);
                     TakeFromInv(Inv_05);
@@ -1312,6 +1387,7 @@ namespace tutorial
             pear_01 = 0;
             pear_02 = 0;
             enemy_01 = 0;
+            tree1 = 0;
             Level = 1;
             if (Wall == 10)
             {
@@ -1364,6 +1440,11 @@ namespace tutorial
             if (enemy_01 == 1)
             {
                 Enemy_01.Visible = true;
+            }
+            
+            if (tree1 == 1)
+            {
+
             }
 
             #endregion
@@ -1464,6 +1545,12 @@ namespace tutorial
             {
                 Enemy_01.Visible = false;
             }
+
+            if (tree1 == 0)
+            {
+
+            }
+
             #endregion
             #region Walls
             if (Walls[0] == 0)

@@ -118,6 +118,7 @@
             this.Life.MarqueeAnimationSpeed = 50;
             this.Life.Name = "Life";
             this.Life.Size = new System.Drawing.Size(183, 23);
+            this.Life.Step = 5;
             this.Life.TabIndex = 1;
             this.Life.Value = 100;
             this.Life.Click += new System.EventHandler(this.Life_Click);
@@ -460,6 +461,7 @@
             this.Life2.MarqueeAnimationSpeed = 50;
             this.Life2.Name = "Life2";
             this.Life2.Size = new System.Drawing.Size(100, 16);
+            this.Life2.Step = 5;
             this.Life2.Value = 100;
             this.Life2.Click += new System.EventHandler(this.Life2_Click);
             // 
