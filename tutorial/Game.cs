@@ -270,7 +270,9 @@ namespace tutorial
             if (key.KeyCode == Keys.NumPad0)
             {
                 if (NumPadEnable == 1)
-                {}
+                {
+                    
+                }
                 else if(NumPadEnable == 0)
                 {}
             }
