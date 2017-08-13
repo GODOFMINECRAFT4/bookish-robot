@@ -14,6 +14,8 @@ namespace tutorial
     public partial class Form1 : Form
     {
         int LoginBypass;
+        int NumUD1;
+        int NumUD2;
         public Form1()
         {
             InitializeComponent();
@@ -30,9 +32,7 @@ namespace tutorial
                 DebugLoad();
             }
             else if (numericUpDown1.Value == 0)
-            {
-                // Do Nothing
-            }
+            {/* Do Nothing */}
         }
 
         public void Skip()
@@ -66,16 +66,22 @@ namespace tutorial
 //Debug Button Show
         private void main_text_Click(object sender, EventArgs e)
         {
+            numericUpDown1.Visible = true;
+            numericUpDown2.Visible = true;
             DebugButton.Visible = true;
         }
 
 //Debug Button Run
         private void DebugButton_Click(object sender, EventArgs e)
         {
-            LevelCodeGen open_form = new LevelCodeGen();
-            open_form.Visible = true;
-            this.Hide();
-            Skip();
+            if(NumUD1 == 1)
+            {
+
+            }
+            if (NumUD2 == 1)
+            {
+
+            }
         }
         #endregion
 
@@ -85,6 +91,10 @@ namespace tutorial
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            NumUD1 = Convert.ToInt32(numericUpDown1.Value);
+        }
+        private void numericUpDown2_ValueChanged(object sender, EventArgs e)
         {
 
         }
@@ -117,6 +127,14 @@ namespace tutorial
                 notifyIcon1.BalloonTipTitle = "Login Menu";
                 notifyIcon1.BalloonTipText = "Login Menu Bypassed";
                 Skip();
+            }
+            else if (LoginBypass == 4)
+            {
+                notifyIcon1.Visible = true;
+                notifyIcon1.Text = "Login Menu";
+                notifyIcon1.BalloonTipTitle = "Login Menu";
+                notifyIcon1.BalloonTipText = "Login Menu";
+                notifyIcon1.ShowBalloonTip(5000);
             }
         }
     }

@@ -225,7 +225,7 @@ namespace tutorial
             {
                 if (Running == 1)
                 {
-                    //NumberTotal = NumberTotal + 1;
+                    MessageBox.Show("Sorry This Function Will Freeze The Program", "ERROR");
                 }
             }
         }
