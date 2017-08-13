@@ -669,6 +669,7 @@ namespace tutorial
                     GainHealth(Apple);
                     TakeFromInv(Inv_01);
                     Inv_01.Image = Inv_Blank.Image;
+                    apple_01 = 0;
                 }
             }
 
@@ -683,6 +684,7 @@ namespace tutorial
                     GainHealth(Apple);
                     TakeFromInv(Inv_01);
                     Inv_01.Image = Inv_Blank.Image;
+                    apple_02 = 0;
                 }
             }
 
@@ -698,6 +700,7 @@ namespace tutorial
                     GainHealth(Banana);
                     TakeFromInv(Inv_01);
                     Inv_01.Image = Inv_Blank.Image;
+                    banana_01 = 0;
                 }
             }
 
@@ -712,6 +715,7 @@ namespace tutorial
                     GainHealth(Banana);
                     TakeFromInv(Inv_01);
                     Inv_01.Image = Inv_Blank.Image;
+                    banana_02 = 0;
                 }
             }
 
@@ -727,6 +731,7 @@ namespace tutorial
                     GainHealth(Pear);
                     TakeFromInv(Inv_01);
                     Inv_01.Image = Inv_Blank.Image;
+                    pear_01 = 0;
                 }
             }
 
@@ -741,6 +746,7 @@ namespace tutorial
                     GainHealth(Pear);
                     TakeFromInv(Inv_01);
                     Inv_01.Image = Inv_Blank.Image;
+                    pear_02 = 0;
                 }
             }
 
@@ -761,6 +767,7 @@ namespace tutorial
                     GainHealth(Apple);
                     TakeFromInv(Inv_02);
                     Inv_02.Image = Inv_Blank.Image;
+                    apple_01 = 0;
                 }
             }
 
@@ -775,6 +782,7 @@ namespace tutorial
                     GainHealth(Apple);
                     TakeFromInv(Inv_02);
                     Inv_02.Image = Inv_Blank.Image;
+                    apple_02 = 0;
                 }
             }
 
@@ -790,6 +798,7 @@ namespace tutorial
                     GainHealth(Banana);
                     TakeFromInv(Inv_02);
                     Inv_02.Image = Inv_Blank.Image;
+                    banana_01 = 0;
                 }
             }
 
@@ -804,6 +813,7 @@ namespace tutorial
                     GainHealth(Banana);
                     TakeFromInv(Inv_02);
                     Inv_02.Image = Inv_Blank.Image;
+                    banana_02 = 0;
                 }
             }
 
@@ -819,6 +829,7 @@ namespace tutorial
                     GainHealth(Pear);
                     TakeFromInv(Inv_02);
                     Inv_02.Image = Inv_Blank.Image;
+                    pear_01 = 0;
                 }
             }
 
@@ -833,6 +844,7 @@ namespace tutorial
                     GainHealth(Pear);
                     TakeFromInv(Inv_02);
                     Inv_02.Image = Inv_Blank.Image;
+                    pear_02 = 0;
                 }
             }
         }
@@ -852,6 +864,7 @@ namespace tutorial
                     GainHealth(Apple);
                     TakeFromInv(Inv_03);
                     Inv_03.Image = Inv_Blank.Image;
+                    apple_01 = 0;
                 }
             }
 
@@ -866,6 +879,7 @@ namespace tutorial
                     GainHealth(Apple);
                     TakeFromInv(Inv_03);
                     Inv_03.Image = Inv_Blank.Image;
+                    apple_02 = 0;
                 }
             }
 
@@ -881,6 +895,7 @@ namespace tutorial
                     GainHealth(Banana);
                     TakeFromInv(Inv_03);
                     Inv_03.Image = Inv_Blank.Image;
+                    banana_01 = 0;
                 }
             }
 
