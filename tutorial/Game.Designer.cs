@@ -120,7 +120,7 @@
             this.Life.Size = new System.Drawing.Size(183, 23);
             this.Life.Step = 5;
             this.Life.TabIndex = 1;
-            this.Life.Value = 100;
+            this.Life.Value = 1;
             this.Life.Click += new System.EventHandler(this.Life_Click);
             // 
             // Pear_02
@@ -462,7 +462,7 @@
             this.Life2.Name = "Life2";
             this.Life2.Size = new System.Drawing.Size(100, 16);
             this.Life2.Step = 5;
-            this.Life2.Value = 100;
+            this.Life2.Value = 1;
             this.Life2.Click += new System.EventHandler(this.Life2_Click);
             // 
             // Spacer
@@ -594,6 +594,7 @@
             this.Load += new System.EventHandler(this.Game_Load);
             this.Click += new System.EventHandler(this.Game_Click);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Game_KeyDown);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Game_KeyPress);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Game_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.Pear_02)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Banana_02)).EndInit();

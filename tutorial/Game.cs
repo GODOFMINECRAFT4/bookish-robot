@@ -83,7 +83,7 @@ namespace tutorial
                 richTextBox1.Text = richTextBox1.Text + WASDText + Environment.NewLine;
                 if (WASDTextConsole == 1)
                 {
-                    System.Console.WriteLine(WASDText);
+                    Console.WriteLine(WASDText);
                 }
             }
 
@@ -93,7 +93,7 @@ namespace tutorial
                 richTextBox1.Text = richTextBox1.Text + WASDText + Environment.NewLine;
                 if (WASDTextConsole == 1)
                 {
-                    System.Console.WriteLine(WASDText);
+                    Console.WriteLine(WASDText);
                 }
             }
 
@@ -103,7 +103,7 @@ namespace tutorial
                 richTextBox1.Text = richTextBox1.Text + WASDText + Environment.NewLine;
                 if (WASDTextConsole == 1)
                 {
-                    System.Console.WriteLine(WASDText);
+                    Console.WriteLine(WASDText);
                 }
             }
 
@@ -113,7 +113,7 @@ namespace tutorial
                 richTextBox1.Text = richTextBox1.Text + WASDText + Environment.NewLine;
                 if (WASDTextConsole == 1)
                 {
-                    System.Console.WriteLine(WASDText);
+                    Console.WriteLine(WASDText);
                 }
             }
         }
@@ -133,11 +133,6 @@ namespace tutorial
 
         public void timer3_Tick(object sender, EventArgs time)
         {
-            /*        if (timer3.Equals(timer2))
-                       {
-                           Collisions();
-                       }  */
-
             if (timer3.Tag.Equals("on"))
             {
                 Collisions();
@@ -396,6 +391,10 @@ namespace tutorial
             EnemyCollisons();
         }
 
+        private void Game_KeyPress(object sender, KeyPressEventArgs key)
+        {
+            
+        }
         #endregion
         #region -Click
         private void MenuItemExit_Click(object sender, EventArgs e)
@@ -459,7 +458,7 @@ namespace tutorial
         {
 //Apples
             if (Player1.Bounds.IntersectsWith(Apple_01.Bounds))
-            {          
+            {
                 AddToInv(Apple_01);
             }
            else if (Player1.Bounds.IntersectsWith(Apple_02.Bounds))
@@ -511,7 +510,7 @@ namespace tutorial
         {
             if (Life.Value == Life.Minimum)
             {
-                System.Console.WriteLine("Health Min");
+                Console.WriteLine("Health Min");
 
                 string LHMessage = "You Died, Game Over" + Environment.NewLine + " Would You Like to Restart The Level";
                 string LHCaption = "Game Over";
@@ -536,8 +535,8 @@ namespace tutorial
                 LifeLabel.Text = "Health = " + Life.Value;
                 Life2.Value -= lose;
                 LifeLabel2.Text = "Health = " + Life2.Value;
-                System.Console.Write("Life Value = " + Life.Value + "   " + "Life2 Value = " + Life2.Value + "   " + "Lose Value = " + lose + "   ");
-                System.Console.WriteLine(Life.Value > Life.Minimum);
+                Console.Write("Life Value = " + Life.Value + "   " + "Life2 Value = " + Life2.Value + "   " + "Lose Value = " + lose + "   ");
+                Console.WriteLine(Life.Value > Life.Minimum);
             }
             //Life.Value -= 10;
         }
@@ -546,7 +545,7 @@ namespace tutorial
         {
             if (Life.Value == Life.Maximum)
             {
-                System.Console.WriteLine("Health Max");
+                Console.WriteLine("Health Max");
             }
             else if (Life.Value + gain < Life.Maximum + 1)
             {
@@ -554,15 +553,15 @@ namespace tutorial
                 LifeLabel.Text = "Health = " + Life.Value;
                 Life2.Value += gain;
                 LifeLabel2.Text = "Health = " + Life2.Value;
-                System.Console.Write("Life Value = " + Life.Value + "   " + "Life2 Value = " + Life2.Value + "   " + "Gain Value = " + gain + "   ");
-                System.Console.WriteLine(Life.Value + gain < Life.Maximum + 1);
+                Console.Write("Life Value = " + Life.Value + "   " + "Life2 Value = " + Life2.Value + "   " + "Gain Value = " + gain + "   ");
+                Console.WriteLine(Life.Value + gain < Life.Maximum + 1);
             }
 
             else if (Life.Value + gain >= Life.Maximum + 1 )
             {
-                System.Console.WriteLine("Health Cant Go Above 100 Idiot");
+                Console.WriteLine("Score Cant Go Above " + Life.Maximum  + " Idiot");
             }
-
+     #region Commented Health code
             /*
             else if (gain == 5)
             {
@@ -600,6 +599,7 @@ namespace tutorial
                 System.Console.WriteLine(Life.Value + gain < Life.Maximum + 1);
             }*/
             //Life.Value += 10;
+            #endregion
         }
 
         public void DamageValues(int Damage)
@@ -658,13 +658,13 @@ namespace tutorial
 // Inv_01
         private void Inv_01_Click(object sender, EventArgs e)
         {
-            System.Console.WriteLine(Inv_01.Tag);
+            Console.WriteLine(Inv_01.Tag);
             // Apples           
             if (Inv_01.Tag == Apple_01.Tag)
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    System.Console.WriteLine("Health Max");
+                    Console.WriteLine("Health Max");
                 }
                 else if (Life.Value  + Apple < HealthBarTotal)
                 {
@@ -679,7 +679,7 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    System.Console.WriteLine("Health Max");
+                    Console.WriteLine("Health Max");
                 }
                 else if (Life.Value + Apple < HealthBarTotal)
                 {
@@ -695,7 +695,7 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    System.Console.WriteLine("Health Max");
+                    Console.WriteLine("Health Max");
                 }
                 else if (Life.Value + Banana < HealthBarTotal)
                 {
@@ -710,7 +710,7 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    System.Console.WriteLine("Health Max");
+                    Console.WriteLine("Health Max");
                 }
                 else if (Life.Value + Banana < HealthBarTotal)
                 {
@@ -726,7 +726,7 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    System.Console.WriteLine("Health Max");
+                    Console.WriteLine("Health Max");
                 }
                 else if (Life.Value + Pear < HealthBarTotal)
                 {
@@ -741,7 +741,7 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    System.Console.WriteLine("Health Max");
+                    Console.WriteLine("Health Max");
                 }
                 else if (Life.Value + Pear < HealthBarTotal)
                 {
@@ -756,13 +756,13 @@ namespace tutorial
 // Inv_02
         private void Inv_02_CLick(object sender, EventArgs e)
         {
-            System.Console.WriteLine(Inv_02.Tag);
+            Console.WriteLine(Inv_02.Tag);
             // Apples           
             if (Inv_02.Tag == Apple_01.Tag)
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    System.Console.WriteLine("Health Max");
+                    Console.WriteLine("Health Max");
                 }
                 else if (Life.Value + Apple < HealthBarTotal)
                 {
@@ -777,7 +777,7 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    System.Console.WriteLine("Health Max");
+                    Console.WriteLine("Health Max");
                 }
                 else if (Life.Value + Apple < HealthBarTotal)
                 {
@@ -793,7 +793,7 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    System.Console.WriteLine("Health Max");
+                    Console.WriteLine("Health Max");
                 }
                 else if (Life.Value + Banana < HealthBarTotal)
                 {
@@ -808,7 +808,7 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    System.Console.WriteLine("Health Max");
+                    Console.WriteLine("Health Max");
                 }
                 else if (Life.Value + Banana < HealthBarTotal)
                 {
@@ -824,7 +824,7 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    System.Console.WriteLine("Health Max");
+                    Console.WriteLine("Health Max");
                 }
                 else if (Life.Value + Pear < HealthBarTotal)
                 {
@@ -839,7 +839,7 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    System.Console.WriteLine("Health Max");
+                    Console.WriteLine("Health Max");
                 }
                 else if (Life.Value + Pear < HealthBarTotal)
                 {
@@ -853,13 +853,13 @@ namespace tutorial
 // Inv_03
         private void Inv_03_CLick(object sender, EventArgs e)
         {
-            System.Console.WriteLine(Inv_03.Tag);
+            Console.WriteLine(Inv_03.Tag);
             // Apples           
             if (Inv_03.Tag == Apple_01.Tag)
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    System.Console.WriteLine("Health Max");
+                    Console.WriteLine("Health Max");
                 }
                 else if (Life.Value + Apple < HealthBarTotal)
                 {
@@ -874,7 +874,7 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    System.Console.WriteLine("Health Max");
+                    Console.WriteLine("Health Max");
                 }
                 else if (Life.Value + Apple < HealthBarTotal)
                 {
@@ -890,7 +890,7 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    System.Console.WriteLine("Health Max");
+                    Console.WriteLine("Health Max");
                 }
                 else if (Life.Value + Banana < HealthBarTotal)
                 {
@@ -905,7 +905,7 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    System.Console.WriteLine("Health Max");
+                    Console.WriteLine("Health Max");
                 }
                 else if (Life.Value + Banana < HealthBarTotal)
                 {
@@ -920,7 +920,7 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    System.Console.WriteLine("Health Max");
+                    Console.WriteLine("Health Max");
                 }
                 else if (Life.Value + Pear < HealthBarTotal)
                 {
@@ -934,7 +934,7 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    System.Console.WriteLine("Health Max");
+                    Console.WriteLine("Health Max");
                 }
                 else if (Life.Value + Pear < HealthBarTotal)
                 {
@@ -947,13 +947,13 @@ namespace tutorial
 // Inv_04
         private void Inv_04_CLick(object sender, EventArgs e)
         {
-            System.Console.WriteLine(Inv_04.Tag);
+            Console.WriteLine(Inv_04.Tag);
             // Apples           
             if (Inv_04.Tag == Apple_01.Tag)
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    System.Console.WriteLine("Health Max");
+                    Console.WriteLine("Health Max");
                 }
                 else if (Life.Value + Apple < HealthBarTotal)
                 {
@@ -967,7 +967,7 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    System.Console.WriteLine("Health Max");
+                    Console.WriteLine("Health Max");
                 }
                 else if (Life.Value + Apple < HealthBarTotal)
                 {
@@ -982,7 +982,7 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    System.Console.WriteLine("Health Max");
+                    Console.WriteLine("Health Max");
                 }
                 else if (Life.Value + Banana < HealthBarTotal)
                 {
@@ -996,7 +996,7 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    System.Console.WriteLine("Health Max");
+                    Console.WriteLine("Health Max");
                 }
                 else if (Life.Value + Banana < HealthBarTotal)
                 {
@@ -1011,7 +1011,7 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    System.Console.WriteLine("Health Max");
+                    Console.WriteLine("Health Max");
                 }
                 else if (Life.Value + Pear < HealthBarTotal)
                 {
@@ -1025,7 +1025,7 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    System.Console.WriteLine("Health Max");
+                    Console.WriteLine("Health Max");
                 }
                 else if (Life.Value + Pear < HealthBarTotal)
                 {
@@ -1038,13 +1038,13 @@ namespace tutorial
 // Inv_05
         private void Inv_05_CLick(object sender, EventArgs e)
         {
-            System.Console.WriteLine(Inv_05.Tag);
+            Console.WriteLine(Inv_05.Tag);
             // Apples           
             if (Inv_05.Tag == Apple_01.Tag)
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    System.Console.WriteLine("Health Max");
+                    Console.WriteLine("Health Max");
                 }
                 else if (Life.Value + Apple < HealthBarTotal)
                 {
@@ -1058,7 +1058,7 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    System.Console.WriteLine("Health Max");
+                    Console.WriteLine("Health Max");
                 }
                 else if (Life.Value + Apple < HealthBarTotal)
                 {
@@ -1073,7 +1073,7 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    System.Console.WriteLine("Health Max");
+                    Console.WriteLine("Health Max");
                 }
                 else if (Life.Value + Banana < HealthBarTotal)
                 {
@@ -1087,7 +1087,7 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    System.Console.WriteLine("Health Max");
+                    Console.WriteLine("Health Max");
                 }
                 else if (Life.Value + Banana < HealthBarTotal)
                 {
@@ -1102,7 +1102,7 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    System.Console.WriteLine("Health Max");
+                    Console.WriteLine("Health Max");
                 }
                 else if (Life.Value + Pear < HealthBarTotal)
                 {
@@ -1116,7 +1116,7 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    System.Console.WriteLine("Health Max");
+                    Console.WriteLine("Health Max");
                 }
                 else if (Life.Value + Pear < HealthBarTotal)
                 {
@@ -1133,67 +1133,67 @@ namespace tutorial
             #region Inv_Check
             if (Inv_01.Tag != null)
             {
-                System.Console.WriteLine("Inv_01 is Full");
-                System.Console.WriteLine(Inv_01.Tag);
-                System.Console.WriteLine(" ");
+                Console.WriteLine("Inv_01 is Full");
+                Console.WriteLine(Inv_01.Tag);
+                Console.WriteLine(" ");
             }
             else if (Inv_01.Tag == null)
             {
-                System.Console.WriteLine("Inv_01 is Empty");
-                System.Console.WriteLine("Inv_01 = null");
-                System.Console.WriteLine(" ");
+                Console.WriteLine("Inv_01 is Empty");
+                Console.WriteLine("Inv_01 = null");
+                Console.WriteLine(" ");
             }
 
             if (Inv_02.Tag != null)
             {
-                System.Console.WriteLine("Inv_02 is Full");
-                System.Console.WriteLine(Inv_02.Tag);
-                System.Console.WriteLine(" ");
+                Console.WriteLine("Inv_02 is Full");
+                Console.WriteLine(Inv_02.Tag);
+                Console.WriteLine(" ");
             }
             else if (Inv_02.Tag == null)
             {
-                System.Console.WriteLine("Inv_02 is Empty");
-                System.Console.WriteLine("Inv_02 = null");
-                System.Console.WriteLine(" ");
+                Console.WriteLine("Inv_02 is Empty");
+                Console.WriteLine("Inv_02 = null");
+                Console.WriteLine(" ");
             }
 
             if (Inv_03.Tag != null)
             {
-                System.Console.WriteLine("Inv_03 is Full");
-                System.Console.WriteLine(Inv_03.Tag);
-                System.Console.WriteLine(" ");
+                Console.WriteLine("Inv_03 is Full");
+                Console.WriteLine(Inv_03.Tag);
+                Console.WriteLine(" ");
             }
             else if (Inv_03.Tag == null)
             {
-                System.Console.WriteLine("Inv_03 is Empty");
-                System.Console.WriteLine("Inv_03 = null");
-                System.Console.WriteLine(" ");
+                Console.WriteLine("Inv_03 is Empty");
+                Console.WriteLine("Inv_03 = null");
+                Console.WriteLine(" ");
             }
 
             if (Inv_04.Tag != null)
             {
-                System.Console.WriteLine("Inv_04 is Full");
-                System.Console.WriteLine(Inv_04.Tag);
-                System.Console.WriteLine(" ");
+                Console.WriteLine("Inv_04 is Full");
+                Console.WriteLine(Inv_04.Tag);
+                Console.WriteLine(" ");
             }
             else if (Inv_04.Tag == null)
             {
-                System.Console.WriteLine("Inv_04 is Empty");
-                System.Console.WriteLine("Inv_04 = null");
-                System.Console.WriteLine(" ");
+                Console.WriteLine("Inv_04 is Empty");
+                Console.WriteLine("Inv_04 = null");
+                Console.WriteLine(" ");
             }
 
             if (Inv_05.Tag != null)
             {
-                System.Console.WriteLine("Inv_05 is Full");
-                System.Console.WriteLine(Inv_05.Tag);
-                System.Console.WriteLine(" ");
+                Console.WriteLine("Inv_05 is Full");
+                Console.WriteLine(Inv_05.Tag);
+                Console.WriteLine(" ");
             }
             else if (Inv_05.Tag == null)
             {
-                System.Console.WriteLine("Inv_05 is Empty");
-                System.Console.WriteLine("Inv_05 = null");
-                System.Console.WriteLine(" ");
+                Console.WriteLine("Inv_05 is Empty");
+                Console.WriteLine("Inv_05 = null");
+                Console.WriteLine(" ");
             }
             #endregion
         }
@@ -1365,8 +1365,8 @@ namespace tutorial
         {
             Text = "Game";
             GodMode = false;
-            Life.Value = 100;
-            Life2.Value = 100;
+            Life.Value = 1;
+            Life2.Value = 1;
             Inv_01.Tag = null;
             Inv_02.Tag = null;
             Inv_03.Tag = null;
@@ -1718,6 +1718,7 @@ namespace tutorial
         }
 
         #endregion
+
         #endregion
 
     }

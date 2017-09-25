@@ -53,14 +53,14 @@ namespace tutorial
         {
            int NumberLocal = Decimal.ToInt32(CodeLength.Value);
            NumericBox = NumberLocal;
-           System.Console.WriteLine(CodeLength.Value);
+            Console.WriteLine(CodeLength.Value);
         }
 
         public void CodeLength_x_ValueChanged(object sender, EventArgs e)
         {
             int NumberLocal2 = Decimal.ToInt32(CodeLength_x.Value);
             NumericBox2 = NumberLocal2;
-            System.Console.WriteLine(CodeLength_x.Value);
+            Console.WriteLine(CodeLength_x.Value);
         }
         #endregion
         #region Buttons
@@ -79,7 +79,7 @@ namespace tutorial
             MessageBoxButtons buttons2 = MessageBoxButtons.YesNo;
             DialogResult result;
             DialogResult result2;
-            System.Console.WriteLine(caption + ": " + message);
+            Console.WriteLine(caption + ": " + message);
 
             result = MessageBox.Show(message, caption, buttons);
             if (result == System.Windows.Forms.DialogResult.OK)
@@ -91,7 +91,7 @@ namespace tutorial
                 result2 = MessageBox.Show(message2, caption, buttons2);
                 if (result2 == System.Windows.Forms.DialogResult.Yes)
                 {
-                      System.Console.WriteLine(caption + ": " + "Canceling Generation Of Codes");
+                    Console.WriteLine(caption + ": " + "Canceling Generation Of Codes");
                       MessageBox.Show("Canceling Generation Of Codes", caption);
                 }
 
@@ -149,7 +149,7 @@ namespace tutorial
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            System.Console.WriteLine("NumericBox = " + NumericBox + "   " + "NumericBox 2 = " + NumericBox2 + "   " + "Number = " + Number + "   " + "Number 2 = " + Number2 + "   " + "Number Total = " + NumberTotal + "   " + "i = " + i);
+            Console.WriteLine("NumericBox = " + NumericBox + "   " + "NumericBox 2 = " + NumericBox2 + "   " + "Number = " + Number + "   " + "Number 2 = " + Number2 + "   " + "Number Total = " + NumberTotal + "   " + "i = " + i);
         }
 
         private void timer2_Tick(object sender, EventArgs e)
@@ -239,7 +239,7 @@ namespace tutorial
                 Running = 1;
                 richTextBox1.Text += RandomUtil.GetRandomString() + Environment.NewLine;
                 i++;
-                System.Console.WriteLine("i = " + i);
+                Console.WriteLine("i = " + i);
             }
 
             if (i == NumberTotal)
