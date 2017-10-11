@@ -52,9 +52,9 @@
             // 
             // Exit_Button
             // 
-            this.Exit_Button.Location = new System.Drawing.Point(147, 226);
+            this.Exit_Button.Location = new System.Drawing.Point(147, 197);
             this.Exit_Button.Name = "Exit_Button";
-            this.Exit_Button.Size = new System.Drawing.Size(126, 23);
+            this.Exit_Button.Size = new System.Drawing.Size(126, 52);
             this.Exit_Button.TabIndex = 1;
             this.Exit_Button.Text = "Exit Program";
             this.Exit_Button.UseVisualStyleBackColor = true;
@@ -62,9 +62,9 @@
             // 
             // GoBackButton
             // 
-            this.GoBackButton.Location = new System.Drawing.Point(13, 226);
+            this.GoBackButton.Location = new System.Drawing.Point(13, 197);
             this.GoBackButton.Name = "GoBackButton";
-            this.GoBackButton.Size = new System.Drawing.Size(127, 23);
+            this.GoBackButton.Size = new System.Drawing.Size(127, 52);
             this.GoBackButton.TabIndex = 2;
             this.GoBackButton.Text = "Go Back";
             this.GoBackButton.UseVisualStyleBackColor = true;
@@ -74,10 +74,11 @@
             // 
             this.LoadGameButton.Location = new System.Drawing.Point(13, 197);
             this.LoadGameButton.Name = "LoadGameButton";
-            this.LoadGameButton.Size = new System.Drawing.Size(260, 23);
+            this.LoadGameButton.Size = new System.Drawing.Size(260, 52);
             this.LoadGameButton.TabIndex = 3;
             this.LoadGameButton.Text = "Level Code ";
             this.LoadGameButton.UseVisualStyleBackColor = true;
+            this.LoadGameButton.Visible = false;
             this.LoadGameButton.Click += new System.EventHandler(this.LoadGameButton_Click);
             // 
             // openFileDialog1

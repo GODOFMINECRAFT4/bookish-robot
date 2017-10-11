@@ -46,11 +46,11 @@
             // 
             // submit_button
             // 
-            this.submit_button.Location = new System.Drawing.Point(105, 99);
+            this.submit_button.Location = new System.Drawing.Point(15, 25);
             this.submit_button.Name = "submit_button";
-            this.submit_button.Size = new System.Drawing.Size(75, 23);
+            this.submit_button.Size = new System.Drawing.Size(257, 71);
             this.submit_button.TabIndex = 0;
-            this.submit_button.Text = "Submit";
+            this.submit_button.Text = "Start";
             this.submit_button.UseVisualStyleBackColor = true;
             this.submit_button.Click += new System.EventHandler(this.submit_button_Click);
             // 
@@ -60,9 +60,9 @@
             this.main_text.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.main_text.Location = new System.Drawing.Point(71, 9);
             this.main_text.Name = "main_text";
-            this.main_text.Size = new System.Drawing.Size(158, 13);
+            this.main_text.Size = new System.Drawing.Size(183, 13);
             this.main_text.TabIndex = 1;
-            this.main_text.Text = "Please type your details to login.";
+            this.main_text.Text = "Push Start To Go To The Main Menu";
             this.main_text.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.main_text.Click += new System.EventHandler(this.main_text_Click);
             // 
@@ -103,9 +103,9 @@
             // 
             // DebugButton
             // 
-            this.DebugButton.Location = new System.Drawing.Point(197, 99);
+            this.DebugButton.Location = new System.Drawing.Point(98, 99);
             this.DebugButton.Name = "DebugButton";
-            this.DebugButton.Size = new System.Drawing.Size(75, 23);
+            this.DebugButton.Size = new System.Drawing.Size(174, 23);
             this.DebugButton.TabIndex = 6;
             this.DebugButton.Text = "Debug ";
             this.DebugButton.UseVisualStyleBackColor = true;
@@ -139,6 +139,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 134);
+            this.Controls.Add(this.submit_button);
             this.Controls.Add(this.numericUpDown2);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.DebugButton);
@@ -147,7 +148,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.main_text);
-            this.Controls.Add(this.submit_button);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;

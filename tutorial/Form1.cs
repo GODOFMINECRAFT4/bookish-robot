@@ -76,7 +76,8 @@ namespace tutorial
         {
             if(NumUD1 == 1)
             {
-
+                LevelCodeGen open_form = new LevelCodeGen();
+                open_form.Visible = true;
             }
             if (NumUD2 == 1)
             {
@@ -96,7 +97,7 @@ namespace tutorial
         }
         private void numericUpDown2_ValueChanged(object sender, EventArgs e)
         {
-
+            NumUD2 = Convert.ToInt32(numericUpDown2.Value);
         }
 
         private void Form1_Activated(object sender, EventArgs e)

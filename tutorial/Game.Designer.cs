@@ -83,6 +83,7 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.Player1 = new System.Windows.Forms.PictureBox();
             this.Inv_Blank = new System.Windows.Forms.PictureBox();
+            this.Inv_06 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Pear_02)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Banana_02)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Apple_02)).BeginInit();
@@ -99,6 +100,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Enemy_01)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Player1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Inv_Blank)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Inv_06)).BeginInit();
             this.SuspendLayout();
             // 
             // Player
@@ -547,12 +549,23 @@
             // Inv_Blank
             // 
             this.Inv_Blank.Image = global::tutorial.Properties.Resources.Blank_Inv;
-            this.Inv_Blank.Location = new System.Drawing.Point(812, 9);
+            this.Inv_Blank.Location = new System.Drawing.Point(812, 12);
             this.Inv_Blank.Name = "Inv_Blank";
             this.Inv_Blank.Size = new System.Drawing.Size(32, 32);
             this.Inv_Blank.TabIndex = 22;
             this.Inv_Blank.TabStop = false;
             this.Inv_Blank.Visible = false;
+            // 
+            // Inv_06
+            // 
+            this.Inv_06.Image = ((System.Drawing.Image)(resources.GetObject("Inv_06.Image")));
+            this.Inv_06.InitialImage = ((System.Drawing.Image)(resources.GetObject("Inv_06.InitialImage")));
+            this.Inv_06.Location = new System.Drawing.Point(774, 12);
+            this.Inv_06.Name = "Inv_06";
+            this.Inv_06.Size = new System.Drawing.Size(32, 32);
+            this.Inv_06.TabIndex = 23;
+            this.Inv_06.TabStop = false;
+            this.Inv_06.Click += new System.EventHandler(this.Inv_06_Click);
             // 
             // Game
             // 
@@ -560,7 +573,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1008, 729);
-            this.Controls.Add(this.Inv_05);
+            this.Controls.Add(this.Inv_06);
             this.Controls.Add(this.Player1);
             this.Controls.Add(this.Enemy_01);
             this.Controls.Add(this.statusStrip1);
@@ -580,6 +593,7 @@
             this.Controls.Add(this.Player);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.Inv_05);
             this.Controls.Add(this.Inv_Blank);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -614,6 +628,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Enemy_01)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Player1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Inv_Blank)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Inv_06)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -674,5 +689,6 @@
         public System.Windows.Forms.PictureBox Enemy_01;
         private System.Windows.Forms.PictureBox Player1;
         private System.Windows.Forms.PictureBox Inv_Blank;
+        private System.Windows.Forms.PictureBox Inv_06;
     }
 }

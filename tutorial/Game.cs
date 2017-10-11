@@ -21,13 +21,13 @@ namespace tutorial
         bool up;                    // Up    KeyPress   Var {True = Pressed, False = Not Pressed}
         bool down;                  // Down  KeyPress   Var {True = Pressed, False = Not Pressed}
         bool GodMode = false;       // God Mode Enabled Var {True = Pressed, False = Not Pressed}
-        int Apple = 5;              // Apple   Health Gain Value
-        int Pear = 10;              // Pear    Health Gain Value
-        int Banana = 15;            // Banana  Health Gain Value
+        int Apple = 5;              // Apple   Score Gain Value
+        int Pear = 10;              // Pear    Score Gain Value
+        int Banana = 15;            // Banana  Score Gain Value
         int Speed = 5;              // Speed Value Var
         int Debug = 1;              // Debug  Enabled Var {1 = True, 0 = False}
         int NumPadEnable = 1;       // NumPad Enabled Var {1 = True, 0 = False}
-        int HealthBarTotal = 101;   // HealthBarTotal Var {Life.Maximum + 1}
+        int ScoreBarTotal = 101;   // ScoreBarTotal Var {Life.Maximum + 1}
         string DebugText;           // Inv Check Text Store Var
         string downtext;            // downtext = "Down = " + down + "   "
         string uptext;              // uptext = "Up = " + up + "   "
@@ -348,12 +348,12 @@ namespace tutorial
             // Life
             if (key.KeyCode == Keys.H)
             {
-                LoseHealth(10);
+                LoseScore(10);
             }
 
             if (key.KeyCode == Keys.J)
             {
-                GainHealth(10);
+                GainScore(10);
             }
 
             #endregion
@@ -492,25 +492,25 @@ namespace tutorial
                 if (GodMode == false)
                 {
                     //DamageValues(10);
-                    LoseHealth(1 * 5);
+                    LoseScore(1 * 5);
                 }
 
                 else if (GodMode == true)
                 {
-                    LoseHealth(1 * 0);
+                    LoseScore(1 * 0);
                 }
 
             }
         }
          
         #endregion
-        #region Health
+        #region Score
 
-        public void LoseHealth(int lose)
+        public void LoseScore(int lose)
         {
             if (Life.Value == Life.Minimum)
             {
-                Console.WriteLine("Health Min");
+                Console.WriteLine("Score Min");
 
                 string LHMessage = "You Died, Game Over" + Environment.NewLine + " Would You Like to Restart The Level";
                 string LHCaption = "Game Over";
@@ -532,27 +532,27 @@ namespace tutorial
             else if (Life.Value > Life.Minimum)
             {
                 Life.Value -= lose;
-                LifeLabel.Text = "Health = " + Life.Value;
+                LifeLabel.Text = "Score = " + Life.Value;
                 Life2.Value -= lose;
-                LifeLabel2.Text = "Health = " + Life2.Value;
+                LifeLabel2.Text = "Score = " + Life2.Value;
                 Console.Write("Life Value = " + Life.Value + "   " + "Life2 Value = " + Life2.Value + "   " + "Lose Value = " + lose + "   ");
                 Console.WriteLine(Life.Value > Life.Minimum);
             }
             //Life.Value -= 10;
         }
 
-        public void GainHealth(int gain)
+        public void GainScore(int gain)
         {
             if (Life.Value == Life.Maximum)
             {
-                Console.WriteLine("Health Max");
+                Console.WriteLine("Score Max");
             }
             else if (Life.Value + gain < Life.Maximum + 1)
             {
                 Life.Value += gain;
-                LifeLabel.Text = "Health = " + Life.Value;
+                LifeLabel.Text = "Score = " + Life.Value;
                 Life2.Value += gain;
-                LifeLabel2.Text = "Health = " + Life2.Value;
+                LifeLabel2.Text = "Score = " + Life2.Value;
                 Console.Write("Life Value = " + Life.Value + "   " + "Life2 Value = " + Life2.Value + "   " + "Gain Value = " + gain + "   ");
                 Console.WriteLine(Life.Value + gain < Life.Maximum + 1);
             }
@@ -561,14 +561,14 @@ namespace tutorial
             {
                 Console.WriteLine("Score Cant Go Above " + Life.Maximum  + " Idiot");
             }
-     #region Commented Health code
+     #region Commented Score code
             /*
             else if (gain == 5)
             {
                 Life.PerformStep();
                 Life2.PerformStep();
-                LifeLabel.Text = "Health = " + Life.Value;
-                LifeLabel2.Text = "Health = " + Life2.Value;
+                LifeLabel.Text = "Score = " + Life.Value;
+                LifeLabel2.Text = "Score = " + Life2.Value;
                 System.Console.Write("Life Value = " + Life.Value + "   " + "Life2 Value = " + Life2.Value + "   " + "Gain Value = " + gain + "   ");
                 System.Console.WriteLine(Life.Value + gain < Life.Maximum + 1);
             }
@@ -579,8 +579,8 @@ namespace tutorial
                 Life.PerformStep();
                 Life2.PerformStep();
                 Life2.PerformStep();
-                LifeLabel.Text = "Health = " + Life.Value;
-                LifeLabel2.Text = "Health = " + Life2.Value;
+                LifeLabel.Text = "Score = " + Life.Value;
+                LifeLabel2.Text = "Score = " + Life2.Value;
                 System.Console.Write("Life Value = " + Life.Value + "   " + "Life2 Value = " + Life2.Value + "   " + "Gain Value = " + gain + "   ");
                 System.Console.WriteLine(Life.Value + gain < Life.Maximum + 1);
             }
@@ -593,8 +593,8 @@ namespace tutorial
                 Life2.PerformStep();
                 Life2.PerformStep();
                 Life2.PerformStep();
-                LifeLabel.Text = "Health = " + Life.Value;
-                LifeLabel2.Text = "Health = " + Life2.Value;
+                LifeLabel.Text = "Score = " + Life.Value;
+                LifeLabel2.Text = "Score = " + Life2.Value;
                 System.Console.Write("Life Value = " + Life.Value + "   " + "Life2 Value = " + Life2.Value + "   " + "Gain Value = " + gain + "   ");
                 System.Console.WriteLine(Life.Value + gain < Life.Maximum + 1);
             }*/
@@ -664,11 +664,11 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    Console.WriteLine("Health Max");
+                    Console.WriteLine("Score Max");
                 }
-                else if (Life.Value  + Apple < HealthBarTotal)
+                else if (Life.Value  + Apple < ScoreBarTotal)
                 {
-                    GainHealth(Apple);
+                    GainScore(Apple);
                     TakeFromInv(Inv_01);
                     Inv_01.Image = Inv_Blank.Image;
                     apple_01 = 0;
@@ -679,11 +679,11 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    Console.WriteLine("Health Max");
+                    Console.WriteLine("Score Max");
                 }
-                else if (Life.Value + Apple < HealthBarTotal)
+                else if (Life.Value + Apple < ScoreBarTotal)
                 {
-                    GainHealth(Apple);
+                    GainScore(Apple);
                     TakeFromInv(Inv_01);
                     Inv_01.Image = Inv_Blank.Image;
                     apple_02 = 0;
@@ -695,11 +695,11 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    Console.WriteLine("Health Max");
+                    Console.WriteLine("Score Max");
                 }
-                else if (Life.Value + Banana < HealthBarTotal)
+                else if (Life.Value + Banana < ScoreBarTotal)
                 {
-                    GainHealth(Banana);
+                    GainScore(Banana);
                     TakeFromInv(Inv_01);
                     Inv_01.Image = Inv_Blank.Image;
                     banana_01 = 0;
@@ -710,11 +710,11 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    Console.WriteLine("Health Max");
+                    Console.WriteLine("Score Max");
                 }
-                else if (Life.Value + Banana < HealthBarTotal)
+                else if (Life.Value + Banana < ScoreBarTotal)
                 {
-                    GainHealth(Banana);
+                    GainScore(Banana);
                     TakeFromInv(Inv_01);
                     Inv_01.Image = Inv_Blank.Image;
                     banana_02 = 0;
@@ -726,11 +726,11 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    Console.WriteLine("Health Max");
+                    Console.WriteLine("Score Max");
                 }
-                else if (Life.Value + Pear < HealthBarTotal)
+                else if (Life.Value + Pear < ScoreBarTotal)
                 {
-                    GainHealth(Pear);
+                    GainScore(Pear);
                     TakeFromInv(Inv_01);
                     Inv_01.Image = Inv_Blank.Image;
                     pear_01 = 0;
@@ -741,11 +741,11 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    Console.WriteLine("Health Max");
+                    Console.WriteLine("Score Max");
                 }
-                else if (Life.Value + Pear < HealthBarTotal)
+                else if (Life.Value + Pear < ScoreBarTotal)
                 {
-                    GainHealth(Pear);
+                    GainScore(Pear);
                     TakeFromInv(Inv_01);
                     Inv_01.Image = Inv_Blank.Image;
                     pear_02 = 0;
@@ -762,11 +762,11 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    Console.WriteLine("Health Max");
+                    Console.WriteLine("Score Max");
                 }
-                else if (Life.Value + Apple < HealthBarTotal)
+                else if (Life.Value + Apple < ScoreBarTotal)
                 {
-                    GainHealth(Apple);
+                    GainScore(Apple);
                     TakeFromInv(Inv_02);
                     Inv_02.Image = Inv_Blank.Image;
                     apple_01 = 0;
@@ -777,11 +777,11 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    Console.WriteLine("Health Max");
+                    Console.WriteLine("Score Max");
                 }
-                else if (Life.Value + Apple < HealthBarTotal)
+                else if (Life.Value + Apple < ScoreBarTotal)
                 {
-                    GainHealth(Apple);
+                    GainScore(Apple);
                     TakeFromInv(Inv_02);
                     Inv_02.Image = Inv_Blank.Image;
                     apple_02 = 0;
@@ -793,11 +793,11 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    Console.WriteLine("Health Max");
+                    Console.WriteLine("Score Max");
                 }
-                else if (Life.Value + Banana < HealthBarTotal)
+                else if (Life.Value + Banana < ScoreBarTotal)
                 {
-                    GainHealth(Banana);
+                    GainScore(Banana);
                     TakeFromInv(Inv_02);
                     Inv_02.Image = Inv_Blank.Image;
                     banana_01 = 0;
@@ -808,11 +808,11 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    Console.WriteLine("Health Max");
+                    Console.WriteLine("Score Max");
                 }
-                else if (Life.Value + Banana < HealthBarTotal)
+                else if (Life.Value + Banana < ScoreBarTotal)
                 {
-                    GainHealth(Banana);
+                    GainScore(Banana);
                     TakeFromInv(Inv_02);
                     Inv_02.Image = Inv_Blank.Image;
                     banana_02 = 0;
@@ -824,11 +824,11 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    Console.WriteLine("Health Max");
+                    Console.WriteLine("Score Max");
                 }
-                else if (Life.Value + Pear < HealthBarTotal)
+                else if (Life.Value + Pear < ScoreBarTotal)
                 {
-                    GainHealth(Pear);
+                    GainScore(Pear);
                     TakeFromInv(Inv_02);
                     Inv_02.Image = Inv_Blank.Image;
                     pear_01 = 0;
@@ -839,11 +839,11 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    Console.WriteLine("Health Max");
+                    Console.WriteLine("Score Max");
                 }
-                else if (Life.Value + Pear < HealthBarTotal)
+                else if (Life.Value + Pear < ScoreBarTotal)
                 {
-                    GainHealth(Pear);
+                    GainScore(Pear);
                     TakeFromInv(Inv_02);
                     Inv_02.Image = Inv_Blank.Image;
                     pear_02 = 0;
@@ -859,11 +859,11 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    Console.WriteLine("Health Max");
+                    Console.WriteLine("Score Max");
                 }
-                else if (Life.Value + Apple < HealthBarTotal)
+                else if (Life.Value + Apple < ScoreBarTotal)
                 {
-                    GainHealth(Apple);
+                    GainScore(Apple);
                     TakeFromInv(Inv_03);
                     Inv_03.Image = Inv_Blank.Image;
                     apple_01 = 0;
@@ -874,11 +874,11 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    Console.WriteLine("Health Max");
+                    Console.WriteLine("Score Max");
                 }
-                else if (Life.Value + Apple < HealthBarTotal)
+                else if (Life.Value + Apple < ScoreBarTotal)
                 {
-                    GainHealth(Apple);
+                    GainScore(Apple);
                     TakeFromInv(Inv_03);
                     Inv_03.Image = Inv_Blank.Image;
                     apple_02 = 0;
@@ -890,11 +890,11 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    Console.WriteLine("Health Max");
+                    Console.WriteLine("Score Max");
                 }
-                else if (Life.Value + Banana < HealthBarTotal)
+                else if (Life.Value + Banana < ScoreBarTotal)
                 {
-                    GainHealth(Banana);
+                    GainScore(Banana);
                     TakeFromInv(Inv_03);
                     Inv_03.Image = Inv_Blank.Image;
                     banana_01 = 0;
@@ -905,11 +905,11 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    Console.WriteLine("Health Max");
+                    Console.WriteLine("Score Max");
                 }
-                else if (Life.Value + Banana < HealthBarTotal)
+                else if (Life.Value + Banana < ScoreBarTotal)
                 {
-                    GainHealth(Banana);
+                    GainScore(Banana);
                     TakeFromInv(Inv_03);
                     Inv_03.Image = Inv_Blank.Image;
                 }
@@ -920,11 +920,11 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    Console.WriteLine("Health Max");
+                    Console.WriteLine("Score Max");
                 }
-                else if (Life.Value + Pear < HealthBarTotal)
+                else if (Life.Value + Pear < ScoreBarTotal)
                 {
-                    GainHealth(Pear);
+                    GainScore(Pear);
                     TakeFromInv(Inv_03);
                     Inv_03.Image = Inv_Blank.Image;
                 }
@@ -934,11 +934,11 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    Console.WriteLine("Health Max");
+                    Console.WriteLine("Score Max");
                 }
-                else if (Life.Value + Pear < HealthBarTotal)
+                else if (Life.Value + Pear < ScoreBarTotal)
                 {
-                    GainHealth(Pear);
+                    GainScore(Pear);
                     TakeFromInv(Inv_03);
                     Inv_03.Image = Inv_Blank.Image;
                 }
@@ -953,11 +953,11 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    Console.WriteLine("Health Max");
+                    Console.WriteLine("Score Max");
                 }
-                else if (Life.Value + Apple < HealthBarTotal)
+                else if (Life.Value + Apple < ScoreBarTotal)
                 {
-                    GainHealth(Apple);
+                    GainScore(Apple);
                     TakeFromInv(Inv_04);
                     Inv_04.Image = Inv_Blank.Image;
                 }
@@ -967,11 +967,11 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    Console.WriteLine("Health Max");
+                    Console.WriteLine("Score Max");
                 }
-                else if (Life.Value + Apple < HealthBarTotal)
+                else if (Life.Value + Apple < ScoreBarTotal)
                 {
-                    GainHealth(Apple);
+                    GainScore(Apple);
                     TakeFromInv(Inv_04);
                     Inv_04.Image = Inv_Blank.Image;
                 }
@@ -982,11 +982,11 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    Console.WriteLine("Health Max");
+                    Console.WriteLine("Score Max");
                 }
-                else if (Life.Value + Banana < HealthBarTotal)
+                else if (Life.Value + Banana < ScoreBarTotal)
                 {
-                    GainHealth(Banana);
+                    GainScore(Banana);
                     TakeFromInv(Inv_04);
                     Inv_04.Image = Inv_Blank.Image;
                 }
@@ -996,11 +996,11 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    Console.WriteLine("Health Max");
+                    Console.WriteLine("Score Max");
                 }
-                else if (Life.Value + Banana < HealthBarTotal)
+                else if (Life.Value + Banana < ScoreBarTotal)
                 {
-                    GainHealth(Banana);
+                    GainScore(Banana);
                     TakeFromInv(Inv_04);
                     Inv_04.Image = Inv_Blank.Image;
                 }
@@ -1011,11 +1011,11 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    Console.WriteLine("Health Max");
+                    Console.WriteLine("Score Max");
                 }
-                else if (Life.Value + Pear < HealthBarTotal)
+                else if (Life.Value + Pear < ScoreBarTotal)
                 {
-                    GainHealth(Pear);
+                    GainScore(Pear);
                     TakeFromInv(Inv_04);
                     Inv_04.Image = Inv_Blank.Image;
                 }
@@ -1025,11 +1025,11 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    Console.WriteLine("Health Max");
+                    Console.WriteLine("Score Max");
                 }
-                else if (Life.Value + Pear < HealthBarTotal)
+                else if (Life.Value + Pear < ScoreBarTotal)
                 {
-                    GainHealth(Pear);
+                    GainScore(Pear);
                     TakeFromInv(Inv_04);
                     Inv_04.Image = Inv_Blank.Image;
                 }
@@ -1044,11 +1044,11 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    Console.WriteLine("Health Max");
+                    Console.WriteLine("Score Max");
                 }
-                else if (Life.Value + Apple < HealthBarTotal)
+                else if (Life.Value + Apple < ScoreBarTotal)
                 {
-                    GainHealth(Apple);
+                    GainScore(Apple);
                     TakeFromInv(Inv_05);
                     Inv_05.Image = Inv_Blank.Image;
                 }
@@ -1058,11 +1058,11 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    Console.WriteLine("Health Max");
+                    Console.WriteLine("Score Max");
                 }
-                else if (Life.Value + Apple < HealthBarTotal)
+                else if (Life.Value + Apple < ScoreBarTotal)
                 {
-                    GainHealth(Apple);
+                    GainScore(Apple);
                     TakeFromInv(Inv_05);
                     Inv_05.Image = Inv_Blank.Image;
                 }
@@ -1073,11 +1073,11 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    Console.WriteLine("Health Max");
+                    Console.WriteLine("Score Max");
                 }
-                else if (Life.Value + Banana < HealthBarTotal)
+                else if (Life.Value + Banana < ScoreBarTotal)
                 {
-                    GainHealth(Banana);
+                    GainScore(Banana);
                     TakeFromInv(Inv_05);
                     Inv_05.Image = Inv_Blank.Image;
                 }
@@ -1087,11 +1087,11 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    Console.WriteLine("Health Max");
+                    Console.WriteLine("Score Max");
                 }
-                else if (Life.Value + Banana < HealthBarTotal)
+                else if (Life.Value + Banana < ScoreBarTotal)
                 {
-                    GainHealth(Banana);
+                    GainScore(Banana);
                     TakeFromInv(Inv_05);
                     Inv_05.Image = Inv_Blank.Image;
                 }
@@ -1102,11 +1102,11 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    Console.WriteLine("Health Max");
+                    Console.WriteLine("Score Max");
                 }
-                else if (Life.Value + Pear < HealthBarTotal)
+                else if (Life.Value + Pear < ScoreBarTotal)
                 {
-                    GainHealth(Pear);
+                    GainScore(Pear);
                     TakeFromInv(Inv_05);
                     Inv_05.Image = Inv_Blank.Image;
                 }
@@ -1116,16 +1116,108 @@ namespace tutorial
             {
                 if (Life.Value == Life.Maximum)
                 {
-                    Console.WriteLine("Health Max");
+                    Console.WriteLine("Score Max");
                 }
-                else if (Life.Value + Pear < HealthBarTotal)
+                else if (Life.Value + Pear < ScoreBarTotal)
                 {
-                    GainHealth(Pear);
+                    GainScore(Pear);
                     TakeFromInv(Inv_05);
                     Inv_05.Image = Inv_Blank.Image;
                 }
             }
         }
+// Inv_06
+        private void Inv_06_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine(Inv_06.Tag);
+            // Apples           
+            if (Inv_06.Tag == Apple_01.Tag)
+            {
+                if (Life.Value == Life.Maximum)
+                {
+                    Console.WriteLine("Score Max");
+                }
+                else if (Life.Value + Apple < ScoreBarTotal)
+                {
+                    GainScore(Apple);
+                    TakeFromInv(Inv_06);
+                    Inv_06.Image = Inv_Blank.Image;
+                }
+            }
+
+            else if (Inv_06.Tag == Apple_02.Tag)
+            {
+                if (Life.Value == Life.Maximum)
+                {
+                    Console.WriteLine("Score Max");
+                }
+                else if (Life.Value + Apple < ScoreBarTotal)
+                {
+                    GainScore(Apple);
+                    TakeFromInv(Inv_06);
+                    Inv_06.Image = Inv_Blank.Image;
+                }
+            }
+
+            // Bananas
+            else if (Inv_06.Tag == Banana_01.Tag)
+            {
+                if (Life.Value == Life.Maximum)
+                {
+                    Console.WriteLine("Score Max");
+                }
+                else if (Life.Value + Banana < ScoreBarTotal)
+                {
+                    GainScore(Banana);
+                    TakeFromInv(Inv_06);
+                    Inv_06.Image = Inv_Blank.Image;
+                }
+            }
+
+            else if (Inv_06.Tag == Banana_02.Tag)
+            {
+                if (Life.Value == Life.Maximum)
+                {
+                    Console.WriteLine("Score Max");
+                }
+                else if (Life.Value + Banana < ScoreBarTotal)
+                {
+                    GainScore(Banana);
+                    TakeFromInv(Inv_06);
+                    Inv_06.Image = Inv_Blank.Image;
+                }
+            }
+
+            // Pears
+            else if (Inv_06.Tag == Pear_01.Tag)
+            {
+                if (Life.Value == Life.Maximum)
+                {
+                    Console.WriteLine("Score Max");
+                }
+                else if (Life.Value + Pear < ScoreBarTotal)
+                {
+                    GainScore(Pear);
+                    TakeFromInv(Inv_06);
+                    Inv_06.Image = Inv_Blank.Image;
+                }
+            }
+
+            else if (Inv_06.Tag == Pear_02.Tag)
+            {
+                if (Life.Value == Life.Maximum)
+                {
+                    Console.WriteLine("Score Max");
+                }
+                else if (Life.Value + Pear < ScoreBarTotal)
+                {
+                    GainScore(Pear);
+                    TakeFromInv(Inv_06);
+                    Inv_06.Image = Inv_Blank.Image;
+                }
+            }
+        }
+
         #endregion
         #region Debug menu 1
         private void MenuItemDebugInfo_Click(object sender, EventArgs e)
@@ -1290,15 +1382,15 @@ namespace tutorial
 
         private void DebugMenuItem2_Click(object sender, EventArgs e)
         {
-            //God Mode, Infinate Health
+            //God Mode, Infinate Score
             if (!GodMode)
             {
                 GodMode = true;
                 TextBoxGod.Text = "God Mode = " + GodMode ;
                 Life.Value = 100;
-                LifeLabel.Text = "Health - " + Life.Value;
+                LifeLabel.Text = "Score - " + Life.Value;
                 Life2.Value = 100;
-                LifeLabel2.Text = "Health - " + Life2.Value;
+                LifeLabel2.Text = "Score - " + Life2.Value;
             }
 
             else
@@ -1381,8 +1473,8 @@ namespace tutorial
             DebugTextBox.Text = "Speed = " + Speed;
             SpeedTextBox.Text = "Speed = " + Speed;
             TextBoxGod.Text = "God Mode = " + GodMode;
-            LifeLabel.Text = "Health = " + Life.Value;
-            LifeLabel2.Text = "Health = " + Life2.Value;
+            LifeLabel.Text = "Score = " + Life.Value;
+            LifeLabel2.Text = "Score = " + Life2.Value;
             downtext = "Down = " + down;
             uptext = "Up = " + up;
             lefttext = "Left = " + left;
