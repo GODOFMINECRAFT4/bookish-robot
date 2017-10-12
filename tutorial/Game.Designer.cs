@@ -84,6 +84,7 @@
             this.Player1 = new System.Windows.Forms.PictureBox();
             this.Inv_Blank = new System.Windows.Forms.PictureBox();
             this.Inv_06 = new System.Windows.Forms.PictureBox();
+            this.timer4 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Pear_02)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Banana_02)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Apple_02)).BeginInit();
@@ -276,7 +277,7 @@
             this.MenuItemDebugInfo,
             this.MenuItemDebugInfo_2});
             this.MenuItemDebug.Name = "MenuItemDebug";
-            this.MenuItemDebug.Size = new System.Drawing.Size(121, 22);
+            this.MenuItemDebug.Size = new System.Drawing.Size(152, 22);
             this.MenuItemDebug.Text = "Debug";
             // 
             // MenuItemDebugInfo
@@ -296,19 +297,19 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(118, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
             // 
             // MenuItemExit
             // 
             this.MenuItemExit.Name = "MenuItemExit";
-            this.MenuItemExit.Size = new System.Drawing.Size(121, 22);
+            this.MenuItemExit.Size = new System.Drawing.Size(152, 22);
             this.MenuItemExit.Text = "Exit";
             this.MenuItemExit.Click += new System.EventHandler(this.MenuItemExit_Click);
             // 
             // ButtonIDSaveAs
             // 
             this.ButtonIDSaveAs.Name = "ButtonIDSaveAs";
-            this.ButtonIDSaveAs.Size = new System.Drawing.Size(121, 22);
+            this.ButtonIDSaveAs.Size = new System.Drawing.Size(152, 22);
             this.ButtonIDSaveAs.Text = "Save Log";
             this.ButtonIDSaveAs.Click += new System.EventHandler(this.ButtonIDSaveAs_Click);
             // 
@@ -423,9 +424,9 @@
             this.LifeLabel.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.LifeLabel.Location = new System.Drawing.Point(185, 31);
             this.LifeLabel.Name = "LifeLabel";
-            this.LifeLabel.Size = new System.Drawing.Size(65, 13);
+            this.LifeLabel.Size = new System.Drawing.Size(50, 13);
             this.LifeLabel.TabIndex = 15;
-            this.LifeLabel.Text = "Health - 100";
+            this.LifeLabel.Text = "Score - 0";
             this.LifeLabel.Click += new System.EventHandler(this.LifeLabel_Click);
             // 
             // SpeedLabel
@@ -476,8 +477,8 @@
             // LifeLabel2
             // 
             this.LifeLabel2.Name = "LifeLabel2";
-            this.LifeLabel2.Size = new System.Drawing.Size(71, 17);
-            this.LifeLabel2.Text = "Health - 100";
+            this.LifeLabel2.Size = new System.Drawing.Size(53, 17);
+            this.LifeLabel2.Text = "Score - 0";
             this.LifeLabel2.Click += new System.EventHandler(this.LifeLabel2_Click);
             // 
             // Spacer2
@@ -506,6 +507,7 @@
             // 
             // timer3
             // 
+            this.timer3.Interval = 50;
             this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
             // 
             // notifyIcon1
@@ -540,7 +542,7 @@
             // Player1
             // 
             this.Player1.Image = global::tutorial.Properties.Resources.PlayerIcon1;
-            this.Player1.Location = new System.Drawing.Point(329, 482);
+            this.Player1.Location = new System.Drawing.Point(458, 343);
             this.Player1.Name = "Player1";
             this.Player1.Size = new System.Drawing.Size(32, 32);
             this.Player1.TabIndex = 21;
@@ -566,6 +568,12 @@
             this.Inv_06.TabIndex = 23;
             this.Inv_06.TabStop = false;
             this.Inv_06.Click += new System.EventHandler(this.Inv_06_Click);
+            // 
+            // timer4
+            // 
+            this.timer4.Interval = 50;
+            this.timer4.Tag = "on";
+            this.timer4.Tick += new System.EventHandler(this.timer4_Tick);
             // 
             // Game
             // 
@@ -690,5 +698,6 @@
         private System.Windows.Forms.PictureBox Player1;
         private System.Windows.Forms.PictureBox Inv_Blank;
         private System.Windows.Forms.PictureBox Inv_06;
+        private System.Windows.Forms.Timer timer4;
     }
 }

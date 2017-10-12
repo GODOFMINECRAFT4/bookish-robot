@@ -48,9 +48,7 @@ namespace tutorial
         #endregion
         #region Level Vars
         int tree1 = 0;
-        int Wall = 10;
         int Level = 1;
-        int[] Walls;
         #endregion
         #region Form Init
         public Game()
@@ -63,6 +61,7 @@ namespace tutorial
         {
             timer1.Start();
             timer2.Start();
+            timer4.Start();
             FormLoad();
             Reset();
     }
@@ -136,6 +135,35 @@ namespace tutorial
             if (timer3.Tag.Equals("on"))
             {
                 Collisions();
+            }
+        }
+
+        private void timer4_Tick(object sender, EventArgs e)
+        {
+                WallCollisions();
+            if (Life.Value == Life.Maximum)
+            {
+                timer4.Stop();
+                string MSMessage = "You Won" + Environment.NewLine + " Would You Like to Replay The Level";
+                string MSCaption = "You Won";
+                MessageBoxButtons MSButtons = MessageBoxButtons.YesNoCancel;
+                DialogResult MSResult;
+
+                MSResult = MessageBox.Show(MSMessage, MSCaption, MSButtons);
+                if (MSResult == DialogResult.Yes)
+                {
+                    Level = 1;
+                    LevelLoad();
+                    Reset();
+                }
+                else if (MSResult == DialogResult.No)
+                {
+                    Application.Exit();
+                }
+                else if (MSResult == DialogResult.Cancel)
+                {
+                    Application.Exit();
+                }
             }
         }
 
@@ -503,12 +531,17 @@ namespace tutorial
             }
         }
          
+        public void WallCollisions()
+        {
+
+        }
+
         #endregion
         #region Score
 
         public void LoseScore(int lose)
         {
-            if (Life.Value == Life.Minimum)
+            if (Life.Value == Life.Minimum -1)
             {
                 Console.WriteLine("Score Min");
 
@@ -518,12 +551,12 @@ namespace tutorial
                 DialogResult LHResult;
 
                 LHResult = MessageBox.Show(LHMessage, LHCaption, LHButtons);
-                if (LHResult == System.Windows.Forms.DialogResult.Retry)
+                if (LHResult == DialogResult.Retry)
                 {
                     Level = 1;
                     LevelLoad();
                 }
-                else if(LHResult == System.Windows.Forms.DialogResult.Cancel)
+                else if(LHResult == DialogResult.Cancel)
                 {
                     Application.Exit();
                 }
@@ -545,7 +578,25 @@ namespace tutorial
         {
             if (Life.Value == Life.Maximum)
             {
-                Console.WriteLine("Score Max");
+                string MSMessage = "You Won" + Environment.NewLine + " Would You Like to Replay The Level";
+                string MSCaption = "You Won";
+                MessageBoxButtons MSButtons = MessageBoxButtons.YesNoCancel;
+                DialogResult MSResult;
+
+                MSResult = MessageBox.Show(MSMessage, MSCaption, MSButtons);
+                if (MSResult == DialogResult.Yes)
+                {
+                    Level = 1;
+                    LevelLoad();
+                }
+                else if (MSResult == DialogResult.No)
+                {
+                    Application.Exit();
+                }
+                else if (MSResult == DialogResult.Cancel)
+                {
+                    Application.Exit();
+                }
             }
             else if (Life.Value + gain < Life.Maximum + 1)
             {
@@ -644,6 +695,13 @@ namespace tutorial
             {
                 Inv_05.Image = item.Image;
                 Inv_05.Tag = item.Tag;
+                item.Top = 2000;
+            }
+
+            else if (Inv_06.Tag == null)
+            {
+                Inv_06.Image = item.Image;
+                Inv_06.Tag = item.Tag;
                 item.Top = 2000;
             }
         }
@@ -1457,8 +1515,8 @@ namespace tutorial
         {
             Text = "Game";
             GodMode = false;
-            Life.Value = 1;
-            Life2.Value = 1;
+            Life.Value = 0;
+            Life2.Value = 0;
             Inv_01.Tag = null;
             Inv_02.Tag = null;
             Inv_03.Tag = null;
@@ -1481,7 +1539,8 @@ namespace tutorial
             righttext = "Right = " + right;
             WASDText = downtext + uptext + lefttext + righttext;
             Debug = 0;
-            Walls = new int[10];
+            Life.Value = 0;
+            Life2.Value = 0;
         }
 
         #endregion
@@ -1499,10 +1558,6 @@ namespace tutorial
             enemy_01 = 0;
             tree1 = 0;
             Level = 1;
-            if (Wall == 10)
-            {
-                Walls = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-            }
             LevelCheck();
         }
 
@@ -1553,58 +1608,6 @@ namespace tutorial
             }
             
             if (tree1 == 1)
-            {
-
-            }
-
-            #endregion
-            #region Walls
-            if (Walls[0] == 1)
-            {
-
-            }
-
-            if (Walls[1] == 1)
-            {
-
-            }
-
-            if (Walls[2] == 1)
-            {
-
-            }
-
-            if (Walls[3] == 1)
-            {
-
-            }
-
-            if (Walls[4] == 1)
-            {
-
-            }
-
-            if (Walls[5] == 1)
-            {
-
-            }
-
-            if (Walls[6] == 1)
-            {
-
-            }
-
-            if (Walls[7] == 1)
-            {
-
-            }
-
-            if (Walls[8] == 1)
-            {
-
-            }
-
-            if (Walls[9] == 1)
             {
 
             }
@@ -1662,58 +1665,6 @@ namespace tutorial
             }
 
             #endregion
-            #region Walls
-            if (Walls[0] == 0)
-            {
-
-            }
-
-            if (Walls[1] == 0)
-            {
-
-            }
-
-            if (Walls[2] == 0)
-            {
-
-            }
-
-            if (Walls[3] == 0)
-            {
-
-            }
-
-            if (Walls[4] == 0)
-            {
-
-            }
-
-            if (Walls[5] == 0)
-            {
-
-            }
-
-            if (Walls[6] == 0)
-            {
-
-            }
-
-            if (Walls[7] == 0)
-            {
-
-            }
-
-            if (Walls[8] == 0)
-            {
-
-            }
-
-            if (Walls[9] == 0)
-            {
-
-            }
-
-            #endregion
             #endregion
         }
 
@@ -1757,7 +1708,9 @@ namespace tutorial
             pear_01 = 1;
             pear_02 = 1;
             enemy_01 = 1;
-            Walls = new int[] { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
+            ScoreBarTotal = 61;
+            Life.Maximum = 60;
+            Life2.Maximum = 60;
             LevelLoad();
         }
 

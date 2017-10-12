@@ -82,20 +82,20 @@ namespace tutorial
             Console.WriteLine(caption + ": " + message);
 
             result = MessageBox.Show(message, caption, buttons);
-            if (result == System.Windows.Forms.DialogResult.OK)
+            if (result == DialogResult.OK)
             {
                 CodeGen();
             }
-            if (result == System.Windows.Forms.DialogResult.Cancel)
+            if (result == DialogResult.Cancel)
             {
                 result2 = MessageBox.Show(message2, caption, buttons2);
-                if (result2 == System.Windows.Forms.DialogResult.Yes)
+                if (result2 == DialogResult.Yes)
                 {
                     Console.WriteLine(caption + ": " + "Canceling Generation Of Codes");
                       MessageBox.Show("Canceling Generation Of Codes", caption);
                 }
 
-                if (result2 == System.Windows.Forms.DialogResult.No)
+                if (result2 == DialogResult.No)
                 {
                     CodeGen();
                 }

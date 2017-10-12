@@ -126,6 +126,8 @@
     <None Include="Images\Entities\Enemy_01.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\Level Elements\Wall Vertical.bmp" />
+    <Content Include="Images\Level Elements\Wall Horizontal.bmp" />
     <Content Include="Images\Entities\PlayerIcon1.png" />
     <Content Include="Images\Entities\PlayerIcon2.png" />
     <Content Include="Images\info.txt" />
