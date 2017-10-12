@@ -85,6 +85,32 @@
             this.Inv_Blank = new System.Windows.Forms.PictureBox();
             this.Inv_06 = new System.Windows.Forms.PictureBox();
             this.timer4 = new System.Windows.Forms.Timer(this.components);
+            this.Wall1 = new System.Windows.Forms.PictureBox();
+            this.Wall2 = new System.Windows.Forms.PictureBox();
+            this.Wall3 = new System.Windows.Forms.PictureBox();
+            this.Wall4 = new System.Windows.Forms.PictureBox();
+            this.Wall5 = new System.Windows.Forms.PictureBox();
+            this.Wall6 = new System.Windows.Forms.PictureBox();
+            this.Wall7 = new System.Windows.Forms.PictureBox();
+            this.Wall8 = new System.Windows.Forms.PictureBox();
+            this.Wall9 = new System.Windows.Forms.PictureBox();
+            this.Wall10 = new System.Windows.Forms.PictureBox();
+            this.Wall12 = new System.Windows.Forms.PictureBox();
+            this.Wall13 = new System.Windows.Forms.PictureBox();
+            this.Wall14 = new System.Windows.Forms.PictureBox();
+            this.Wall15 = new System.Windows.Forms.PictureBox();
+            this.Wall11 = new System.Windows.Forms.PictureBox();
+            this.Wall16 = new System.Windows.Forms.PictureBox();
+            this.Wall17 = new System.Windows.Forms.PictureBox();
+            this.Wall20 = new System.Windows.Forms.PictureBox();
+            this.Wall18 = new System.Windows.Forms.PictureBox();
+            this.Wall19 = new System.Windows.Forms.PictureBox();
+            this.Wall21 = new System.Windows.Forms.PictureBox();
+            this.Wall22 = new System.Windows.Forms.PictureBox();
+            this.Wall23 = new System.Windows.Forms.PictureBox();
+            this.Wall24 = new System.Windows.Forms.PictureBox();
+            this.Wall25 = new System.Windows.Forms.PictureBox();
+            this.Wall26 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Pear_02)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Banana_02)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Apple_02)).BeginInit();
@@ -102,6 +128,32 @@
             ((System.ComponentModel.ISupportInitialize)(this.Player1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Inv_Blank)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Inv_06)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall20)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall18)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall19)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall21)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall22)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall23)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall24)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall25)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall26)).BeginInit();
             this.SuspendLayout();
             // 
             // Player
@@ -129,7 +181,7 @@
             // Pear_02
             // 
             this.Pear_02.Image = global::tutorial.Properties.Resources.untitled;
-            this.Pear_02.Location = new System.Drawing.Point(796, 523);
+            this.Pear_02.Location = new System.Drawing.Point(905, 628);
             this.Pear_02.Name = "Pear_02";
             this.Pear_02.Size = new System.Drawing.Size(32, 32);
             this.Pear_02.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -140,7 +192,7 @@
             // Banana_02
             // 
             this.Banana_02.Image = global::tutorial.Properties.Resources.banana;
-            this.Banana_02.Location = new System.Drawing.Point(85, 214);
+            this.Banana_02.Location = new System.Drawing.Point(106, 263);
             this.Banana_02.Name = "Banana_02";
             this.Banana_02.Size = new System.Drawing.Size(32, 32);
             this.Banana_02.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -151,7 +203,7 @@
             // Apple_02
             // 
             this.Apple_02.Image = global::tutorial.Properties.Resources.Apple;
-            this.Apple_02.Location = new System.Drawing.Point(771, 174);
+            this.Apple_02.Location = new System.Drawing.Point(926, 227);
             this.Apple_02.Name = "Apple_02";
             this.Apple_02.Size = new System.Drawing.Size(32, 32);
             this.Apple_02.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -162,7 +214,7 @@
             // Pear_01
             // 
             this.Pear_01.Image = global::tutorial.Properties.Resources.untitled;
-            this.Pear_01.Location = new System.Drawing.Point(368, 105);
+            this.Pear_01.Location = new System.Drawing.Point(470, 227);
             this.Pear_01.Name = "Pear_01";
             this.Pear_01.Size = new System.Drawing.Size(32, 32);
             this.Pear_01.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -173,7 +225,7 @@
             // Banana_01
             // 
             this.Banana_01.Image = global::tutorial.Properties.Resources.banana;
-            this.Banana_01.Location = new System.Drawing.Point(504, 591);
+            this.Banana_01.Location = new System.Drawing.Point(343, 628);
             this.Banana_01.Name = "Banana_01";
             this.Banana_01.Size = new System.Drawing.Size(32, 32);
             this.Banana_01.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -184,7 +236,7 @@
             // Apple_01
             // 
             this.Apple_01.Image = global::tutorial.Properties.Resources.Apple;
-            this.Apple_01.Location = new System.Drawing.Point(104, 591);
+            this.Apple_01.Location = new System.Drawing.Point(26, 645);
             this.Apple_01.Name = "Apple_01";
             this.Apple_01.Size = new System.Drawing.Size(32, 32);
             this.Apple_01.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -542,7 +594,7 @@
             // Player1
             // 
             this.Player1.Image = global::tutorial.Properties.Resources.PlayerIcon1;
-            this.Player1.Location = new System.Drawing.Point(458, 343);
+            this.Player1.Location = new System.Drawing.Point(444, 350);
             this.Player1.Name = "Player1";
             this.Player1.Size = new System.Drawing.Size(32, 32);
             this.Player1.TabIndex = 21;
@@ -575,12 +627,298 @@
             this.timer4.Tag = "on";
             this.timer4.Tick += new System.EventHandler(this.timer4_Tick);
             // 
+            // Wall1
+            // 
+            this.Wall1.Image = ((System.Drawing.Image)(resources.GetObject("Wall1.Image")));
+            this.Wall1.Location = new System.Drawing.Point(240, 591);
+            this.Wall1.Name = "Wall1";
+            this.Wall1.Size = new System.Drawing.Size(20, 69);
+            this.Wall1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Wall1.TabIndex = 24;
+            this.Wall1.TabStop = false;
+            // 
+            // Wall2
+            // 
+            this.Wall2.Image = ((System.Drawing.Image)(resources.GetObject("Wall2.Image")));
+            this.Wall2.Location = new System.Drawing.Point(0, 591);
+            this.Wall2.Name = "Wall2";
+            this.Wall2.Size = new System.Drawing.Size(183, 20);
+            this.Wall2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Wall2.TabIndex = 25;
+            this.Wall2.TabStop = false;
+            // 
+            // Wall3
+            // 
+            this.Wall3.Image = ((System.Drawing.Image)(resources.GetObject("Wall3.Image")));
+            this.Wall3.Location = new System.Drawing.Point(240, 591);
+            this.Wall3.Name = "Wall3";
+            this.Wall3.Size = new System.Drawing.Size(168, 20);
+            this.Wall3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Wall3.TabIndex = 26;
+            this.Wall3.TabStop = false;
+            // 
+            // Wall4
+            // 
+            this.Wall4.Image = ((System.Drawing.Image)(resources.GetObject("Wall4.Image")));
+            this.Wall4.Location = new System.Drawing.Point(0, 683);
+            this.Wall4.Name = "Wall4";
+            this.Wall4.Size = new System.Drawing.Size(1008, 20);
+            this.Wall4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Wall4.TabIndex = 27;
+            this.Wall4.TabStop = false;
+            // 
+            // Wall5
+            // 
+            this.Wall5.Image = ((System.Drawing.Image)(resources.GetObject("Wall5.Image")));
+            this.Wall5.Location = new System.Drawing.Point(482, 608);
+            this.Wall5.Name = "Wall5";
+            this.Wall5.Size = new System.Drawing.Size(20, 95);
+            this.Wall5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Wall5.TabIndex = 28;
+            this.Wall5.TabStop = false;
+            // 
+            // Wall6
+            // 
+            this.Wall6.Image = ((System.Drawing.Image)(resources.GetObject("Wall6.Image")));
+            this.Wall6.Location = new System.Drawing.Point(95, 523);
+            this.Wall6.Name = "Wall6";
+            this.Wall6.Size = new System.Drawing.Size(20, 69);
+            this.Wall6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Wall6.TabIndex = 29;
+            this.Wall6.TabStop = false;
+            // 
+            // Wall7
+            // 
+            this.Wall7.Image = ((System.Drawing.Image)(resources.GetObject("Wall7.Image")));
+            this.Wall7.Location = new System.Drawing.Point(163, 128);
+            this.Wall7.Name = "Wall7";
+            this.Wall7.Size = new System.Drawing.Size(20, 418);
+            this.Wall7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Wall7.TabIndex = 30;
+            this.Wall7.TabStop = false;
+            // 
+            // Wall8
+            // 
+            this.Wall8.Image = ((System.Drawing.Image)(resources.GetObject("Wall8.Image")));
+            this.Wall8.Location = new System.Drawing.Point(0, 57);
+            this.Wall8.Name = "Wall8";
+            this.Wall8.Size = new System.Drawing.Size(1008, 20);
+            this.Wall8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Wall8.TabIndex = 31;
+            this.Wall8.TabStop = false;
+            // 
+            // Wall9
+            // 
+            this.Wall9.Image = ((System.Drawing.Image)(resources.GetObject("Wall9.Image")));
+            this.Wall9.Location = new System.Drawing.Point(988, 57);
+            this.Wall9.Name = "Wall9";
+            this.Wall9.Size = new System.Drawing.Size(20, 646);
+            this.Wall9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Wall9.TabIndex = 32;
+            this.Wall9.TabStop = false;
+            // 
+            // Wall10
+            // 
+            this.Wall10.Image = ((System.Drawing.Image)(resources.GetObject("Wall10.Image")));
+            this.Wall10.Location = new System.Drawing.Point(0, 57);
+            this.Wall10.Name = "Wall10";
+            this.Wall10.Size = new System.Drawing.Size(20, 646);
+            this.Wall10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Wall10.TabIndex = 33;
+            this.Wall10.TabStop = false;
+            // 
+            // Wall12
+            // 
+            this.Wall12.Image = ((System.Drawing.Image)(resources.GetObject("Wall12.Image")));
+            this.Wall12.Location = new System.Drawing.Point(862, 143);
+            this.Wall12.Name = "Wall12";
+            this.Wall12.Size = new System.Drawing.Size(20, 468);
+            this.Wall12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Wall12.TabIndex = 34;
+            this.Wall12.TabStop = false;
+            // 
+            // Wall13
+            // 
+            this.Wall13.Image = ((System.Drawing.Image)(resources.GetObject("Wall13.Image")));
+            this.Wall13.Location = new System.Drawing.Point(562, 591);
+            this.Wall13.Name = "Wall13";
+            this.Wall13.Size = new System.Drawing.Size(385, 20);
+            this.Wall13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Wall13.TabIndex = 35;
+            this.Wall13.TabStop = false;
+            // 
+            // Wall14
+            // 
+            this.Wall14.Image = ((System.Drawing.Image)(resources.GetObject("Wall14.Image")));
+            this.Wall14.Location = new System.Drawing.Point(77, 448);
+            this.Wall14.Name = "Wall14";
+            this.Wall14.Size = new System.Drawing.Size(106, 20);
+            this.Wall14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Wall14.TabIndex = 36;
+            this.Wall14.TabStop = false;
+            // 
+            // Wall15
+            // 
+            this.Wall15.Image = ((System.Drawing.Image)(resources.GetObject("Wall15.Image")));
+            this.Wall15.Location = new System.Drawing.Point(0, 374);
+            this.Wall15.Name = "Wall15";
+            this.Wall15.Size = new System.Drawing.Size(106, 20);
+            this.Wall15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Wall15.TabIndex = 37;
+            this.Wall15.TabStop = false;
+            // 
+            // Wall11
+            // 
+            this.Wall11.Image = ((System.Drawing.Image)(resources.GetObject("Wall11.Image")));
+            this.Wall11.Location = new System.Drawing.Point(77, 301);
+            this.Wall11.Name = "Wall11";
+            this.Wall11.Size = new System.Drawing.Size(106, 20);
+            this.Wall11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Wall11.TabIndex = 38;
+            this.Wall11.TabStop = false;
+            // 
+            // Wall16
+            // 
+            this.Wall16.Image = ((System.Drawing.Image)(resources.GetObject("Wall16.Image")));
+            this.Wall16.Location = new System.Drawing.Point(0, 216);
+            this.Wall16.Name = "Wall16";
+            this.Wall16.Size = new System.Drawing.Size(106, 20);
+            this.Wall16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Wall16.TabIndex = 39;
+            this.Wall16.TabStop = false;
+            // 
+            // Wall17
+            // 
+            this.Wall17.Image = ((System.Drawing.Image)(resources.GetObject("Wall17.Image")));
+            this.Wall17.Location = new System.Drawing.Point(77, 128);
+            this.Wall17.Name = "Wall17";
+            this.Wall17.Size = new System.Drawing.Size(408, 20);
+            this.Wall17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Wall17.TabIndex = 41;
+            this.Wall17.TabStop = false;
+            // 
+            // Wall20
+            // 
+            this.Wall20.Image = ((System.Drawing.Image)(resources.GetObject("Wall20.Image")));
+            this.Wall20.Location = new System.Drawing.Point(694, 143);
+            this.Wall20.Name = "Wall20";
+            this.Wall20.Size = new System.Drawing.Size(188, 20);
+            this.Wall20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Wall20.TabIndex = 42;
+            this.Wall20.TabStop = false;
+            // 
+            // Wall18
+            // 
+            this.Wall18.Image = ((System.Drawing.Image)(resources.GetObject("Wall18.Image")));
+            this.Wall18.Location = new System.Drawing.Point(562, 57);
+            this.Wall18.Name = "Wall18";
+            this.Wall18.Size = new System.Drawing.Size(20, 91);
+            this.Wall18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Wall18.TabIndex = 43;
+            this.Wall18.TabStop = false;
+            // 
+            // Wall19
+            // 
+            this.Wall19.Image = ((System.Drawing.Image)(resources.GetObject("Wall19.Image")));
+            this.Wall19.Location = new System.Drawing.Point(562, 143);
+            this.Wall19.Name = "Wall19";
+            this.Wall19.Size = new System.Drawing.Size(65, 20);
+            this.Wall19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Wall19.TabIndex = 44;
+            this.Wall19.TabStop = false;
+            // 
+            // Wall21
+            // 
+            this.Wall21.Image = ((System.Drawing.Image)(resources.GetObject("Wall21.Image")));
+            this.Wall21.Location = new System.Drawing.Point(926, 523);
+            this.Wall21.Name = "Wall21";
+            this.Wall21.Size = new System.Drawing.Size(85, 20);
+            this.Wall21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Wall21.TabIndex = 46;
+            this.Wall21.TabStop = false;
+            // 
+            // Wall22
+            // 
+            this.Wall22.Image = ((System.Drawing.Image)(resources.GetObject("Wall22.Image")));
+            this.Wall22.Location = new System.Drawing.Point(862, 448);
+            this.Wall22.Name = "Wall22";
+            this.Wall22.Size = new System.Drawing.Size(85, 20);
+            this.Wall22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Wall22.TabIndex = 47;
+            this.Wall22.TabStop = false;
+            // 
+            // Wall23
+            // 
+            this.Wall23.Image = ((System.Drawing.Image)(resources.GetObject("Wall23.Image")));
+            this.Wall23.Location = new System.Drawing.Point(926, 374);
+            this.Wall23.Name = "Wall23";
+            this.Wall23.Size = new System.Drawing.Size(85, 20);
+            this.Wall23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Wall23.TabIndex = 48;
+            this.Wall23.TabStop = false;
+            // 
+            // Wall24
+            // 
+            this.Wall24.Image = ((System.Drawing.Image)(resources.GetObject("Wall24.Image")));
+            this.Wall24.Location = new System.Drawing.Point(862, 301);
+            this.Wall24.Name = "Wall24";
+            this.Wall24.Size = new System.Drawing.Size(85, 20);
+            this.Wall24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Wall24.TabIndex = 49;
+            this.Wall24.TabStop = false;
+            // 
+            // Wall25
+            // 
+            this.Wall25.Image = ((System.Drawing.Image)(resources.GetObject("Wall25.Image")));
+            this.Wall25.Location = new System.Drawing.Point(926, 192);
+            this.Wall25.Name = "Wall25";
+            this.Wall25.Size = new System.Drawing.Size(82, 20);
+            this.Wall25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Wall25.TabIndex = 50;
+            this.Wall25.TabStop = false;
+            // 
+            // Wall26
+            // 
+            this.Wall26.Image = ((System.Drawing.Image)(resources.GetObject("Wall26.Image")));
+            this.Wall26.Location = new System.Drawing.Point(914, 96);
+            this.Wall26.Name = "Wall26";
+            this.Wall26.Size = new System.Drawing.Size(82, 20);
+            this.Wall26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Wall26.TabIndex = 51;
+            this.Wall26.TabStop = false;
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.Wall26);
+            this.Controls.Add(this.Wall25);
+            this.Controls.Add(this.Wall24);
+            this.Controls.Add(this.Wall23);
+            this.Controls.Add(this.Wall22);
+            this.Controls.Add(this.Wall21);
+            this.Controls.Add(this.Wall19);
+            this.Controls.Add(this.Wall18);
+            this.Controls.Add(this.Wall20);
+            this.Controls.Add(this.Wall17);
+            this.Controls.Add(this.Wall16);
+            this.Controls.Add(this.Wall11);
+            this.Controls.Add(this.Wall15);
+            this.Controls.Add(this.Wall14);
+            this.Controls.Add(this.Wall13);
+            this.Controls.Add(this.Wall12);
+            this.Controls.Add(this.Wall10);
+            this.Controls.Add(this.Wall9);
+            this.Controls.Add(this.Wall8);
+            this.Controls.Add(this.Wall7);
+            this.Controls.Add(this.Wall6);
+            this.Controls.Add(this.Wall5);
+            this.Controls.Add(this.Wall4);
+            this.Controls.Add(this.Wall3);
+            this.Controls.Add(this.Wall2);
+            this.Controls.Add(this.Wall1);
             this.Controls.Add(this.Inv_06);
             this.Controls.Add(this.Player1);
             this.Controls.Add(this.Enemy_01);
@@ -637,6 +975,32 @@
             ((System.ComponentModel.ISupportInitialize)(this.Player1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Inv_Blank)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Inv_06)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall20)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall19)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall21)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall22)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall23)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall24)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall25)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wall26)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -699,5 +1063,31 @@
         private System.Windows.Forms.PictureBox Inv_Blank;
         private System.Windows.Forms.PictureBox Inv_06;
         private System.Windows.Forms.Timer timer4;
+        private System.Windows.Forms.PictureBox Wall1;
+        private System.Windows.Forms.PictureBox Wall2;
+        private System.Windows.Forms.PictureBox Wall3;
+        private System.Windows.Forms.PictureBox Wall4;
+        private System.Windows.Forms.PictureBox Wall5;
+        private System.Windows.Forms.PictureBox Wall6;
+        private System.Windows.Forms.PictureBox Wall7;
+        private System.Windows.Forms.PictureBox Wall8;
+        private System.Windows.Forms.PictureBox Wall9;
+        private System.Windows.Forms.PictureBox Wall10;
+        private System.Windows.Forms.PictureBox Wall12;
+        private System.Windows.Forms.PictureBox Wall13;
+        private System.Windows.Forms.PictureBox Wall14;
+        private System.Windows.Forms.PictureBox Wall15;
+        private System.Windows.Forms.PictureBox Wall11;
+        private System.Windows.Forms.PictureBox Wall16;
+        private System.Windows.Forms.PictureBox Wall17;
+        private System.Windows.Forms.PictureBox Wall20;
+        private System.Windows.Forms.PictureBox Wall18;
+        private System.Windows.Forms.PictureBox Wall19;
+        private System.Windows.Forms.PictureBox Wall21;
+        private System.Windows.Forms.PictureBox Wall22;
+        private System.Windows.Forms.PictureBox Wall23;
+        private System.Windows.Forms.PictureBox Wall24;
+        private System.Windows.Forms.PictureBox Wall25;
+        private System.Windows.Forms.PictureBox Wall26;
     }
 }

@@ -533,7 +533,187 @@ namespace tutorial
          
         public void WallCollisions()
         {
+            if (Player1.Bounds.IntersectsWith(Wall1.Bounds))
+            {
+                this.Player1.Location = new Point(
+                this.Player.Location.X,
+                this.Player.Location.Y);
+            }
 
+            if (Player1.Bounds.IntersectsWith(Wall2.Bounds))
+            {
+                this.Player1.Location = new Point(
+                this.Player.Location.X,
+                this.Player.Location.Y);
+            }
+
+            if (Player1.Bounds.IntersectsWith(Wall3.Bounds))
+            {
+                this.Player1.Location = new Point(
+                this.Player.Location.X,
+                this.Player.Location.Y);
+            }
+
+            if (Player1.Bounds.IntersectsWith(Wall4.Bounds))
+            {
+                this.Player1.Location = new Point(
+                this.Player.Location.X,
+                this.Player.Location.Y);
+            }
+
+            if (Player1.Bounds.IntersectsWith(Wall5.Bounds))
+            {
+                this.Player1.Location = new Point(
+                this.Player.Location.X,
+                this.Player.Location.Y);
+            }
+
+            if (Player1.Bounds.IntersectsWith(Wall6.Bounds))
+            {
+                this.Player1.Location = new Point(
+                this.Player.Location.X,
+                this.Player.Location.Y);
+            }
+
+            if (Player1.Bounds.IntersectsWith(Wall7.Bounds))
+            {
+                this.Player1.Location = new Point(
+                this.Player.Location.X,
+                this.Player.Location.Y);
+            }
+
+            if (Player1.Bounds.IntersectsWith(Wall8.Bounds))
+            {
+                this.Player1.Location = new Point(
+                this.Player.Location.X,
+                this.Player.Location.Y);
+            }
+
+            if (Player1.Bounds.IntersectsWith(Wall9.Bounds))
+            {
+                this.Player1.Location = new Point(
+                this.Player.Location.X,
+                this.Player.Location.Y);
+            }
+
+            if (Player1.Bounds.IntersectsWith(Wall10.Bounds))
+            {
+                this.Player1.Location = new Point(
+                this.Player.Location.X,
+                this.Player.Location.Y);
+            }
+
+            if (Player1.Bounds.IntersectsWith(Wall11.Bounds))
+            {
+                this.Player1.Location = new Point(
+                this.Player.Location.X,
+                this.Player.Location.Y);
+            }
+
+            if (Player1.Bounds.IntersectsWith(Wall12.Bounds))
+            {
+                this.Player1.Location = new Point(
+                this.Player.Location.X,
+                this.Player.Location.Y);
+            }
+
+            if (Player1.Bounds.IntersectsWith(Wall13.Bounds))
+            {
+                this.Player1.Location = new Point(
+                this.Player.Location.X,
+                this.Player.Location.Y);
+            }
+
+            if (Player1.Bounds.IntersectsWith(Wall14.Bounds))
+            {
+                this.Player1.Location = new Point(
+                this.Player.Location.X,
+                this.Player.Location.Y);
+            }
+
+            if (Player1.Bounds.IntersectsWith(Wall15.Bounds))
+            {
+                this.Player1.Location = new Point(
+                this.Player.Location.X,
+                this.Player.Location.Y);
+            }
+
+            if (Player1.Bounds.IntersectsWith(Wall16.Bounds))
+            {
+                this.Player1.Location = new Point(
+                this.Player.Location.X,
+                this.Player.Location.Y);
+            }
+
+            if (Player1.Bounds.IntersectsWith(Wall17.Bounds))
+            {
+                this.Player1.Location = new Point(
+                this.Player.Location.X,
+                this.Player.Location.Y);
+            }
+
+            if (Player1.Bounds.IntersectsWith(Wall18.Bounds))
+            {
+                this.Player1.Location = new Point(
+                this.Player.Location.X,
+                this.Player.Location.Y);
+            }
+
+            if (Player1.Bounds.IntersectsWith(Wall19.Bounds))
+            {
+                this.Player1.Location = new Point(
+                this.Player.Location.X,
+                this.Player.Location.Y);
+            }
+
+            if (Player1.Bounds.IntersectsWith(Wall20.Bounds))
+            {
+                this.Player1.Location = new Point(
+                this.Player.Location.X,
+                this.Player.Location.Y);
+            }
+
+            if (Player1.Bounds.IntersectsWith(Wall21.Bounds))
+            {
+                this.Player1.Location = new Point(
+                this.Player.Location.X,
+                this.Player.Location.Y);
+            }
+
+            if (Player1.Bounds.IntersectsWith(Wall22.Bounds))
+            {
+                this.Player1.Location = new Point(
+                this.Player.Location.X,
+                this.Player.Location.Y);
+            }
+
+            if (Player1.Bounds.IntersectsWith(Wall23.Bounds))
+            {
+                this.Player1.Location = new Point(
+                this.Player.Location.X,
+                this.Player.Location.Y);
+            }
+
+            if (Player1.Bounds.IntersectsWith(Wall24.Bounds))
+            {
+                this.Player1.Location = new Point(
+                this.Player.Location.X,
+                this.Player.Location.Y);
+            }
+
+            if (Player1.Bounds.IntersectsWith(Wall25.Bounds))
+            {
+                this.Player1.Location = new Point(
+                this.Player.Location.X,
+                this.Player.Location.Y);
+            }
+
+            if (Player1.Bounds.IntersectsWith(Wall26.Bounds))
+            {
+                this.Player1.Location = new Point(
+                this.Player.Location.X,
+                this.Player.Location.Y);
+            }
         }
 
         #endregion
@@ -1541,6 +1721,7 @@ namespace tutorial
             Debug = 0;
             Life.Value = 0;
             Life2.Value = 0;
+            timer4.Start();
         }
 
         #endregion
